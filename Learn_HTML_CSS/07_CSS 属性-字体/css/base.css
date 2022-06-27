@@ -1,0 +1,8 @@
+/* 整个网站都需要设置的样式，我们一般会放到一个单独的文件中 */
+
+/* 开发中通常会给 body 设置字体 */
+body {
+  /* 我们可以参考某些知名网站设置的字体，比如京东的： */
+  /* 多个字体名称之间用逗号分隔 */
+  font-family: Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+}
