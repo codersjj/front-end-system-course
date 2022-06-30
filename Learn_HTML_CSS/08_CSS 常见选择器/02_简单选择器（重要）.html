@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      color: #f00;
+    }
+
+    .box {
+      color: #0f0;
+    }
+
+    #home {
+      color: #00f;
+    }
+  </style>
+</head>
+<body>
+  <!-- 强调：在同一个 HTML 文档中，id 不要重复，应该是唯一的 -->
+
+  <div>我是 div1</div>
+  <div class="box">我是 div2</div>
+  <div id="home">我是 div3</div>
+
+  <p class="box">我是 p 元素</p>
+
+  <!-- <h2 id="home">我是 h2 元素</h2> -->
+
+  <!-- 实际开发中，class/id 的名称可能比较复杂，那么有以下几种命名格式 -->
+  <div class="box one"></div>
+  <div class="box-one box-first"></div>
+  <div class="box_one box_first"></div>
+  <div class="boxOne boxFirst"></div>
+  <div class="BoxOne BoxFirst"></div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* a 元素链接从来没有被访问过 */
+    a:link {
+      color: red;
+    }
+
+    /* a 元素链接已被访问过 */
+    a:visited {
+      color: blue;
+    }
+
+    /* a 元素获取焦点 */
+    a:focus {
+      font-size: 50px;
+    }
+
+    /* 鼠标放到 a 元素上面 */
+    a:hover {
+      color: green;
+    }
+
+    /* 鼠标在 a 元素上面点下去了，但还没有松手 */
+    a:active {
+      color: skyblue;
+    }
+
+    input:focus {
+      background-color: red;
+    }
+
+    /* a {
+      color: orange;
+      font-size: 30px;
+    } */
+  </style>
+</head>
+<body>
+
+  <a href="http://www.mi.com">小米</a>
+  <a href="http://www.baidu.com">百度一下</a>
+
+  <input type="text">
+
+  <div>我是 div 元素</div>
+
+</body>
+</html>
