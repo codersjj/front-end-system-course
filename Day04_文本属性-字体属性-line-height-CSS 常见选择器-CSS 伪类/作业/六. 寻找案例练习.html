@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Gilroy-regular,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3370ff;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      box-sizing: border-box;
+      width: 384px;
+      padding: 40px 60px 27px;
+      margin: 50px 0 0 50px;
+    }
+
+    .item:hover {
+      box-shadow: 0 10px 30px 0 rgb(136 150 171 / 15%);
+    }
+
+    .item:hover .employeeCard-more {
+      opacity: 1;
+      border: 1px solid #3370ff;
+      color: #3370ff;
+    }
+
+    .item .avatar {
+      height: 216px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .item .avatar > img {
+      width: 216px;
+      height: 216px;
+    }
+
+    .item .employeeCard-name {
+      margin-bottom: 8px;
+      font-size: 22px;
+      color: #1f2329;
+      text-align: center;
+    }
+
+    .item .employeeCard-title {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #1f2329;
+      text-align: center;
+    }
+
+    .item .employeeCard-description {
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #646a73;
+      text-align: left;
+    }
+
+    .item .employeeCard-more {
+      display: inline-block;
+      opacity: .2;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #51565d;
+      border-radius: 50%;
+      color: #51565d;
+      text-align: center;
+    }
+
+    .item .employeeCard-more svg {
+      width: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="item" href="https://jobs.bytedance.com/experienced/story/1">
+    <div class="avatar">
+      <img src="https://lf3-cdn-tos.bytescm.com/obj/eden-cn/lmeh7pfuho/campus/story_shenchi_avatar.png" alt="人物头像">
+    </div>
+    <div class="employeeCard-name">从大学老师到算法工程师</div>
+    <div class="employeeCard-title">沈池 I AI - Lab 图像算法</div>
+    <div class="employeeCard-description">
+      怀着一颗想出来闯荡的心，从学术界跳到了工业界；公司有着丰富的应用场景和海量数据资源，技术落地非常有保证。
+    </div>
+    <div class="employeeCard-more">
+      <svg class="arrow-more_svg__icon" viewBox="0 0 1450 1024" width="32" height="32"><path fill="currentColor" d="M1390.933 546.133L972.8 964.267c-17.067 17.066-51.2 17.066-68.267 0L896 955.733c-17.067-17.066-17.067-51.2 0-68.266l324.267-332.8H76.8c-25.6 0-42.667-17.067-42.667-42.667v-8.533c0-25.6 17.067-42.667 42.667-42.667h1160.533L896 119.467c-17.067-17.067-17.067-51.2 0-68.267l8.533-8.533c17.067-17.067 51.2-17.067 68.267 0L1390.933 460.8c8.534 8.533 8.534 17.067 17.067 25.6v8.533c0 34.134-8.533 42.667-17.067 51.2z"></path></svg>
+    </div>
+  </a>
+
+</body>
+</html>
