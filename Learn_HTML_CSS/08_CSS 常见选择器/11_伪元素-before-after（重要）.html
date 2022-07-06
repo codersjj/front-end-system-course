@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box .before {
+      font-size: 24px;
+      color: #f00;
+    }
+
+    .box .after {
+      font-size: 24px;
+      color: #00f;
+    }
+
+    /* 伪元素 */
+    .item::before {
+      content: "123";
+      font-size: 24px;
+      color: #f00;
+    }
+
+    .item::after {
+      content: "321";
+      font-size: 24px;
+      color: #00f;
+    }
+
+    .hot-item::after {
+      content: url("../images/hot-icon.svg");
+
+      /* 位置不是很好看的解决办法（以后会具体来讲） */
+      position: relative; /* 相对定位，对一些东西做微调时常用 */
+      left: 8px;
+      top: 2.3px;
+    }
+
+    .new-item::after {
+      content: url("../images/new-icon.svg");
+
+      position: relative;
+      left: 8px;
+      top: 2.3px;
+    }
+
+    /* 伪元素注意事项 */
+    .content::after {
+      /* 使用 ::before 或 ::after 时，不要将 content 省略 */
+      /* content 不需要文本时不要省略 content 属性，可以写上空字符串 */
+      content: "";
+      /* 伪元素默认情况下是行内元素（设置宽高不会生效），所以这里可以将其设置为行内块级元素以便设置宽高 */
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <span class="before">123</span>
+    我是 div 元素
+    <span class="after">321</span>
+  </div>
+
+  <div class="box">
+    <span class="before">123</span>
+    我也是 div 元素
+    <span class="after">321</span>
+  </div>
+
+  <!-- 伪元素方案：直接添加相应的类（item）即可，提高了可阅读性、可维护性和可扩展性 -->
+  <div class="box item">我就不一样了，我是用伪元素添加修饰性内容的 div 元素</div>
+  <div class="box item">我也是用伪元素添加修饰性内容的 div 元素</div>
+  <div class="box hot-item">我也是用伪元素添加修饰性内容的 div 元素</div>
+  <div class="box new-item">我也是用伪元素添加修饰性内容的 div 元素</div>
+  <!-- 伪元素注意事项 -->
+  <div class="content">哈哈哈</div>
+
+</body>
+</html>
