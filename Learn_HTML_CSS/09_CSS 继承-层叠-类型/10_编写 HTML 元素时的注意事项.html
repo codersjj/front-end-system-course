@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 块级元素 -->
+  <!-- h1、p、div 等等 -->
+  <!-- 行内级元素 -->
+  <!-- a、span、strong、img 等等 -->
+
+  <div>
+    <h1></h1>
+    <p></p>
+    <span></span>
+    <a href=""></a>
+    <img src="" alt="">
+  </div>
+
+  <!-- 特殊：不要在 p 元素中放 div 等块级元素 -->
+  <p>
+    123
+    <div>哈哈哈</div>
+    321
+  </p>
+
+  <!-- 行内级元素中不要放块级元素，因为使用行内级元素的本意是想在同一行中显示的 -->
+  <span>
+    abc
+    <div>呵呵呵</div>
+    <p>asdf</p>
+    cba
+  </span>
+
+</body>
+</html>

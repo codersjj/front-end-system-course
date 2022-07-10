@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* em：相对于自身的字体大小（自身没有设置字体大小则相对于父元素的字体大小，父元素也没有设置字体大小则一层层往上找，最终则是相对于浏览器默认设置的字体大小：16px） */
+      font-size: 2em; /* 32px */
+    }
+
+    .box span {
+      /* font-size: 2em; */ /* 64px（从父元素继承过来的 font-size 是 32px，所以 2em = 2 * 32px = 64px） */
+      /* 实际上继承过来的是计算值 */
+      /* font-size: 32px; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    我是 div 元素
+    <span>我是 span 元素</span>
+  </div>
+
+</body>
+</html>

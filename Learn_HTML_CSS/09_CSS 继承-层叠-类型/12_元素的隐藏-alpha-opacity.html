@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* alpha：只是设置当前 color/bgc 等某个属性的透明度，不会影响子元素 */
+    .box1 {
+      /* 不是很推荐十六进制 8 位/4 位的写法 */
+      /* 因为这种写法在最新的 CSS Color Module Level 4 中才有，所以有些浏览器是不支持的 */
+      /* 当然，不支持其实也没有太大关系，因为我们后面会用到 Webpack 里面的工具，叫做 PostCSS，再借助于 browserslist 工具，帮我们适配当前项目要适配的浏览器，会自动帮我们将 8 位的十六进制颜色表示法转化为 rgba() 表示法的 */
+      /* color: #f00f; */
+      /* color: #f000; */
+      /* color: #f008; */
+      /* color: #ff000088; */
+      /* color: #ff000000; */
+
+      /* 推荐 rgba() 写法 */
+      /* color: rgba(255, 0, 0, 0.5) */
+      color: rgba(255, 0, 0, .5);
+      /* color: rgba(255, 0, 0, 0); */
+
+      /* 通过设置颜色的透明度来隐藏（文本） */
+      /* color: rgba(0, 0, 0, 0); */
+
+      /* 通过设置背景颜色的透明度来隐藏 */
+      /* background-color: rgba(0, 0, 0, 0); */
+      /* 但其实 background-color 的默认值就是 transparent，对应的值就是 rgba(0, 0, 0, 0)) */
+      background-color: transparent;
+    }
+
+    /* opacity：设置整个元素本身的不透明度，会对所有的子元素生效 */
+    .box2 {
+      background-color: skyblue;
+
+      /* opacity: 0; */
+      opacity: 0.5;
+      /* opacity: 1; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box1">
+    我是 box1
+    <img src="../images/gouwujie01.jpg" alt="">
+  </div>
+  <div class="box2">
+    我是 box2
+    <img src="../images/gouwujie01.jpg" alt="">
+  </div>
+
+</body>
+</html>

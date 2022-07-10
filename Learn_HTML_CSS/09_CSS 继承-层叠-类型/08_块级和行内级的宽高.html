@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 100px;
+      background-color: #f66;
+    }
+
+    span {
+      width: 200px;
+      height: 100px;
+      background-color: #6f6;
+    }
+
+    img {
+      width: 300px;
+      height: 200px;
+    }
+
+    input {
+      width: 300px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>我是 div 元素</div>
+
+  <!-- 行内级元素设置宽度和高度不生效？更准确地说其实是行内非替换元素不可以设置宽高 -->
+  <span>我是 span 元素</span>
+
+  <!-- 补充： -->
+  <!-- img 元素：inline、replaced -> 行内替换元素 -->
+  <!--
+    行内替换元素：
+      1. 和其它行内级元素在同一行显示
+      2. 可以设置宽度和高度
+  -->
+  <img src="../images/gouwujie01.jpg" alt="">
+  <input type="text">
+
+</body>
+</html>
