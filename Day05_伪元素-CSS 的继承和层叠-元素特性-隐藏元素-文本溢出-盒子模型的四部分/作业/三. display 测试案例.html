@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: inline;
+
+      /* width: 300px;
+      height: 100px; */
+
+      background-color: skyblue;
+    }
+
+    .content {
+      display: block;
+
+      background-color: limegreen;
+    }
+
+    a {
+      background-color: pink;
+    }
+
+    .poetry::after {
+      content: "";
+
+      display: inline-block;
+
+      width: 20px;
+      height: 10px;
+      background-color: #f66;
+    }
+
+    p {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">我是 div 元素，我要变成行内级元素</div>
+  <span class="content">我是 span 元素，我要变成块级元素</span>
+  <a href="#">我是 a 元素</a>
+  <span class="poetry">蒹葭苍苍</span>
+  <p>我是 p 元素，我要隐藏起来</p>
+
+</body>
+</html>
