@@ -1,0 +1,52 @@
+body {
+  text-align: center;
+}
+
+.item {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 100px;
+  padding: 20px 10px;
+  width: 234px;
+  height: 300px;
+  background-color: #fff;
+}
+
+.item:hover {
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1), -10px 15px 30px rgba(0, 0, 0, .1); */
+}
+
+.item img {
+  width: 160px;
+  height: 160px;
+}
+
+.item .title {
+  margin-top: 15px;
+}
+
+.item .desc {
+  margin-top: 5px;
+  color: #b0b0b0;
+
+  /* 单行文本显示，超出内容使用省略号代替 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item .price {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.item .new-price {
+  color: #ff6700;
+}
+
+.item .old-price {
+  margin-left: 5px;
+  text-decoration: line-through;
+  color: #b0b0b0;
+}

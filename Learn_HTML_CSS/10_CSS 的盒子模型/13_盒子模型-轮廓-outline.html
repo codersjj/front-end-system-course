@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      outline: 50px solid skyblue;
+
+      border: 10px solid #000;
+      padding: 20px;
+      width: 200px;
+      height: 200px;
+      background-color: #1BA784;
+    }
+
+    /* 行内元素设置 margin-top 无效，可以设置为 inline-block 使 margin-top 生效 */
+    a {
+      display: inline-block;
+      margin-top: 100px;
+
+      /* 直接给 a 元素设置样式，相当于给 a 元素的所有动态伪类（lvfha）都设置了样式 */
+      outline: none;
+    }
+
+    /* a:focus {
+      outline: none;
+    } */
+
+    input {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+  <a href="#">百度一下</a>
+  <input type="text">
+
+</body>
+</html>

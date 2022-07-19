@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      height: 150px;
+      background-color: #1BA784;
+    }
+
+    .box2 {
+      /* height: 100px; */
+      background-color: #EEA2A4;
+    }
+
+    .content {
+      background-color: #f00;
+      color: #fff;
+
+      /* 内容的 width、height：压根不生效 */
+      width: 300px;
+      height: 300px;
+
+      /* 内边距 padding */
+      /* 特殊：上下 padding 会被撑起，但是不占据空间 */
+      padding: 50px;
+
+      /* 边框 border */
+      /* 特殊：上下 border 会被撑起，但是不占据空间 */
+      border: 50px solid orange;
+
+      /* 外边距 margin */
+      /* 特殊：上下 margin 是不生效的 */
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <div class="box1">哈哈哈</div> -->
+  <span class="content">我是 span 元素</span>
+  我是其它文本
+  <div class="box2">我是 div 元素</div>
+
+</body>
+</html>
