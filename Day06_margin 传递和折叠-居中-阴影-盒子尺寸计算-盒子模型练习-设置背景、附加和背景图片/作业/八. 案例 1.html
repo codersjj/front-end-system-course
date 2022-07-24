@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      font-family: fangzheng,Microsoft YaHei;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    .item {
+      box-sizing: border-box;
+      margin: 100px auto;
+      padding: 20px 0;
+      width: 425px;
+      height: 160px;
+      /* background-color: #93D5DC; */
+    }
+
+    .item .title {
+      font-size: 18px;
+    }
+
+    .item .info {
+      font-size: 13px;
+    }
+
+    .item .info .distance {
+      margin: 3px 0 6px;
+      padding-right: 30px;
+      text-align: right;
+      color: #666;
+    }
+
+    .item .info .location {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .item .location span:first-child {
+      position: relative;
+      top: 2px;
+      margin-right: 8px;
+      width: 20px;
+      /* background-color: green; */
+    }
+
+    .item .location span:last-child {
+      display: inline-block;
+    }
+
+    .item .info .tel::before {
+      content: url(./images/telephone.png);
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      margin-right: 7px;
+      width: 20px;
+      height: 14px;
+      /* background-color: red; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="item">
+    <h3 class="title">比亚迪汽车海洋网（福田世纪汇盛世开元商超店）</h3>
+    <div class="info">
+      <div class="distance">距离您 2.67 公里</div>
+      <div class="location">
+        <span>
+          <img src="./images/location.png" alt="定位图标">
+        </span>
+        <span>广东省深圳市福田区华强北街道华航社区深南大道3018号世纪汇商场一层</span>
+      </div>
+      <div class="tel">电话: 13613079196</div>
+    </div>
+  </div>
+
+</body>
+</html>

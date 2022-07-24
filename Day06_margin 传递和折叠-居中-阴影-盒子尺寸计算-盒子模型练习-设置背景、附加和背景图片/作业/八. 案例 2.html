@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      outline: none;
+      text-decoration: none;
+      color: #333;
+      font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    .item {
+      width: 450px;
+      height: 500px;
+      background-color: #f8f8f8;
+    }
+
+    .item > a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .item .img-box img {
+      width: 100%;
+    }
+
+    .item .text-box {
+      box-sizing: border-box;
+      padding: 25px 28px 36px;
+      height: 230px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .item .text-box .title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .item .text-box .info {
+      margin-bottom: 20px;
+    }
+
+    .item .info .address,
+    .item .info .time {
+      display: inline-block;
+    }
+
+    .item .info .address {
+      margin-right: 10px;
+    }
+
+    .item .info .icon-address,
+    .item .info .icon-time {
+      margin-right: 6px;
+    }
+
+    .item .info .icon-address::before,
+    .item .info .icon-time::before {
+      content: "";
+      position: relative;
+      top: 4px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      /* background-color: red; */
+      background-size: contain;
+    }
+
+    .item .info .icon-address::before {
+      background-image: url(./images/location.svg);
+    }
+
+    .item .info .icon-time::before {
+      background-image: url(./images/calendar.png);
+    }
+
+    .item .text {
+      line-height: 26px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="item">
+    <a href="https://e.huawei.com/topic/2022-data-storage-user-forum/index.html" target="_blank">
+      <div class="img-box">
+        <!-- <img src="https://www-file.huawei.com/-/media/corp2020/home/event/1/2022-data-storage-user-forum2.jpg" alt="共生 · 共创 · 共赢"> -->
+        <img src="./images/huawei01.jpg" alt="共生 · 共创 · 共赢">
+      </div>
+      <div class="text-box">
+        <h4 class="title">2022数据存储用户精英论坛</h4>
+        <div class="info">
+          <div class="address">
+            <span class="icon-address"></span>
+            中国，广州
+          </div>
+          <div class="time">
+            <span class="icon-time"></span>
+            2022年7月28日 - 29日
+          </div>
+        </div>
+        <div class="text">
+          本届论坛将邀请资深行业用户，围绕数据存储的AI智能管理、多云连接等产业热点话题分享洞察与实践，探讨如何通过联合创新，共同定义产业方向。
+        </div>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>

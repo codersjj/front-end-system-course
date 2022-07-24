@@ -120,10 +120,10 @@
 
 - 以下属性**对行内非替换元素不起作用**
   - `width`、`height`、`margin-top`、`margin-bottom`
-- 以下属性**对行内非替换元素的效果比较特殊**
+- 以下属性**对行内非替换元素的效果比较特殊**（看起来有效果，但是不占据空间）
   - `padding-top`、`padding-bottom`、上下方向的 `border`
 
-## 6. （掌握）盒子尺寸计算 - `boxing-sizing`
+## 6. （掌握）盒子尺寸计算 - `box-sizing`
 
 - **`box-sizing` 用来设置盒子模型中宽高的行为**
 - **`content-box`**
