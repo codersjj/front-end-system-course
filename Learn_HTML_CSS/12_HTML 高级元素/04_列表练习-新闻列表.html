@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    思路：
+    1. 先完成 HTML 结构
+    2. 重置样式（body、a、ol、ul、li 等等）
+    3. 先整体，后局部
+      * 顺序：从外往里，从上往下
+    4. 抽取重复的 CSS 代码
+      * 将重复的代码放到一个单独的 class 中（比如 .icon）
+      * 将不同的代码放到不同的 class 中（比如 .hot、.new）
+   -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    ul {
+      margin: 20px;
+      width: 318px;
+    }
+
+    ul .item {
+      margin-top: 20px;
+    }
+
+    ul > li > a {
+      display: inline-block;
+      width: 100%;
+      color: #999;
+    }
+
+    ul > li > a:hover {
+      color: blue;
+    }
+
+    /* 局部 */
+    ul > li .ranking {
+      position: relative;
+      top: 2px;
+      /* box-sizing: border-box; */
+      display: inline-block;
+      margin-right: 8px;
+      /* padding: 0 6px; */
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* ul > li .ranking.one {
+      color: #a82e2e;
+    }
+
+    ul > li .ranking.two {
+      color: #f04142;
+    }
+
+    ul > li .ranking.three {
+      color: #ff9a03;
+    } */
+
+    /* 伪类：结构伪类（后面会详细讲解） */
+    ul > li:nth-child(1) .ranking {
+      color: #a82e2e;
+    }
+
+    ul > li:nth-child(2) .ranking {
+      color: #f04142;
+    }
+
+    ul > li:nth-child(3) .ranking {
+      color: #ff9a03;
+    }
+
+    ul > li .title {
+      display: inline;
+      color: #222;
+    }
+
+    ul > li .title:hover {
+      color: #f04142;
+    }
+
+    ul > li .icon {
+      position: relative;
+      top: 2px;
+      left: 4px;
+
+      display: inline-block;
+      /* margin-left: 6px; */
+      width: 16px;
+      height: 16px;
+    }
+
+    ul > li .hot {
+      background-image: url(../images/hot-icon.svg);
+    }
+
+    ul > li .new {
+      background-image: url(../images/new-icon.svg);
+    }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking one">1</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+        <i class="icon hot"></i>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking two">2</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking three">3</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+        <i class="icon new"></i>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">4</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">5</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">6</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">7</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">8</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+        <i class="icon hot"></i>
+      </a>
+    </li>
+    <li class="item">
+      <a href="https://www.toutiao.com/article/7124005227547591199/" target="_blank">
+        <span class="ranking">9</span>
+        <div class="title">回答时代课题 照亮复兴征程</div>
+      </a>
+    </li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      color: #f00 !important;
+    }
+
+    .container {
+      /* 后代元素自己有设置相应的 CSS 属性时，优先使用自己设置的值，而不是继承过来的值（不管继承过来的权重有多高） */
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    呵呵呵
+    <div class="container">哈哈哈</div>
+  </div>
+
+</body>
+</html>

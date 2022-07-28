@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 使用 get 方式提交时，密码等敏感信息都会以明文的形式出现在 URL 中，那么我们可以先对其进行加密，之后再进行提交，或者改成 post 方式提交 -->
+  <form action="http://hongyuan.com" method="post" target="_blank">
+    <div>
+      <label for="username">
+        姓名：
+        <input id="username" type="text" name="username">
+      </label>
+    </div>
+    <div>
+      <label for="password">密码：</label>
+      <input id="password" type="password" name="password">
+    </div>
+    <div>
+      性别：
+      <label for="male">
+        <input id="male" type="radio" name="sex" value="male">男
+      </label>
+      <label for="female">
+        <input id="female" type="radio" name="sex" value="female">女
+      </label>
+    </div>
+    <div>
+      爱好：
+      <label for="pingpong">
+        <input id="pingpong" type="checkbox" name="hobby" value="tableTennis" checked>乒乓球
+      </label>
+      <label for="basketball">
+        <input id="basketball" type="checkbox" name="hobby" value="basketball">篮球
+      </label>
+      <label for="football">
+        <input id="football" type="checkbox" name="hobby" value="football" checked>足球
+      </label>
+    </div>
+
+    <button type="reset">重置内容</button>
+    <input type="submit">
+  </form>
+
+</body>
+</html>
