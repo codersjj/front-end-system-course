@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: "iconfont";
+      src: url("./fonts03/iconfont.ttf");
+    }
+
+    .iconfont {
+      font-family: "iconfont";
+      font-style: normal;
+      /* font-size: 100px; */
+    }
+
+    .icon-home {
+      font-size: 100px;
+    }
+
+    .icon-music::before {
+      content: "\e654";
+    }
+
+    .bg-icon {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 通过字符实体的方式（元素内容）使用字体图标 -->
+  <i class="iconfont icon-home">&#xe626;</i>
+  <i class="iconfont">&#xe69f;</i>
+
+  <!-- 2. （更常见）通过 class 的方式（伪元素）使用字体图标 -->
+  <i class="iconfont icon-music"></i>
+
+  <i class="bg-icon"></i>
+
+</body>
+</html>
