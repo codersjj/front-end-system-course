@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .box {
+      overflow-x: hidden;
+    }
+
+    .box img {
+      /* 写法 1： */
+      /* position: relative; */
+      /* 再向右移动父元素宽度的一半长 */
+      /* left: 50%; */
+      /* 先向左移动图片自身宽度的一半长 */
+      /* translate 中的百分比是相对于自己的 */
+      /* transform: translate(-50%); */
+
+      /* 写法 2： */
+      /* 先向左移动图片自身宽度的一半长 */
+      /* 这里使用了 transform 就可以不需要相对定位了 */
+      transform: translate(-50%);
+      /* transform: translateX(-50%); */
+      /* 再向右移动父元素宽度的一半长 */
+      margin-left: 50%;
+
+      /* 写法 3： */
+      /* position: relative;
+      left: 50%;
+      margin-left: -960px; */
+
+      /* 写法 4： */
+      /* position: relative;
+      left: -960px;
+      margin-left: 50%; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <img src="../images/mhxy.jpg" alt="">
+  </div>
+
+</body>
+</html>

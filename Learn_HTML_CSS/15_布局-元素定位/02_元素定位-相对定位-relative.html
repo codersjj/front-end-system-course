@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      /* relative: 相对定位 */
+      /* 元素仍然在标准流中，依然占据空间 */
+      position: relative;
+      /* 但此时设置 left/right/top/bottom 则可以将该元素当成脱离标准流的元素了 */
+      /* left: 30px;
+      top: 50px; */
+      /* right: 30px;
+      bottom: 50px; */
+      left: -30px;
+      top: -50px;
+
+      /* margin-left: 30px; */
+    }
+  </style>
+</head>
+<body>
+
+  <span>我是 span 元素</span>
+  <strong class="text">我是 strong 元素</strong>
+  <img src="../images/diqiu.jpg" alt="">
+  <div>我是 div 元素</div>
+
+</body>
+</html>
