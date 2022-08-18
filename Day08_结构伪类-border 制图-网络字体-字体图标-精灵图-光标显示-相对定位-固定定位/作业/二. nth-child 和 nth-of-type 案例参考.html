@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 获取box 的第3个div元素 */
+      .box div:nth-child(3) {
+        color: red;
+      }
+      /* 父元素下的3个孩子 */
+      .box :nth-child(3) {
+        color: pink;
+      }
+      /* 需求: 选择box中的第三个div元素(排除所有的干扰项) */
+      .box div:nth-of-type(3) {
+        font-weight: 700;
+        color: green;
+      }
+      .box div:nth-of-type(2n) {
+        background-color: pink;
+      }
+      .box div:nth-of-type(2n + 1) {
+        background-color: blue;
+      }
+      /* 前几个 */
+      .box div:nth-of-type(-n + 4) {
+        color: purple;
+        font-weight: 700;
+      }
+      /* 会找ul下的子元素同类型的第几个 */
+      ul :nth-of-type(3) {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>第1个元素</div>
+      <span>干扰项1</span>
+      <span>干扰项2</span>
+      <span>干扰项3</span>
+      <span>干扰项4</span>
+      <span>干扰项5</span>
+      <div>第2个元素</div>
+      <div>第3个元素</div>
+      <div>第4个元素</div>
+      <div>第5个元素</div>
+      <div>第6个元素</div>
+      <div>第7个元素</div>
+      <div>第8个元素</div>
+      <p>干扰项6</p>
+      <div>第9个元素</div>
+      <div>第10个元素</div>
+    </div>
+    <ul>
+      <li>第1个li元素</li>
+      <li>第2个li元素</li>
+      <span>干扰项3</span>
+      <span>干扰项4</span>
+      <span>干扰项5</span>
+      <li>第3个li元素</li>
+      <li>第4个li元素</li>
+      <li>第5个li元素</li>
+      <li>第6个li元素</li>
+      <li>第7个li元素</li>
+      <li>第8个li元素</li>
+      <li>第9个li元素</li>
+      <li>第10个li元素</li>
+    </ul>
+  </body>
+</html>

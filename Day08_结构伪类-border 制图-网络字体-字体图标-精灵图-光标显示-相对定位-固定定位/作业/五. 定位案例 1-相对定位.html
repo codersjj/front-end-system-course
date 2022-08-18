@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./fonts/font_rgj3qdw8q3/iconfont.css">
+  <style>
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .shopping-cart {
+      /* box-sizing: border-box; */
+      margin: 100px auto;
+      border: 1px solid #eee;
+      width: 130px;
+      height: 34px;
+      /* background-color: skyblue; */
+      text-align: center;
+      line-height: 34px;
+      color: #e1251b;
+    }
+
+    .shopping-cart:hover {
+      border-color: #c81623;
+      cursor: default;
+    }
+
+    .icon-cart, .num {
+      /* display: inline-block; */
+      /* background-color: #f66; */
+      font-style: normal;
+    }
+
+    .icon-cart {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .num-box {
+      display: inline-block;
+      line-height: 12px;
+    }
+
+    .num {
+      position: relative;
+      left: -8px;
+      top: -8px;
+      display: inline-block;
+      /* border: 1px solid #000; */
+      border-radius: 7px;
+      padding: 1px 3px;
+      width: 12px;
+      height: 12px;
+      background-color: #e1251b;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .text {
+      margin-left: -10px;
+      font-size: 12px;
+      color: #e1251b;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shopping-cart">
+    <i class="iconfont icon-cart"></i>
+    <!-- 这里包了一个盒子，以便在使用相对定位时，由于元素未脱标导致设置高度及行高进行垂直居中时因文本对齐造成内容显示不全的问题 -->
+    <div class="num-box">
+      <i class="num">0</i>
+    </div>
+    <a class="text" href="https://cart.jd.com/cart.action" target="_blank">我的购物车</a>
+  </div>
+
+</body>
+</html>

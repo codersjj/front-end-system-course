@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      .service {
+        background: #eaeaea;
+        border-bottom: 1px solid #666;
+        margin-top: 200px;
+      }
+      .w {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      .slogen {
+        display: flex;
+        align-items: center;
+        height: 42px;
+        padding: 30px 0 30px 55px;
+      }
+      .slogen .item {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        height: 42px;
+        line-height: 42px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #444;
+        text-indent: 8px;
+      }
+      .slogen .icon {
+        display: inline-block;
+        width: 71px;
+        height: 82px;
+        background: url(./images/jd_sprite.png) no-repeat;
+      }
+      .slogen .more {
+        background-position: 0 -1px;
+      }
+      .slogen .fast {
+        background-position: -77px -1px;
+      }
+      .slogen .good {
+        background-position: -154px -1px;
+      }
+      .slogen .cheap {
+        background-position: 0 -90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="service">
+      <div class="w">
+        <ul class="slogen">
+          <li class="item">
+            <i class="icon more"></i>
+            品类齐全，轻松购物
+          </li>
+          <li class="item">
+            <i class="icon fast"></i>
+            多仓直发，极速配送
+          </li>
+          <li class="item">
+            <i class="icon good"></i>
+            正品行货，精致服务
+          </li>
+          <li class="item">
+            <i class="icon cheap"></i>
+            天天低价，畅选无忧
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
