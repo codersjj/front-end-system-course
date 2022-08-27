@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    1. 可以随意设置宽高；
+    2. 宽高默认由内容决定；
+    3. 不再受标准流的约束；
+   -->
+  <style>
+    .container {
+      position: relative;
+
+      width: 1000px;
+      height: 800px;
+      background-color: #B0D5DF;
+    }
+
+    .box {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 800px;
+      height: 600px;
+      background-color: #66C18C;
+    }
+
+    strong {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 200px;
+      height: 150px;
+      background-color: #373834;
+      color: #fff;
+    }
+
+    img {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">
+      <span>我是 span 元素</span>
+      <strong>我是 strong 元素</strong>
+      <img src="../images/gouwujie01.jpg" alt="">
+      <div>我是 div 元素</div>
+    </div>
+  </div>
+
+</body>
+</html>

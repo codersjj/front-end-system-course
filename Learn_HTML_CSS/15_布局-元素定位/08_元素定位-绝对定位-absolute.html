@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      /* 设置为 fixed 时元素变为了定位元素的同时也脱标了，这会影响其它元素原来的布局 */
+      /* position: fixed;
+      top: 0; */
+      /* 设置为 relative 时元素变为定位元素的同时还在标准流中，就不会影响其它元素原来的布局 */
+      position: relative;
+
+      width: 1000px;
+      height: 800px;
+      background-color: orangered;
+    }
+
+    .box {
+      position: relative;
+
+      width: 800px;
+      height: 600px;
+      background-color: skyblue;
+    }
+
+    strong {
+      /* position: relative; */
+      /* 脱离标准流 */
+      /* position: fixed; */
+      /* 脱离标准流 */
+      /* top、right、bottom、left 四个属性会被激活 */
+      /* 设置 absolute 时，在没有祖先元素定位的情况下，相对的是视口 */
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    img {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>哈哈哈</div>
+  <div class="container">
+    <div class="box">
+      <span>我是 span 元素</span>
+      <strong>我是 strong 元素</strong>
+      <img src="../images/gouwujie01.jpg" alt="">
+      <div>我是 div 元素</div>
+    </div>
+  </div>
+  <div>呵呵呵</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    6. 定位参照对象的宽高和绝对定位元素宽高之间的关系（两条公式）
+   -->
+  <style>
+    .box {
+      position: relative;
+
+      width: 800px;
+      height: 300px;
+      background-color: #66C18C;
+    }
+
+    /* 绝对定位方案让元素在父级盒子中水平垂直居中，相较于 flex 方案，此方案不存在兼容性问题 */
+    .container {
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* width: 100%; */
+      bottom: 0;
+      top: 0;
+
+      /* margin: 0 auto; */
+      margin: auto;
+
+      width: 200px;
+      height: 100px;
+      /* height: 100%; */
+      background-color: #B0D5DF;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="container"></div>
+  </div>
+
+</body>
+</html>

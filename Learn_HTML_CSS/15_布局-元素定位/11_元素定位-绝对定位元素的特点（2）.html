@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    4. 不再给父元素汇报宽高数据；
+    5. 脱标元素内部默认还是按照标准流布局；
+   -->
+  <style>
+    .box {
+      /* display: inline-block; */
+      background-color: #66C18C;
+    }
+
+    .box strong {
+      position: absolute;
+      /* position: fixed; */
+
+      width: 100px;
+      height: 80px;
+      background-color: #B0D5DF;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <!-- 脱标元素内部默认还是按照标准流布局的 -->
+    <strong>
+      <i>我是 i 元素</i>
+      <span>我是 span 元素</span>
+    </strong>
+  </div>
+
+</body>
+</html>
