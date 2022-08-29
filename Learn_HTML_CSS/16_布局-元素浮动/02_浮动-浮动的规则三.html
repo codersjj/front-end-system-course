@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: #64483D;
+    }
+
+    .item {
+      /* 三个元素全部向左移动，都会脱离标准流 */
+      /* float: left; */
+
+      width: 100px;
+      height: 100px;
+      background-color: #66C18C;
+    }
+
+    .box1 {
+      float: left;
+      margin-left: 20px;
+      /* margin: 20px 0 0 20px; */
+      background-color: #B0D5DF;
+    }
+
+    .box2 {
+      float: left;
+      background-color: #F0A1A8;
+    }
+
+    .box3 {
+      float: left;
+    }
+
+    .box4 {
+      float: left;
+      width: 260px;
+      height: 100px;
+      background-color: #F9723D;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 浮动元素之间不能层叠 -->
+    <div class="item box1">1</div>
+    <div class="item box2">2</div>
+    <div class="item box3">3</div>
+
+    <div class="box4">4</div>
+  </div>
+
+</body>
+</html>

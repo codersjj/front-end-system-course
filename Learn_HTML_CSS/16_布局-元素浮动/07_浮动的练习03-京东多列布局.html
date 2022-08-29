@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 公共样式（其它页面也可以直接拿去使用） */
+    .content {
+      margin: 0 auto;
+      width: 1190px;
+      height: 800px;
+      background-color: #B0D5DF;
+    }
+
+    /* 布局样式 */
+    .content .box {
+      /* 方案三（精妙）：多包裹一层 div，将其 margin 设置为负值，根据在标准流中的块级非替换元素的 width 和 margin 的计算公式，精妙地实现多列布局 */
+      /* margin-right: -10px; */
+      margin: 0 -5px;
+
+      height: 100%;
+      /* background-color: #ccc; */
+    }
+
+    .content .item {
+      float: left;
+
+      /* margin-right: 10px; */
+      margin: 0 5px;
+
+      width: 230px;
+      height: 322px;
+      background-color: #66C18C;
+    }
+
+    /* 方案一：使用伪类（可能存在兼容性问题） */
+    /* .content > .item:last-child {
+      margin-right: 0;
+    } */
+    .content .item:nth-child(5n) {
+      /* margin-right: 0; */
+    }
+
+    /* 方案二：额外添加类名来设置样式（麻烦一点点） */
+    .content .item.last-item {
+      /* margin-right: 0; */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <!--
+      多包裹一层盒子，以便利用在标准流中的块级非替换元素遵循的公式：
+        margin-left(0) + border-left-width(0) + padding-left(0) + width(auto) + padding-right(0) + border-right-width(0) + margin-right(0) = width of containing block
+        =>
+        margin-left + 0 + 0 + width + 0 + 0 + margin-right = width of containing block
+        =>
+        0 + width + (-10px) = 1190px
+        =>
+        width = 1200px
+    -->
+    <div class="box">
+
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5 last-item">5</div>
+
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+      <div class="item item9">9</div>
+      <div class="item item10 last-item">10</div>
+
+    </div>
+  </div>
+
+</body>
+</html>
