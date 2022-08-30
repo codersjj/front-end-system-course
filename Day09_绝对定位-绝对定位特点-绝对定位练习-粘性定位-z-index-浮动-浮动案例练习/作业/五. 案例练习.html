@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    /* 重置样式 */
+    a {
+      /* display: inline-block; */
+      display: block;
+    }
+
+    i {
+      font-style: normal;
+    }
+
+    /* 公共样式 */
+    .icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      /* background-color: #000; */
+    }
+
+    .icon_video_play_count {
+      background-image: url("./images/video-play-count.svg");
+    }
+
+    .icon_video_danmaku {
+      background-image: url("./images/video-danmaku.svg");
+    }
+
+    /* 布局样式 */
+    .item {
+      margin: 100px auto;
+      width: 270px;
+    }
+
+    .item .album a {
+      position: relative;
+    }
+
+    .item .album img {
+      display: block;
+      border-radius: 6px;
+      width: 100%;
+      height: 152px;
+    }
+
+    .item .album .cover {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 0 0 6px 6px;
+      padding: 16px 8px 6px;
+      /* background-color: #f66; */
+      background-image: linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .item .cover .video-play-count,
+    .item .cover .video-danmaku {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .item .video-play-count .icon,
+    .item .video-danmaku .icon {
+      position: relative;
+      top: 4px;
+    }
+
+    .item .cover .duration {
+      position: absolute;
+      right: 8px;
+    }
+
+    .item .info a {
+      /* width: 100%; */
+    }
+
+    .item .info .title {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #18191c;
+
+      /* 文本显示一行（有一个前提：当前元素的宽度需要固定下来），显示不完的内容用省略号代替 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      /* 文本显示两行，显示不完的内容用省略号代替 */
+      /* display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; */
+    }
+
+    .item .info .owner {
+      margin-top: 5px;
+    }
+
+    .item .owner a {
+      color: #9499a0;
+      font-size: 13px;
+    }
+
+    .item .owner img {
+      position: relative;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      color: #9499a0;
+    }
+
+    .item .owner .widget-up {
+      position: relative;
+      top: 3px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url(./images/widget-up.svg);
+      background-repeat: no-repeat;
+      background-position: 0 2px;
+      /* background-color: red; */
+    }
+
+    .item .owner .author::before {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      margin-right: 2px;
+      width: 16px;
+      height: 16px;
+      content: url("./images/widget-up.svg");
+    }
+  </style>
+</head>
+<body>
+
+  <div class="item">
+    <div class="album">
+      <a href="https://www.bilibili.com/video/BV1gT4y1i7Lc?vd_source=8b9417088af38c747028c141d420e38b" target="_blank">
+        <!-- img 元素设置 referrerpolicy 属性解决图片获取不到的问题，参考资料：https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-referrerpolicy -->
+        <img src="https://i2.hdslb.com/bfs/archive/9c763bf06b7765462eac62cc0a9a34b260d3f9c8.jpg@672w_378h_1c.webp" alt="懒羊羊图片" referrerpolicy="no-referrer">
+        <div class="cover">
+          <div class="video-play-count">
+            <i class="icon icon_video_play_count"></i>
+            <span>3万</span>
+          </div>
+          <div class="video-danmaku">
+            <i class="icon icon_video_danmaku"></i>
+            <span>128</span>
+          </div>
+          <span class="duration">23:54</span>
+        </div>
+      </a>
+    </div>
+    <div class="info">
+      <a href="#">
+        <h3 class="title" title="萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？">萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？萌化了！谁会不喜欢毛茸茸的小懒懒呢？</h3>
+      </a>
+      <p class="owner">
+        <a href="#">
+          <!-- <img src="./images/widget-up.svg" alt="up主小图标"> -->
+          <!-- <span class="widget-up"></span> -->
+          <span class="author">Muxi慕喜咩</span>
+          <span class="date"> · 3-20</span>
+        </a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
