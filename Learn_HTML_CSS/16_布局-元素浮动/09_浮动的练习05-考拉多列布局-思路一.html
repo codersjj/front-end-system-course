@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    思路一（不好控制，不推荐）：内外层 box 的 border 都来进行设置
+   -->
+  <style>
+    /* 公共样式 */
+    .content {
+      margin: 0 auto;
+      width: 1100px;
+      height: 800px;
+      background-color: #B0D5DF;
+    }
+
+    /* 布局样式 */
+    /* 给外层的 box 添加 border */
+    .box {
+      /* box-sizing: border-box; */
+      border: 1px solid #000;
+      /* width: 1098px; */
+      height: 166px;
+      background-color: orange;
+    }
+
+    .wrapper {
+      margin-right: -1px;
+      height: 100%;
+      /* background-color: #66C18C; */
+    }
+
+    /* 给内层的 item box 添加 border-right */
+    .item {
+      float: left;
+      border-right: 1px solid #000;
+      width: 219px;
+      height: 100%;
+      /* background-color: #F0A1A8; */
+    }
+
+    .item.last {
+      border-right: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="box">
+      <div class="wrapper">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item last"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

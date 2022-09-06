@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      margin: 0 auto;
+      width: 1190px;
+      /* height: 1000px; */
+      background-color: #B0D5DF;
+    }
+
+    .wrapper {
+      margin-right: -10px;
+    }
+
+    .item {
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 290px;
+      background-color: #66C18C;
+    }
+
+    .item.left {
+      height: 370px;
+    }
+
+    .item.right {
+      height: 180px;
+    }
+
+    .content .line {
+      /* height: 10px; */
+      /* background-color: #4A4035; */
+
+      clear: both;
+    }
+
+    .other {
+      height: 100px;
+      background-color: #F0A1A8;
+    }
+
+    /* 最终的解决方案 */
+    .clearfix::after {
+      content: "";
+      display: block;
+      /* height: 10px; */
+      /* background-color: #253D24; */
+      clear: both;
+
+      /* 浏览器兼容 */
+      visibility: hidden;
+      height: 0;
+
+      /* IE6/7 */
+      *zoom: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <!-- 因为所有的后代 div 元素都是浮动的，脱离标准流 -->
+    <!-- 不会向父元素汇报高度，那么 .content 元素压根就没有高度 -->
+    <div class="wrapper clearfix">
+      <div class="item left"></div>
+      <div class="item left"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+
+      <!-- <div class="line"></div> -->
+    </div>
+  </div>
+  <!-- 其它的内容 -->
+  <!-- 会认为 .content 没有高度，那么就会直接在上面显示 -->
+  <div class="other">哈哈哈</div>
+
+  <div class="content">
+    <div class="wrapper clearfix">
+      <div class="item left"></div>
+      <div class="item left"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+    </div>
+  </div>
+  <div class="other">哈哈哈</div>
+
+</body>
+</html>
