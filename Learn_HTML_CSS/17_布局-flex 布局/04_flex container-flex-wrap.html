@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+
+      /* 默认值 nowrap，不换行（单行） */
+      /* flex-wrap: nowrap; */
+      /* flex-wrap: wrap; */
+      /* flex-wrap: wrap-reverse; */
+
+      /* flex-flow 是 flex-direction 和 flex-wrap 的简写属性 */
+      /* flex-flow: row; */
+      /* flex-flow: wrap; */
+      flex-flow: row-reverse wrap;
+      /* flex-flow: wrap row-reverse; */
+
+      width: 500px;
+      height: 500px;
+      background-color: #B0D5DF;
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+  </div>
+
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

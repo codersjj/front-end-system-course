@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+
+      width: 500px;
+      height: 500px;
+      background-color: #B0D5DF;
+    }
+
+    .item {
+      /* 基础（初始）尺寸 */
+      /* flex-basis: auto; */
+      /* 有显示不完的单词时会自动拉伸 item */
+      flex-basis: 120px;
+      /* flex-basis: content; */
+
+      /* max-width: 100px; */
+      /* width: 120px;
+      width: 60px;
+      width: 260px; */
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item item1">1我是一段文本我是一段文本我是一段文本</div>
+    <div class="item item2">2我是 coder_hahaha_xixixi</div>
+    <div class="item item3">3</div>
+  </div>
+
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

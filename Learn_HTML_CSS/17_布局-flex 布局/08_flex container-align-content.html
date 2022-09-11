@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+      align-content: normal;
+      align-content: stretch;
+      align-content: flex-start;
+      align-content: flex-end;
+      align-content: space-between;
+      align-content: space-around;
+      align-content: space-evenly;
+
+      width: 500px;
+      /* 但是，开发中一般情况下父元素的高度会由内容撑起来，不会写死，那么多行 flex items 默认就是挨着排列的，交叉轴方向不会有多余的空间，此时设置 align-content 没有意义 */
+      height: 500px;
+      background-color: #B0D5DF;
+    }
+
+    .item {
+      /* margin-bottom: 10px; */
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item item1">1x</div>
+    <div class="item item2">2x</div>
+    <div class="item item3">3x</div>
+    <div class="item item4">4x</div>
+    <div class="item item5">5x</div>
+    <div class="item item6">6x</div>
+  </div>
+
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>
