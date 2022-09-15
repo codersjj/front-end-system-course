@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小米官网</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .dress {
+      margin-top: 30px;
+      /* height: 200px; */
+      /* background-color: #f66; */
+    }
+
+    .dress .header {
+      height: 58px;
+      /* 通过 line-height 让单行的文字垂直居中 */
+      line-height: 58px;
+    }
+
+    .dress .header .left-area {
+      float: left;
+      font-size: 22px;
+    }
+
+    .dress .header .left-area .title {
+      font-weight: 200;
+    }
+
+    .dress .header .right-area {
+      float: right;
+      font-size: 16px;
+    }
+
+    .dress .header .right-area .item {
+      margin-left: 20px;
+    }
+
+    .dress .header .right-area .item:hover,
+    .dress .header .right-area .item.active {
+      padding: 3px 0;
+      border-bottom: 3px solid #ff6700;
+      color: #ff6700;
+    }
+
+    /* 列表内容 */
+    .dress .list {
+      margin-right: -14px;
+      /* background: green; */
+    }
+
+    .dress .list .item {
+      /* 动画方案一 */
+      /* position: relative;
+      top: 0px; */
+
+      float: left;
+
+      /* box model */
+      margin-right: 14px;
+      margin-bottom: 14px;
+      width: 234px;
+      height: 300px;
+
+      background: skyblue;
+
+      /* （过渡）动画 */
+      /* 使用 all 时注意查阅有关 CSS 属性是否支持动画（Animation type） */
+      transition: all .2s ease-in;
+    }
+
+    .dress .list .item.item1 {
+      height: 614px;
+    }
+
+    .dress .list .item.item9,
+    .dress .list .item.item10 {
+      height: 143px;
+    }
+
+    .dress .list .item:hover {
+      /* 动画方案一 */
+      /* top: -2px; */
+      /* 动画方案二（推荐） */
+      transform: translateY(-2px);
+
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    }
+
+    .dress .list .item a {
+      display: block;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mi_wrapper dress">
+    <div class="header clearfix">
+      <div class="left-area">
+        <h3 class="title">智能穿戴</h3>
+      </div>
+      <div class="right-area">
+        <a href="#" class="item active hot">热门</a>
+        <a href="#" class="item wear">穿戴</a>
+      </div>
+    </div>
+    <div>
+      <ul class="list clearfix">
+        <!-- (li.item.item$>a[href="#"]{$})*10 -->
+        <li class="item item1"><a href="#">1</a></li>
+        <li class="item item2"><a href="#">2</a></li>
+        <li class="item item3"><a href="#">3</a></li>
+        <li class="item item4"><a href="#">4</a></li>
+        <li class="item item5"><a href="#">5</a></li>
+        <li class="item item6"><a href="#">6</a></li>
+        <li class="item item7"><a href="#">7</a></li>
+        <li class="item item8"><a href="#">8</a></li>
+        <li class="item item9"><a href="#">9</a></li>
+        <li class="item item10"><a href="#">10</a></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
