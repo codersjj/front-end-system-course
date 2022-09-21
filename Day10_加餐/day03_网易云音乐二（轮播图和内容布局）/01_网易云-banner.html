@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网易云音乐的轮播图</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .banner {
+      /* background-color: #7CB9E8; */
+      background: url("./images/banner_bg_02.jpg") center / 6000px;
+    }
+
+    .banner .content {
+      position: relative;
+      height: 285px;
+      /* background-color: #f66; */
+    }
+
+    .banner .left {
+      position: relative;
+      width: 730px;
+      height: 100%;
+    }
+
+    .banner .left .img-list {
+      display: flex;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .banner .left .img-list li {
+      flex: none;
+      width: 100%;
+    }
+
+    .banner .left .img-list .item {
+      display: block;
+      height: 100%;
+    }
+
+    .banner .left .img-list .item img  {
+      /* display: block; */
+      width: 100%;
+      height: 100%;
+      /* background-color: #B284BE; */
+    }
+
+    .banner .left .dot-list {
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      /* 这里设置 margin: 0 auto; 实现不了居中，因为宽度没有设置小于定位参照元素的具体值，所以我们可以改用 justify-content: center; */
+      /* margin: 0 auto; */
+    }
+
+    .banner .left .dot-list li {
+      margin: 0 2px;
+      /* background-color: #6f6; */
+    }
+
+    .banner .left .dot-list li .item {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url("./images/banner_sprite.png") 3px -343px;
+    }
+
+    .banner .left .dot-list li .item:hover,
+    .banner .left .dot-list li .item.active {
+      background: url("./images/banner_sprite.png") -16px -343px;
+    }
+
+    .banner .right {
+      position: absolute;
+      top: 0;
+      right: -1px;
+      width: 254px;
+      height: 100%;
+      background: url("./images/download-sprite.png");
+    }
+
+    .banner .right .download {
+      display: inline-block;
+      margin: 186px 0 0 19px;
+      width: 215px;
+      height: 56px;
+      text-indent: -9999px;
+    }
+
+    .banner .right .download:hover {
+      background: url("./images/download-sprite.png") 0 -290px;
+    }
+
+    .banner .right p {
+      margin-top: 10px;
+      text-align: center;
+      color: #8d8d8d;
+    }
+
+    .banner .control {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 37px;
+      height: 63px;
+      background: url(./images/banner_sprite.png);
+    }
+
+    .banner .control.prev {
+      left: -68px;
+      background-position: 0 -360px;
+    }
+
+    .banner .control.prev:hover {
+      background-position: 0 -430px;
+    }
+
+    .banner .control.next {
+      right: -68px;
+      background-position: 0 -508px;
+    }
+
+    .banner .control.next:hover {
+      background-position: 0 -578px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="wrapper_02 content">
+      <div class="left">
+        <ul class="img-list">
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpg" alt="">
+            </a>
+          </li>
+        </ul>
+        <ul class="dot-list">
+          <li><a href="#" class="item active"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <a class="download" href="#">下载客户端</a>
+        <p>PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+      </div>
+      <a class="control prev" href="#"></a>
+      <a class="control next" href="#"></a>
+    </div>
+  </div>
+
+</body>
+</html>
