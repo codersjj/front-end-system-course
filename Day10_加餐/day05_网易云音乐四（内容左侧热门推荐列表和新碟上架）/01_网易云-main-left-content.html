@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网易云音乐的主要区域</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/header.css">
+
+  <link rel="stylesheet" href="./css/main-area-right.css">
+  <style>
+    .main .area {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      border: 1px solid #d3d3d3;
+      border-width: 0 1px;
+      /* height: 500px; */
+      /* background-color: #f66; */
+      background: url("./images/main_bg.png");
+    }
+
+    .main .area-left {
+      padding: 20px 20px 40px;
+      width: 729px;
+    }
+
+    .main .area-left .left-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .main .area-left .left-area .list {
+      display: flex;
+      margin-left: 20px;
+      color: #666;
+    }
+
+    .main .area-left .left-area .list .line {
+      margin: 0 12px;
+      color: #ccc;
+    }
+
+    .main .hot-recommend-section .content {
+      margin-top: 20px;
+    }
+
+    .main .hot-recommend-section .content .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .main .hot-recommend-section .content .list .item {
+      margin-bottom: 30px;
+      width: 140px;
+      height: 204px;
+      /* background-color: #f66; */
+    }
+
+    .hot-recommend-section .content .item {
+      margin: 0 auto;
+      width: 140px;
+      /* background-color: skyblue; */
+    }
+
+    .hot-recommend-section .content .item .top {
+      position: relative;
+
+      background-color: red;
+    }
+
+    .hot-recommend-section .content .item .top img {
+      /* 将图片下方多出来的几像素去除 */
+      /* vertical-align: top; */
+      /* 也可以通过设置为 block 元素来去除 */
+      display: block;
+    }
+
+    .hot-recommend-section .content .item .top .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      /* width: 140px;
+      height: 140px; */
+      /* width: 100%;
+      height: 100%; */
+      /* background-color: rgba(102, 193, 140, .8); */
+      /* background-image: url("./images/cover_sprite.png"); */
+      /* background-position: 0 0; */
+    }
+
+    .hot-recommend-section .content .item .top .info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding-left: 8px;
+
+      width: auto;
+      /* height: 27px; */
+      /* background-color: #B0D5DF; */
+      /* background: url("./images/cover_sprite.png") 0 -537px; */
+      line-height: 27px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    .hot-recommend-section .content .item .top .info .icon-music {
+      position: relative;
+      top: 1px;
+
+      /* display: inline-block; */
+      /* width: 14px;
+      height: 11px; */
+
+      /* background-image: url("./images/iconall_sprite.png"); */
+      /* background-position: 0 -24px; */
+    }
+
+    .hot-recommend-section .content .item .top .info .count {
+      margin-left: 4px;
+    }
+
+    .hot-recommend-section .content .item .top .info .icon-play {
+      /* 绝对定位 + 上下 margin auto 实现在父元素中右侧居中 */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto 0;
+
+      /* 设置绝对定位之后可以不设置 dib 了 */
+      /* display: inline-block; */
+      /* width: 16px;
+      height: 17px; */
+
+      /* background-image: url("./images/iconall_sprite.png"); */
+      /* background-position: 0 0; */
+    }
+
+    .hot-recommend-section .content .item .top .info .icon-play:hover {
+      background-position: 0 -60px;
+      cursor: pointer;
+    }
+
+    .hot-recommend-section .content .item .bottom {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #000;
+    }
+
+    .hot-recommend-section .content .item .bottom .icon-radio {
+      position: relative;
+      top: 2px;
+    }
+
+    .hot-recommend-section .content .item .bottom:hover {
+      text-decoration: underline;
+    }
+
+    .disc-section .content {
+      margin: 20px 0 37px;
+      border: 1px solid #d3d3d3;
+    }
+
+    .disc-section .content .inner {
+      position: relative;
+      border: 1px solid #fff;
+      padding-left: 16px;
+      background: #f5f5f5;
+    }
+
+    .disc-section .content .roller {
+      display: flex;
+      align-items: center;
+      width: 645px;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .disc-section .content .roller .list {
+      display: flex;
+    }
+
+    .disc-section .content .roller .item {
+      position: relative;
+      margin-left: 11px;
+      width: 118px;
+      height: 150px;
+      background: url("./images/main_sprite.png") no-repeat -260px 100px;
+    }
+
+    .disc-section .content .roller .item .top {
+      position: relative;
+    }
+
+    .disc-section .content .roller .item .top img {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+
+    .disc-section .content .roller .item .top .cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .disc-section .content .roller .item .top .play {
+      display: none;
+    }
+
+    .disc-section .content .roller .item .top:hover .play {
+      position: absolute;
+      right: 22px;
+      bottom: 5px;
+      display: block;
+    }
+
+    .disc-section .content .roller .item .desc {
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    .disc-section .content .roller .item .desc p {
+      padding-top: 3px;
+      padding-right: 15px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .disc-section .content .roller .item .desc .title {
+      color: #000;
+    }
+
+    .disc-section .content .roller .item .desc .title:hover {
+      text-decoration: underline;
+    }
+
+    .disc-section .content .roller .item .desc .author {
+      color: #666;
+    }
+
+    .disc-section .content .roller .item .desc .author:hover {
+      text-decoration: underline;
+    }
+
+    .disc-section .content .prev,
+    .disc-section .content .next {
+      position: absolute;
+      /* top: 0px; */
+      top: 60px;
+      bottom: 0;
+      /* margin: auto 0; */
+      width: 17px;
+      height: 17px;
+      background: url(./images/main_sprite.png) no-repeat;
+    }
+
+    .disc-section .content .prev {
+      left: 3px;
+      background-position: -260px -75px;
+    }
+
+    .disc-section .content .next {
+      right: 6px;
+      background-position: -300px -75px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div class="area wrapper_02">
+      <div class="area-left">
+        <div class="hot-recommend-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a class="title">热门推荐</a>
+              <ul class="list">
+                <li><a class="item" href="#">华语</a></li>
+                <li class="line">|</li>
+                <li><a class="item" href="#">流行</a></li>
+                <li class="line">|</li>
+                <li><a class="item" href="#">摇滚</a></li>
+                <li class="line">|</li>
+                <li><a class="item" href="#">民谣</a></li>
+                <li class="line">|</li>
+                <li><a class="item" href="#">电子</a></li>
+              </ul>
+            </div>
+            <div class="right-area">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+          <div class="content">
+            <ul class="list">
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  <i class="icon_sprite icon_sprite_radio icon-radio"></i>
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  <i class="icon_sprite icon_sprite_radio icon-radio"></i>
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  <i class="icon_sprite icon_sprite_radio icon-radio"></i>
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+              <li class="item">
+                <div class="top">
+                  <img src="./images/music_album01.jpg" alt="歌单封面">
+                  <a class="cover_sprite cover_type_01 cover" href="#"></a>
+                  <div class="cover_sprite cover_type_02 info">
+                    <i class="iconall_sprite iconall_sprite_icon_music icon-music"></i>
+                    <span class="count">62万</span>
+                    <i class="iconall_sprite iconall_sprite_icon_play icon-play"></i>
+                  </div>
+                </div>
+                <a class="bottom" href="#">
+                  天气好的话，把耳机分给我一半吧
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="disc-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a class="title">新碟上架</a>
+            </div>
+            <div class="right-area">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+          <div class="content">
+            <div class="inner">
+              <a class="prev" href="#"></a>
+              <div class="roller">
+                <ul class="list">
+                  <li class="item">
+                    <div class="top">
+                      <img src="./images/new_disc_album_01.jpg" alt="">
+                      <a href="#" class="cover_sprite cover_type_03 cover"></a>
+                      <a href="#" class="iconall_sprite iconall_sprite_icon_play_02 play"></a>
+                    </div>
+                    <div class="desc">
+                      <p><a class="title" href="#">启示录启示录启示录启示录启示录</a></p>
+                      <p><a class="author" href="#">G.E.M.邓紫棋G.E.M.邓紫棋</a></p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="top">
+                      <img src="./images/new_disc_album_01.jpg" alt="">
+                      <a href="#" class="cover_sprite cover_type_03 cover"></a>
+                      <a href="#" class="iconall_sprite iconall_sprite_icon_play_02 play"></a>
+                    </div>
+                    <div class="desc">
+                      <p><a class="title" href="#">启示录启示录启示录启示录启示录</a></p>
+                      <p><a class="author" href="#">G.E.M.邓紫棋G.E.M.邓紫棋</a></p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="top">
+                      <img src="./images/new_disc_album_01.jpg" alt="">
+                      <a href="#" class="cover_sprite cover_type_03 cover"></a>
+                      <a href="#" class="iconall_sprite iconall_sprite_icon_play_02 play"></a>
+                    </div>
+                    <div class="desc">
+                      <p><a class="title" href="#">启示录启示录启示录启示录启示录</a></p>
+                      <p><a class="author" href="#">G.E.M.邓紫棋G.E.M.邓紫棋</a></p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="top">
+                      <img src="./images/new_disc_album_01.jpg" alt="">
+                      <a href="#" class="cover_sprite cover_type_03 cover"></a>
+                      <a href="#" class="iconall_sprite iconall_sprite_icon_play_02 play"></a>
+                    </div>
+                    <div class="desc">
+                      <p><a class="title" href="#">启示录启示录启示录启示录启示录</a></p>
+                      <p><a class="author" href="#">G.E.M.邓紫棋G.E.M.邓紫棋</a></p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="top">
+                      <img src="./images/new_disc_album_01.jpg" alt="">
+                      <a href="#" class="cover_sprite cover_type_03 cover"></a>
+                      <a href="#" class="iconall_sprite iconall_sprite_icon_play_02 play"></a>
+                    </div>
+                    <div class="desc">
+                      <p><a class="title" href="#">启示录启示录启示录启示录启示录</a></p>
+                      <p><a class="author" href="#">G.E.M.邓紫棋G.E.M.邓紫棋</a></p>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="list">
+                  <li class="item">1</li>
+                  <li class="item">2</li>
+                  <li class="item">3</li>
+                  <li class="item">4</li>
+                  <li class="item">5</li>
+                </ul>
+              </div>
+              <a class="next" href="#"></a>
+            </div>
+          </div>
+        </div>
+        <div class="rank-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a class="title">榜单</a>
+            </div>
+            <div class="right-area">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-right">
+        <div class="user-login">
+          <p class="desc">
+            登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
+          </p>
+          <a class="btn" href="#">用户登录</a>
+        </div>
+        <div class="settled-singer">
+          <div class="header_type_01 header">
+            <h3 class="title">入驻歌手</h3>
+            <a href="#" class="more">查看全部 &gt;</a>
+          </div>
+          <ul class="list">
+            <li>
+              <a href="#" class="item">
+                <div class="head">
+                  <img src="./images/main-right-settled-singer01.jpg" alt="孙楠歌手头像">
+                </div>
+                <div class="content">
+                  <h3 class="name">孙楠</h3>
+                  <span class="desc">歌手孙楠 代表作《你快回来》《燃烧》</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="head">
+                  <img src="./images/main-right-settled-singer01.jpg" alt="孙楠歌手头像">
+                </div>
+                <div class="content">
+                  <h3 class="name">孙楠</h3>
+                  <span class="desc">歌手孙楠 代表作《你快回来》《燃烧》</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="head">
+                  <img src="./images/main-right-settled-singer01.jpg" alt="孙楠歌手头像">
+                </div>
+                <div class="content">
+                  <h3 class="name">孙楠</h3>
+                  <span class="desc">歌手孙楠 代表作《你快回来》《燃烧》</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="head">
+                  <img src="./images/main-right-settled-singer01.jpg" alt="孙楠歌手头像">
+                </div>
+                <div class="content">
+                  <h3 class="name">孙楠</h3>
+                  <span class="desc">歌手孙楠 代表作《你快回来》《燃烧》</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="head">
+                  <img src="./images/main-right-settled-singer01.jpg" alt="孙楠歌手头像">
+                </div>
+                <div class="content">
+                  <h3 class="name">孙楠</h3>
+                  <span class="desc">歌手孙楠 代表作《你快回来》《燃烧》</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hot-anchor">
+          <div class="header_type_01">
+            <h3 class="title">热门主播</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

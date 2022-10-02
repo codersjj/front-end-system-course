@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #f66;
+
+      /* 没有设置 box-sizing 为 border-box 时，水平：240px，垂直：240px */
+      border: 20px solid #000;
+
+      /* 设置 box-sizing: border-box; 后，就会算在 width、height 里了 */
+      /* box-sizing 在生效时，有一个前提：有明确地设置宽度和高度 */
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 需要加 box-sizing 的场景 -->
+  <div class="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 规范：行内非替换元素不要嵌套块级元素 -->
+  <!-- 但实际开发中，很多场景下可能需要这么做，那么需要将行内非替换元素设置为块级或行内块级元素 -->
+  <a href="#">
+    <div>div 元素</div>
+    <p>p 元素</p>
+  </a>
+
+</body>
+</html>
