@@ -43,10 +43,6 @@
   color: #666;
 }
 
-.header_type_02 .more:hover {
-  text-decoration: underline;
-}
-
 .header_type_02 .more::after {
   content: "";
   display: inline-block;

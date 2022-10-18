@@ -1,0 +1,30 @@
+body, h1, h2, h3, ol, ul, li, dl, dt, dd, p {
+  margin: 0;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+ol, ul, dl, dt, dd {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+i {
+  font-style: normal;
+}

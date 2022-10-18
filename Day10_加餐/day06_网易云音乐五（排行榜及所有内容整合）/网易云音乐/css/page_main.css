@@ -1,0 +1,10 @@
+.main .area {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  border-width: 0 1px;
+  /* height: 500px; */
+  /* background-color: #f66; */
+  background: url("../images/main_bg.png");
+}

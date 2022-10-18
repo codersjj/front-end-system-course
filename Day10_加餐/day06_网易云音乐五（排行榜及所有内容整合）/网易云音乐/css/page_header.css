@@ -1,0 +1,188 @@
+.top-bar {
+  box-sizing: border-box;
+  border-bottom: 1px solid #000;
+  /* 通过 min-width 解决浏览器放大后右侧背景色消失的问题 */
+  min-width: 1100px;
+  height: 70px;
+  background-color: #242424;
+}
+
+.top-bar .content {
+  display: flex;
+  justify-content: space-between;
+  height: 69px;
+  line-height: 69px;
+}
+
+.top-bar .left {
+  display: flex;
+}
+
+.top-bar .left .logo {
+  box-sizing: border-box;
+  padding-right: 20px;
+  width: 176px;
+  background-image: url("../images/topbar.png");
+}
+
+.top-bar .left .logo a {
+  display: block;
+  /* text-indext 是设置块元素中的首行文本之前的缩进量，所以对 display: inline; 元素无效，需要设置 display 为 block 或 inline-block */
+  text-indent: -9999px;
+}
+
+.top-bar .left .list {
+  display: flex;
+}
+
+.top-bar .left .list .item {
+  position: relative;
+}
+
+.top-bar .left .list .item a {
+  display: block;
+  padding: 0 19px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.top-bar .left .list .item:hover a,
+.top-bar .left .list .item.active a {
+  color: #fff;
+  background-color: #000;
+}
+
+.top-bar .left .list .item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 12px;
+  height: 6px;
+  background: url("../images/topbar.png") -226px 0;
+}
+
+.top-bar .left .list .item .hot {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+}
+
+.top-bar .right {
+  display: flex;
+  padding-right: 3px;
+}
+
+.top-bar .right .search {
+  /* position: relative; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  align-self: center;
+  margin-right: 12px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  /* padding-left: 28px; */
+  padding-right: 10px;
+  width: 158px;
+  height: 32px;
+  background: #fff url("../images/topbar.png") 0 -99px;
+  /* overflow: hidden; */
+}
+
+.top-bar .right .search input {
+  /* position: absolute;
+  top: 0;
+  bottom: 0; */
+  width: 118px;
+  font-size: 12px;
+}
+
+.top-bar .right .search input::placeholder {
+  color: #9b9b9b;
+}
+
+.top-bar .right .author {
+  align-self: center;
+  box-sizing: border-box;
+  border: 1px solid #4F4F4F;
+  border-radius: 20px;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.top-bar .right .author:hover {
+  border-color: #ccc;
+}
+
+.top-bar .right .author a {
+  display: block;
+  color: #ccc;
+}
+
+.top-bar .right .author:hover a {
+  color: #fff;
+}
+
+.top-bar .right .login {
+  margin-left: 20px;
+}
+
+.top-bar .right .login a {
+  padding-right: 22px;
+  color: #787878;
+}
+
+.top-bar .right .login:hover a {
+  color: #999;
+}
+
+.top-bar .right .login a:hover {
+  text-decoration: underline;
+  color: #787878;
+}
+
+.top-nav {
+  box-sizing: border-box;
+  border-bottom: 1px solid #a40011;
+  height: 35px;
+  line-height: 35px;
+  min-width: 1100px;
+  background-color: #C20C0C;
+}
+
+.top-nav .content {
+  box-sizing: border-box;
+  padding-left: 180px;
+  /* height: 34px; */
+}
+
+.top-nav .list {
+  display: flex;
+  /* height: 100%; */
+}
+
+.top-nav .list .item {
+  display: inline-block;
+  color: #fff;
+}
+
+.top-nav .list .item span {
+  display: block;
+  margin: 7px 17px;
+  border-radius: 20px;
+  padding: 0 13px;
+  height: 20px;
+  line-height: 21px;
+}
+
+.top-nav .list .item:hover span,
+.top-nav .list .item.active span {
+  background-color: #9B0909;
+}
