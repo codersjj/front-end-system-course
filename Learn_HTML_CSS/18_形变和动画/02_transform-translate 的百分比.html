@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: inline-block;
+      border: 10px solid #f66;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: skyblue;
+
+      /* 百分比：百分比是相对于谁？ */
+      /* 不同地方的百分比相对的参照对象是不一样的 */
+      /* translate() 的百分比是相对于自身的 */
+      /* 如果设置的是 x 轴的位移，那么参考的是自身的宽度 */
+      /* 如果设置的是 y 轴的位移，那么参考的是自身的高度 */
+      /* transform: translate(50%); */
+      transform: translate(100%, 100%);
+      /* transform: translateX(100%);
+      transform: translateY(50%); */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box"></div>
+  </div>
+
+</body>
+</html>

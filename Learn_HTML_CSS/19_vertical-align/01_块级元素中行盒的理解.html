@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 当前 box 没有设置高度，结果有高度 */
+    /* 为什么会有高度？由内容撑起来的 */
+    /* 本质：内容的行高（一行文本所占据的高度，如果有多行文本，则对每行文本的行高进行累加）撑起来的 */
+    .box {
+      background-color: #83fd7a;
+    }
+
+    .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    行盒：line box
+    作用：将当前行（这里的“行”指的是“一行文本”、“两行文本”中的“行”）里面所有的内容包裹在一起
+   -->
+  <div class="box">
+    我是 div 元素 <span class="small"></span>
+    饲养员轮流给猴子撒下一些米粒，看到有食物了他们迅速地窜过来，以惊人的速度两只手交替着将米粒储存到两腮中，小嘴不间歇地咀嚼着。猴子看到食物激动的叫声不断引来山上的猴子，越来越多，阵仗壮观。我们刚想从背包拿出点零食也喂一喂猴子，就被饲养员及时阻拦，主要担心猴群会肆无忌惮的抢掠，也担心猴子吃饱了会有过分的举动。
+  </div>
+
+</body>
+</html>

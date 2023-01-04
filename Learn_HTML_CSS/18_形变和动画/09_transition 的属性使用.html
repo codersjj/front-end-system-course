@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: #ccc;
+    }
+
+    .box {
+      position: relative;
+      /* 注意：初始状态 left 的值必须要设置，不然由于 left 的默认值是 auto，不好确定位置，无法使 transition 生效 */
+      left: 0;
+      width: 200px;
+      height: 100px;
+      background-color: #83fd7a;
+
+      /* 告知浏览器 box 在进行一些 CSS 属性变化的时候有一个过渡效果 */
+      /* transition-property: left, transform; */
+      /* transition-property: all;
+      transition-duration: 1.5s;
+      transition-timing-function: ease-in;
+      transition-delay: 1s; */
+
+      /* 简写属性 */
+      /* transition: left 1.5s ease-in 1s; */
+      transition: all 1.5s ease-in 1s;
+    }
+
+    .container:hover .box {
+      left: 100px;
+      /* transform: translate(100px);
+      width: 500px; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box"></div>
+  </div>
+
+</body>
+</html>

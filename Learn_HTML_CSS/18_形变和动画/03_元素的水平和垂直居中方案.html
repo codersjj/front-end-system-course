@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container1 {
+      position: relative;
+
+      height: 300px;
+      background-color: skyblue;
+    }
+
+    .box1 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+
+      width: 100px;
+      height: 100px;
+      background-color: #f66;
+    }
+
+    .container2 {
+      display: flex;
+      align-items: center;
+      height: 300px;
+      background-color: skyblue;
+    }
+
+    .box2 {
+      background-color: #f66;
+    }
+
+    .container3 {
+      height: 300px;
+      background-color: skyblue;
+    }
+
+    .box3 {
+      position: relative;
+      /* 1. 向下位移父元素高度的 50% */
+      top: 50%;
+      /* 注意：margin-top 设置百分比时，相对的是其包含块（父元素）的宽度！ */
+      /* margin-top: 50%; */
+      /* 2. 向上位移元素自身高度的 50% */
+      transform: translate(0, -50%);
+
+      display: inline-block;
+      height: 100px;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    水平居中：
+      1. 行内（块）级元素
+        设置其父元素的 text-align: center;
+      2. 块级元素
+        有指定宽度的情况下，设置其 margin: 0 auto;
+      3. 绝对定位
+        有指定宽度的情况下，设置其 left: 0; right: 0; margin: 0 auto;
+      4. flex 布局
+        设置其父元素的 justify-content: center;
+   -->
+
+   <!--
+    垂直居中：
+      1. 绝对定位
+        元素有具体高度的情况下，设置其 top: 0; bottom: 0; margin: auto 0;
+        弊端：（1）使用绝对定位会让元素脱离标准流（元素不再占据位置，后面的元素会跑上来）
+             （2）必须给元素设置高度（否则默认高度为 auto 时元素会占满包含块的高度）
+      2. （目前通常直接使用 flex 布局即可）flex 布局
+        弊端：（1）当前的 flex 布局中所有的元素都会被垂直居中
+             （2）相对来说，兼容性差一点点（基本可以忽略）
+      3. （个人推荐，不好理解）定位 top + transform: translate();
+    -->
+
+    <!-- 垂直居中：1. 绝对定位 -->
+    <!-- <div class="container1">
+      <div class="box1"></div>
+      aaa
+    </div> -->
+
+    <!-- 垂直居中：2. flex 布局 -->
+    <!-- <div class="container2">
+      <div class="box2">flex 布局的垂直居中</div>
+    </div> -->
+
+    <!-- 垂直居中：3. top + translate -->
+    <div class="container3">
+      <div class="box3">哈哈哈</div>
+      aaa
+    </div>
+
+</body>
+</html>

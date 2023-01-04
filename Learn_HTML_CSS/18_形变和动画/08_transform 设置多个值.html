@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding-top: 200px;
+    }
+
+    .box {
+      margin: 0 auto;
+      width: 200px;
+      height: 100px;
+      background-color: #83fd7a;
+    }
+
+    .box:hover {
+      /* transform: translate(100px, 50px);
+      transform: scale(1.2);
+      transform: rotate(45deg); */
+
+      /*
+        <transform-function>+
+          +：一个或多个，多个之间用空格分隔
+          transform: translate(100px) scale(1.2);
+        <shadow>#
+          #：一个或多个，多个之间用逗号分隔
+          box-shadow: 1px 1px 1px 1px #ccc, 1px 1px 1px 1px #f66;
+      */
+      transform: translate(100px, 50px) scale(1.2) rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+</body>
+</html>

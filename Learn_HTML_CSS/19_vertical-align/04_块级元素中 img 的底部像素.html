@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #83fd7a;
+    }
+
+    .box img {
+      display: block;
+
+      /* vertical-align: top; */
+      /* vertical-align: middle; */
+      /* vertical-align: bottom; */
+    }
+
+    .box span {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 块级元素中即使只有 img，也会考虑到如果有文本存在时的默认对齐方式（baseline 对齐） -->
+  <!-- 所以 img（inline-block 元素） 下方会多出来一点空间 -->
+  <!-- 如果不想在下方多出来这几像素的空间，可以将 img（inline-block 元素）的 vertical-align 设置为非 baseline 的值 -->
+  <div class="box">
+    <img src="../images/diqiu.jpg" alt="">
+    <!-- <span></span> -->
+    <!-- asgjasya22ax -->
+  </div>
+
+</body>
+</html>

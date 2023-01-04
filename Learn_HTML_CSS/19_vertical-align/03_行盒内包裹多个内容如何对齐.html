@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #83fd7a;
+    }
+
+    .box img {
+      width: 200px;
+
+      /* vertical-align: top; */
+    }
+
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 200px;
+      background-color: #f66;
+
+      /* vertical-align: baseline; */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 通过 vertical-align 设置一个行盒内的行内级元素在垂直方向上的对齐方式 -->
+  <!--
+    总结一下就是有两个东西在起作用：
+      1. 行内级元素在 vertical-align 默认为 baseline 对齐的前提下
+      2. 行盒必须包裹所有内容
+  -->
+  <div class="box">
+    我是 div 元素
+    他们迅速asdfxx700地窜过来as123xxghjyx213
+    <img src="../images/diqiu.jpg" alt="">
+    <span class="small"></span>
+  </div>
+
+</body>
+</html>
