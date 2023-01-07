@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+
+    a {
+      color: #616161;
+      text-decoration: none;
+    }
+
+    h3, p {
+      margin: 0;
+    }
+
+
+    .item {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      margin: auto;
+
+      width: 234px;
+      height: 300px;
+      background-color: #fff;
+
+      /* transition: transform .2s linear, box-shadow .2s linear; */
+      transition: all .2s linear;
+    }
+
+    .item:hover {
+      transform: translate(0, -3px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    }
+
+    .item .img img {
+      width: 160px;
+    }
+
+    .item .title {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .item .desc {
+      margin: 5px 0 15px;
+      font-size: 12px;
+      color: #b0b0b0;
+    }
+
+    .item .price {
+      display: flex;
+      font-family: Arial;
+      font-size: 14px;
+    }
+
+    .item .price .new {
+      color: #ff6700;
+    }
+
+    .item .price del {
+      margin-left: 0.5em;
+      color: #b0b0b0;
+    }
+
+    .item .price .old {
+      /* color: #b0b0b0; */
+      /* text-decoration: line-through; */
+    }
+  </style>
+</head>
+<body>
+
+  <a class="item" href="https://www.mi.com/scooter/" target="_blank">
+    <div class="img">
+      <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/T1r_x_BgLT1RXrhCrK.jpg?thumb=1&w=200&h=200" alt="平衡车图片">
+    </div>
+    <h3 class="title">九号平衡车</h3>
+    <p class="desc">年轻人的酷玩具</p>
+    <p class="price">
+      <span class="new">1999元</span>
+      <del>
+        <span class="old">2199元</span>
+      </del>
+    </p>
+  </a>
+
+</body>
+</html>
