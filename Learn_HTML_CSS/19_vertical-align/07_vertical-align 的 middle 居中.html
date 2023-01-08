@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 300px;
+      /* line-height：设置一行文本的高度（一个行盒的高度） */
+      line-height: 300px;
+      background-color: #f66;
+    }
+
+    .box span {
+      background-color: #fff;
+      /* font-size: 60px; */
+    }
+
+    .box img {
+      width: 200px;
+      /* 在当前的行盒中 */
+      vertical-align: middle;
+    }
+
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <!-- 小写英文字母 x 的中心不在文本的中线上，因为这里涉及到一个问题：大部分的字体，都会进行文本下沉 -->
+    <span>我是普通的文本xxxgjxx</span>
+    <!-- 所以图片在设置 vertical-align: middle; 时，即和小写英文字母 x 的中心对齐时，最终的效果是图片会往下移一点点，图片在父元素中并没有真正垂直居中 -->
+    <!-- <img src="../images/diqiu.jpg" alt=""> -->
+    <div class="small"></div>
+  </div>
+
+</body>
+</html>
