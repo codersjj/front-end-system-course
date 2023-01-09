@@ -14,15 +14,46 @@
     }
 
     .top .area {
+      display: flex;
+      justify-content: space-between;
       height: 41px;
-      background-color: #f66;
+      /* 单行文本垂直方向居中 */
+      line-height: 41px;
+    }
+
+    .top .left-area {
+      display: flex;
+      /* background-color: #6f6; */
+    }
+
+    .top .left-area .logo a {
+      display: block;
+      width: 150px;
+      /* 这里 height 可以不设置，因为这里有继承过来 line-height */
+      /* height: 100%; */
+      text-indent: -9999px;
+      background: url("./img/top_logo.png") center center no-repeat;
+    }
+
+    .top .right-area {
+      background-color: #66f;
     }
   </style>
 </head>
 <body>
 
   <div class="top">
-    <div class="top_wrapper area"></div>
+    <div class="top_wrapper area">
+      <div class="left-area">
+        <h2 class="logo">
+          <a href="#">腾讯游戏</a>
+        </h2>
+        <div class="recommend">
+          <img src="./img/top_recommend.jpg" alt="游戏推荐图片">
+        </div>
+      </div>
+      <div class="right-area">right</div>
+    </div>
   </div>
 
 </body>

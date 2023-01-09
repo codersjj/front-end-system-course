@@ -1,7 +1,18 @@
 /* reset.css 样式重置文件 */
 
 /* margin、padding 重置 */
-body {
+body, h2 {
   margin: 0;
   padding: 0;
+}
+
+/* a 元素样式重置 */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* img 的 vertical-align 重置 */
+img {
+  vertical-align: top;
 }
