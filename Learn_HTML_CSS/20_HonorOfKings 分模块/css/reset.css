@@ -1,0 +1,7 @@
+/* reset.css 样式重置文件 */
+
+/* margin、padding 重置 */
+body {
+  margin: 0;
+  padding: 0;
+}
