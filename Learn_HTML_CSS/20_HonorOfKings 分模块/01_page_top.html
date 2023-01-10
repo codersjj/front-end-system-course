@@ -36,7 +36,61 @@
     }
 
     .top .right-area {
-      background-color: #66f;
+      display: flex;
+      /* background-color: #66f; */
+    }
+
+    .top .right-area > :first-child {
+      margin-right: 20px;
+    }
+
+    .top .right-area .item a {
+      position: relative;
+      display: block;
+      font-size: 14px;
+      /* background-color: skyblue; */
+    }
+
+    .top .right-area .item a.growth {
+      /* display: flex;
+      align-items: center; */
+
+      padding-left: 30px;
+      color: #464646;
+    }
+
+    .top .right-area .item a.growth .icon-grow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto 0;
+      /* display: inline-block; */
+      width: 30px;
+      height: 30px;
+      background: url(./img/top_sprite.png) -30px 0 no-repeat;
+    }
+
+    .top .right-area .item a.ranking {
+      padding-right: 30px;
+      color: #333;
+    }
+
+    .top .right-area .item a.ranking::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      opacity: .1;
+
+      margin: auto 0;
+      width: 30px;
+      height: 30px;
+      background: url(./img/top_sprite.png) no-repeat 0 0;
+
+      transform: rotate(90deg);
     }
   </style>
 </head>
@@ -52,7 +106,17 @@
           <img src="./img/top_recommend.jpg" alt="游戏推荐图片">
         </div>
       </div>
-      <div class="right-area">right</div>
+      <ul class="right-area">
+        <li class="item">
+          <a class="growth" href="#">
+            <i class="icon-grow"></i>
+            成长守护平台
+          </a>
+        </li>
+        <li class="item">
+          <a class="ranking" href="#">腾讯游戏排行榜</a>
+        </li>
+      </ul>
     </div>
   </div>
 
