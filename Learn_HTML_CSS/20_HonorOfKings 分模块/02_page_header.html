@@ -18,11 +18,30 @@
       justify-content: space-between;
       height: 84px;
       line-height: 84px;
-      background-color: skyblue;
+      /* background-color: skyblue; */
     }
 
     .header .area .left-area {
-      background-color: #f66;
+      display: flex;
+      /* background-color: #f66; */
+    }
+
+    .header .area .left-area .logo {
+      /* height: 100%; */
+    }
+
+    .header .area .left-area .logo a {
+      /* 相对定位 + 平移 实现在父元素中垂直方向居中 */
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      display: block;
+      width: 200px;
+      height: 54px;
+      text-indent: -9999px;
+      /* background-color: #fff; */
+      background: url("./img/logo.png") center center no-repeat;
     }
 
     .header .area .right-area {
@@ -34,7 +53,11 @@
 
   <div class="header">
     <div class="header_wrapper area">
-      <div class="left-area">left</div>
+      <div class="left-area">
+        <h1 class="logo">
+          <a href="#">王者荣耀</a>
+        </h1>
+      </div>
       <div class="right-area">right</div>
     </div>
   </div>
