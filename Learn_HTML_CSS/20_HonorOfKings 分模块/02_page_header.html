@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-header</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .header {
+      /* 这里 rgba 设置值时一般会把逗号之间的空格去掉，0.x 也会省略小数点前的 0 */
+      background-color: rgba(0,0,0,.8);
+    }
+
+    .header .area {
+      display: flex;
+      justify-content: space-between;
+      height: 84px;
+      line-height: 84px;
+      background-color: skyblue;
+    }
+
+    .header .area .left-area {
+      background-color: #f66;
+    }
+
+    .header .area .right-area {
+      background-color: #66f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header_wrapper area">
+      <div class="left-area">left</div>
+      <div class="right-area">right</div>
+    </div>
+  </div>
+
+</body>
+</html>
