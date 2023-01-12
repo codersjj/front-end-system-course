@@ -87,8 +87,46 @@
       color: #91763f;
     }
 
+    .header .area .left-area .search {
+      /* display: flex;
+      align-items: center; */
+      margin-left: 10px;
+      /* background-color: #fff; */
+    }
+
+    .header .area .left-area .search a {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+      display: block;
+      width: 27px;
+      height: 26px;
+      background: url(./img/nav_search.png);
+    }
+
     .header .area .right-area {
-      background-color: #66f;
+      display: flex;
+      align-items: center;
+      /* background-color: #66f; */
+    }
+
+    .header .area .right-area .image img {
+      border: 1px solid #d9ad50;
+      border-radius: 50%;
+    }
+
+    .header .area .right-area .info {
+      margin-left: 7px;
+    }
+
+    .header .area .right-area .info a {
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .header .area .right-area .info p {
+      font-size: 14px;
+      color: #858792;
     }
   </style>
 </head>
@@ -144,8 +182,19 @@
             </a>
           </li>
         </ul>
+        <div class="search">
+          <a href="#"></a>
+        </div>
       </div>
-      <div class="right-area">right</div>
+      <div class="right-area">
+        <a href="#" class="image">
+          <img src="./img/header_login.png" alt="">
+        </a>
+        <div class="info">
+          <a href="#">欢迎登录</a>
+          <p>登录后查看游戏战绩</p>
+        </div>
+      </div>
     </div>
   </div>
 
