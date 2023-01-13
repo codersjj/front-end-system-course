@@ -28,6 +28,26 @@
       width: 236px;
       background-color: #6f6;
     }
+
+    .news-section .download a {
+      display: block;
+      background: url(./img/main_sprite.png) no-repeat;
+    }
+
+    .news-section .download a.download-btn {
+      height: 128px;
+      background-position: 0 -219px;
+    }
+
+    .news-section .download a.guard-btn {
+      height: 106px;
+      background-position: 0 -350px;
+    }
+
+    .news-section .download a.experience-btn {
+      height: 108px;
+      background-position: 0 -461px;
+    }
   </style>
 </head>
 <body>
@@ -36,7 +56,11 @@
     <div class="news-section">
       <div class="banner"></div>
       <div class="news"></div>
-      <div class="download"></div>
+      <div class="download">
+        <a class="download-btn" href="#"></a>
+        <a class="guard-btn" href="#"></a>
+        <a class="experience-btn" href="#"></a>
+      </div>
     </div>
     <div class="content-section"></div>
     <div class="match-section"></div>
