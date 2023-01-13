@@ -35,8 +35,35 @@
     }
 
     .news-section .download a.download-btn {
+      position: relative;
       height: 128px;
       background-position: 0 -219px;
+      overflow: hidden;
+    }
+
+    .news-section .download a.download-btn .download-btn-ani {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 300px;
+      height: 50px;
+      background-color: #ccc;
+      transform: rotate(-45deg);
+      animation: lightmove 1.6s ease-in infinite;
+      filter: blur(32px);
+    }
+
+    @keyframes lightmove {
+      from {
+        top: -150px;
+        left: -120px;
+      }
+
+      to {
+        top: 150px;
+        left: 120px;
+      }
     }
 
     .news-section .download a.guard-btn {
@@ -57,7 +84,9 @@
       <div class="banner"></div>
       <div class="news"></div>
       <div class="download">
-        <a class="download-btn" href="#"></a>
+        <a class="download-btn" href="#">
+          <span class="download-btn-ani"></span>
+        </a>
         <a class="guard-btn" href="#"></a>
         <a class="experience-btn" href="#"></a>
       </div>
