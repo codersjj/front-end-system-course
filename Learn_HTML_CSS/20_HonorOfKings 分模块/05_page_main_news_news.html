@@ -84,15 +84,15 @@
       display: block;
       /* 可以省略，让 line-height 把高度撑起来 */
       /* height: 45px; */
-      border-bottom: 3px solid transparent;
       line-height: 45px;
       color: #b8b9c5;
       text-align: center;
+      transition: border-bottom 150ms ease-in;
     }
 
     .news-section .news .title-list .item.active a,
     .news-section .news .title-list .item:not(.more) a:hover {
-      border-bottom-color: #f3c258;
+      border-bottom: 3px solid #f3c258;
       color: #f3c258;
     }
 
