@@ -1,5 +1,10 @@
 /* 公共样式文件 */
 
+/* body 的公共样式 */
+body {
+  font: 14px/1.5 "Microsoft YaHei",Tahoma,"simsun",sans-serif;
+}
+
 /* wrapper 居中包裹的区域 */
 .top_wrapper {
   margin: 0 auto;

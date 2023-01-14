@@ -69,6 +69,38 @@
       padding: 0 17px;
     }
 
+    .news-section .news .title-list {
+      display: flex;
+      /* align-items: normal; */
+      height: 48px;
+      border-bottom: 1px solid #000;
+    }
+
+    .news-section .news .title-list .item {
+      width: 52px;
+    }
+
+    .news-section .news .title-list .item a {
+      display: block;
+      /* 可以省略，让 line-height 把高度撑起来 */
+      /* height: 45px; */
+      border-bottom: 3px solid transparent;
+      line-height: 45px;
+      color: #b8b9c5;
+      text-align: center;
+    }
+
+    .news-section .news .title-list .item.active a,
+    .news-section .news .title-list .item:not(.more) a:hover {
+      border-bottom-color: #f3c258;
+      color: #f3c258;
+    }
+
+    /* .news-section .news .title-list .item.more a:hover {
+      border-bottom-color: transparent;
+      color: #b8b9c5;
+    } */
+
     .news-section .download {
       width: 236px;
       /* background-color: #6f6; */
@@ -157,14 +189,30 @@
           </li>
         </ul>
       </div>
-
       <div class="news">
-        我是中间的内容
-        <ul class="title-list"></ul>
+        <ul class="title-list">
+          <li class="item active">
+            <a href="#">热门</a>
+          </li>
+          <li class="item">
+            <a href="#">新闻</a>
+          </li>
+          <li class="item">
+            <a href="#">公告</a>
+          </li>
+          <li class="item">
+            <a href="#">活动</a>
+          </li>
+          <li class="item">
+            <a href="#">赛事</a>
+          </li>
+          <li class="item more">
+            <a href="#">...</a>
+          </li>
+        </ul>
         <p class="notice"></p>
         <ul class="news-list"></ul>
       </div>
-
       <div class="download">
         <a class="download-btn" href="#">
           <span class="download-btn-ani"></span>
