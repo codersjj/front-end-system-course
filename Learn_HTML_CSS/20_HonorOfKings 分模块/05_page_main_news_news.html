@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-main-news</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .news-section {
+      display: flex;
+      height: 342px;
+      background: url(./img/news_bg.png) no-repeat;
+    }
+
+    .news-section .banner {
+      width: 605px;
+      background-color: #222;
+    }
+
+    .news-section .banner .image-list {
+      display: flex;
+      width: 604px;
+      overflow: hidden;
+    }
+
+    .news-section .banner .image-list .item {
+      flex-shrink: 0;
+      /* 最好给 item 设置固定宽度，否则在 flex 布局中由于 flex-shrink 的默认值为 1，item 可能会被压缩。
+      这里设置每项都占满父元素的宽度，注意，需要同时设置 flex-shrink 为 0，不让它对 item 进行压缩 */
+      width: 100%;
+    }
+
+    .news-section .banner .image-list .item a {
+      display: block;
+    }
+
+    .news-section .banner .image-list .item a img {
+      width: 100%;
+    }
+
+    .news-section .banner .title-list {
+      display: flex;
+      width: 604px;
+      height: 44px;
+      line-height: 44px;
+    }
+
+    .news-section .banner .title-list .item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .news-section .banner .title-list .item a {
+      display: block;
+      font-size: 14px;
+      color: #b1b2be;
+    }
+
+    .news-section .banner .title-list .item.active a ,
+    .news-section .banner .title-list .item a:hover {
+      color: #f3c258;
+      background: rgba(255,255,255,.15);
+    }
+
+    .news-section .news {
+      flex: 1;
+      padding: 0 17px;
+    }
+
+    .news-section .download {
+      width: 236px;
+      background-color: #6f6;
+    }
+
+    .news-section .download a {
+      display: block;
+      background: url(./img/main_sprite.png) no-repeat;
+    }
+
+    .news-section .download a.download-btn {
+      position: relative;
+      height: 128px;
+      background-position: 0 -219px;
+      overflow: hidden;
+    }
+
+    .news-section .download a.download-btn .download-btn-ani {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 300px;
+      height: 50px;
+      background-color: #ccc;
+      transform: rotate(-45deg);
+      animation: lightmove 1.6s ease-in infinite;
+      filter: blur(32px);
+    }
+
+    @keyframes lightmove {
+      from {
+        top: -150px;
+        left: -120px;
+      }
+
+      to {
+        top: 150px;
+        left: 120px;
+      }
+    }
+
+    .news-section .download a.guard-btn {
+      height: 106px;
+      background-position: 0 -350px;
+    }
+
+    .news-section .download a.experience-btn {
+      height: 108px;
+      background-position: 0 -461px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main_wrapper main">
+    <div class="news-section">
+      <div class="banner">
+        <ul class="image-list">
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+        </ul>
+        <ul class="title-list">
+          <li class="item">
+            <a href="#">武汉eStarPro夺冠</a>
+          </li>
+          <li class="item">
+            <a href="#">兔年一起团</a>
+          </li>
+          <li class="item">
+            <a href="#">莱西奥英雄档案</a>
+          </li>
+          <li class="item active">
+            <a href="#">王者营地四周年</a>
+          </li>
+          <li class="item">
+            <a href="#">世冠决赛解析</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="news">
+        我是中间的内容
+        <ul class="title-list"></ul>
+        <p class="notice"></p>
+        <ul class="news-list"></ul>
+      </div>
+
+      <div class="download">
+        <a class="download-btn" href="#">
+          <span class="download-btn-ani"></span>
+        </a>
+        <a class="guard-btn" href="#"></a>
+        <a class="experience-btn" href="#"></a>
+      </div>
+    </div>
+    <div class="content-section"></div>
+    <div class="match-section"></div>
+  </div>
+
+</body>
+</html>
