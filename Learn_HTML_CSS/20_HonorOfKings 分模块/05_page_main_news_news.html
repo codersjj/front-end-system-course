@@ -67,6 +67,9 @@
     .news-section .news {
       flex: 1;
       padding: 0 17px;
+
+      /* 在设置 flex: 1; 的元素上设置 overflow: hidden; 来解决里面子元素的内容 nowrap 超出时不显示 ... 的问题 */
+      overflow: hidden;
     }
 
     .news-section .news .title-list {
@@ -100,6 +103,25 @@
       border-bottom-color: transparent;
       color: #b8b9c5;
     } */
+
+    .news-section .news .notice {
+      margin: 18px 0 11px 0;
+      padding: 0 15px;
+      height: 36px;
+      line-height: 36px;
+      background: #414046;
+    }
+
+    .news-section .news .notice > a {
+      display: block;
+      /* padding-right: 50px; */
+      color: #f3c258;
+      font-size: 18px;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
 
     .news-section .download {
       width: 236px;
@@ -210,7 +232,9 @@
             <a href="#">...</a>
           </li>
         </ul>
-        <p class="notice"></p>
+        <p class="notice">
+          <a href="#">快乐分享，兔年一起团！王者新春年货节 组队消费赢好礼活动公告</a>
+        </p>
         <ul class="news-list"></ul>
       </div>
       <div class="download">
