@@ -27,3 +27,30 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+/* 新闻类型的“图标” */
+.news_type {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-right: 2px;
+  width: 32px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.news_type_hot {
+  color: #ff3636;
+  /* border-color 的默认值是 currentcolor，即当前元素上 color 属性的值 */
+  /* border-color: currentcolor; */
+}
+
+.news_type_notice {
+  color: #f4be19;
+}
+
+.news_type_news {
+  color: #1e96ab;
+}

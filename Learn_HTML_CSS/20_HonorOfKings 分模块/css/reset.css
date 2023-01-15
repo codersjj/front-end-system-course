@@ -21,3 +21,8 @@ img {
 ul, ol, li {
   list-style: none;
 }
+
+/* 斜体样式的元素样式重置 */
+i, em {
+  font-style: normal;
+}
