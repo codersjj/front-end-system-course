@@ -29,7 +29,7 @@ body {
 }
 
 /* 新闻类型的“图标” */
-.news_type {
+.news_type::before {
   display: inline-block;
   border: 1px solid;
   border-radius: 2px;
@@ -41,16 +41,19 @@ body {
   font-size: 12px;
 }
 
-.news_type_hot {
+.news_type_hot::before {
+  content: "热门";
   color: #ff3636;
   /* border-color 的默认值是 currentcolor，即当前元素上 color 属性的值 */
   /* border-color: currentcolor; */
 }
 
-.news_type_notice {
+.news_type_notice::before {
+  content: "公告";
   color: #f4be19;
 }
 
-.news_type_news {
+.news_type_news::before {
+  content: "新闻";
   color: #1e96ab;
 }
