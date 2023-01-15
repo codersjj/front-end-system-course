@@ -20,3 +20,10 @@ body {
   width: 1200px;
   margin: 0 auto;
 }
+
+/* 文本不换行显示 3 行代码 */
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
