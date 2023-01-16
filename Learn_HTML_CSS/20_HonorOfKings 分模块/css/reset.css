@@ -1,7 +1,7 @@
 /* reset.css 样式重置文件 */
 
 /* margin、padding 重置 */
-body, h1, h2, ul, ol, li, p {
+body, h1, h2, h3, ul, ol, li, p {
   margin: 0;
   padding: 0;
 }

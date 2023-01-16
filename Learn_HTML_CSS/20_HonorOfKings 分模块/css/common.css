@@ -57,3 +57,37 @@ body {
   content: "新闻";
   color: #1e96ab;
 }
+
+/* section_header */
+.section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* .section_header .header_left {
+
+} */
+
+.section_header .header_left .title {
+  padding-left: 33px;
+  font-size: 22px;
+  color: #323235;
+  background: url("../img/main_sprite.png") no-repeat 0 -102px;
+}
+
+.section_header .header_left .title.title_icon_match {
+  background-position: 0 -180px;
+}
+
+.section_header .header_right .more {
+  display: block;
+  padding-left: 22px;
+  color: #999;
+  background: url("../img/main_sprite.png") no-repeat -252px 3px;
+}
+
+.section_header .header_right .more:hover {
+  color: #f3c258;
+}
