@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="./css/common.css">
   <style>
     .video_item {
+      display: block;
       margin: 100px auto;
       width: 209px;
-      height: 200px;
       /* background-color: #5a5; */
     }
 
@@ -23,6 +23,38 @@
 
     .video_item .album img {
       width: 100%;
+    }
+
+    .video_item .album .cover {
+      /* display: none; */
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0,0,0,.6);
+
+      /* display 属性不支持动画！ */
+      /* transition: display 300ms ease; */
+      transition: opacity 300ms ease;
+    }
+
+    .video_item:hover .album .cover {
+      /* display: block; */
+      opacity: 1;
+    }
+
+    .video_item .album .cover .icon_play {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      background: url(./img/main_sprite.png) no-repeat -192px -64px;
     }
 
     .video_item .album .info {
@@ -61,18 +93,21 @@
 </head>
 <body>
 
-  <div class="video_item">
+  <a class="video_item" href="#">
     <div class="album">
       <img src="./img/video_album_01.png" alt="">
       <div class="info">
         <span class="count">1.2万</span>
         <span class="date">2020-12-01</span>
       </div>
+      <div class="cover">
+        <i class="icon_play"></i>
+      </div>
     </div>
     <div class="desc" title="【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！">
       【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！
     </div>
-  </div>
+  </a>
 
 </body>
 </html>
