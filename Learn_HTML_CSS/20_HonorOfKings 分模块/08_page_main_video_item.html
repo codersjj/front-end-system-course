@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-video-item</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .video_item {
+      margin: 100px auto;
+      width: 209px;
+      height: 200px;
+      /* background-color: #5a5; */
+    }
+
+    .video_item .album {
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .video_item .album img {
+      width: 100%;
+    }
+
+    .video_item .album .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      padding: 0 10px;
+      height: 22px;
+      line-height: 22px;
+
+      color: #fff;
+      background-color: rgba(0,0,0,.6);
+    }
+
+    .video_item .album .info .count {
+      padding-left: 15px;
+      background: url("./img/main_sprite.png") -256px -59px no-repeat;
+    }
+
+    .video_item .desc {
+      margin-top: 10px;
+
+      /* 两行文本，超出时省略号显示 */
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video_item">
+    <div class="album">
+      <img src="./img/video_album_01.png" alt="">
+      <div class="info">
+        <span class="count">1.2万</span>
+        <span class="date">2020-12-01</span>
+      </div>
+    </div>
+    <div class="desc" title="【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！">
+      【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！
+    </div>
+  </div>
+
+</body>
+</html>
