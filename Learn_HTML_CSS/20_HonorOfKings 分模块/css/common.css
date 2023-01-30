@@ -110,6 +110,11 @@ body {
   cursor: pointer;
 }
 
+.tab_control > .item.item_wrap {
+  flex: 0 auto;
+  padding: 0 18px;
+}
+
 .tab_control > .item:hover,
 .tab_control > .item.active {
   border-bottom-color: #f3c258;
