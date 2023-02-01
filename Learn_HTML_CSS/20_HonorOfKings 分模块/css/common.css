@@ -96,6 +96,10 @@ body {
   background-position: 0 -180px;
 }
 
+.section_header .header_left .title.title_icon_hero {
+  background-position: 0 -140px;
+}
+
 .section_header .header_right .more {
   display: block;
   padding-left: 22px;
