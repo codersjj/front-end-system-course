@@ -51,6 +51,39 @@
       font-size: 12px;
       color: #999;
     }
+
+    .main .hero-skin .hero-list {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .main .hero-skin .hero-list .item a {
+      position: relative;
+      display: block;
+    }
+
+    .main .hero-skin .hero-list .item a .cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      writing-mode: vertical-lr;
+      font-size: 14px;
+      color: #f3c258;
+      background-color: rgba(0,0,0,.88);
+
+      transition: opacity 300ms ease;
+    }
+
+    .main .hero-skin .hero-list .item a:hover .cover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +117,32 @@
               <p class="time">上线时间：2023.01.03</p>
             </div>
           </div>
+          <ul class="hero-list">
+            <li class="item">
+              <a href="#">
+                <img src="./img/hero_01.webp" alt="">
+                <div class="cover">赵怀真</div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <img src="./img/hero_01.webp" alt="">
+                <div class="cover">赵怀真</div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <img src="./img/hero_01.webp" alt="">
+                <div class="cover">赵怀真</div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <img src="./img/hero_01.webp" alt="">
+                <div class="cover">赵怀真</div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
