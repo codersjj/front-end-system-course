@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #ccc;
+    }
+
+    .box .search {
+      display: block;
+    }
+
+    .box .info {
+      display: none;
+    }
+
+    .box .search:hover .info {
+      display: block;
+    }
+
+    /* .box .search:hover + .info {
+      display: block;
+    } */
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <a class="search" href="#">
+      百度一下
+      <!-- 位置一 -->
+      <div class="info">哈哈哈</div>
+    </a>
+    <!-- 位置二 -->
+    <!-- <div class="info">哈哈哈</div> -->
+  </div>
+
+</body>
+</html>
