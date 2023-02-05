@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-header</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .header {
+      position: relative;
+      /* 这里 rgba 设置值时一般会把逗号之间的空格去掉，0.x 也会省略小数点前的 0 */
+      background-color: rgba(0,0,0,.8);
+    }
+
+    .header .area {
+      display: flex;
+      justify-content: space-between;
+      height: 84px;
+      /* line-height: 84px; */
+      /* background-color: skyblue; */
+    }
+
+    .header .area .left-area {
+      display: flex;
+      /* background-color: #f66; */
+    }
+
+    .header .area .left-area .logo {
+      /* height: 100%; */
+    }
+
+    .header .area .left-area .logo a {
+      /* 相对定位 + 平移 实现在父元素中垂直方向居中 */
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      display: block;
+      width: 200px;
+      height: 54px;
+      text-indent: -9999px;
+      /* background-color: #fff; */
+      background: url("./img/logo.png") center center no-repeat;
+    }
+
+    .header .area .left-area .nav-list {
+      display: flex;
+      margin-left: 30px;
+    }
+
+    .header .area .left-area .nav-list .item {
+      width: 115px;
+      /* line-height: 1.5; */
+      text-align: center;
+      /* background-color: #666; */
+    }
+
+    .header .area .left-area .nav-list .item:hover,
+    .header .area .left-area .nav-list .item.active {
+      background: url(./img/main_sprite.png) 0 0 no-repeat;
+    }
+
+    .header .area .left-area .nav-list .item a {
+      display: block;
+      box-sizing: border-box;
+      padding: 20px 5px 0 0;
+      height: 100%;
+      font-size: 18px;
+      color: #c9c9dd;
+    }
+
+    .header .area .left-area .nav-list .item:hover a,
+    .header .area .left-area .nav-list .item.active a {
+      color: #e4b653;
+    }
+
+    .header .area .left-area .nav-list .item a .desc {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #858792;
+    }
+
+    .header .area .left-area .nav-list .item:hover a .desc,
+    .header .area .left-area .nav-list .item.active a .desc {
+      color: #91763f;
+    }
+
+    .header .area .left-area .search {
+      /* display: flex;
+      align-items: center; */
+      margin-left: 10px;
+      /* background-color: #fff; */
+    }
+
+    .header .area .left-area .search a {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+      display: block;
+      width: 27px;
+      height: 26px;
+      background: url(./img/nav_search.png);
+    }
+
+    .header .area .right-area {
+      display: flex;
+      align-items: center;
+      /* background-color: #66f; */
+    }
+
+    .header .area .right-area .image img {
+      border: 1px solid #d9ad50;
+      border-radius: 50%;
+    }
+
+    .header .area .right-area .info {
+      margin-left: 7px;
+    }
+
+    .header .area .right-area .info a {
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .header .area .right-area .info p {
+      font-size: 14px;
+      color: #858792;
+    }
+
+    .header .dropmenu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 84px;
+      height: 0;
+      background-color: rgba(0,0,0,.7);
+
+      overflow: hidden;
+      /* 注意：transition 属性要加在这里，而不是 :hover 状态时，否则，从 hover 状态变成正常状态时，由于正常状态时没有加 transition 属性，就不会有过渡动画 */
+      transition: height 300ms ease;
+    }
+
+    .header:hover .dropmenu {
+      height: 285px;
+    }
+
+    .header .dropmenu .inner {
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 15px 0 30px 50px;
+      width: 940px;
+      height: 100%;
+      color: #c9c9dd;
+      /* background-color: #a9be7b; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header_wrapper area">
+      <div class="left-area">
+        <h1 class="logo">
+          <a href="#">王者荣耀</a>
+        </h1>
+        <ul class="nav-list">
+          <li class="item active">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              内容中心
+              <span class="desc">CONTENTS</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              赛事中心
+              <span class="desc">MATCH</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              百态王者
+              <span class="desc">CULTURE</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              社区互动
+              <span class="desc">COMMUNITY</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              玩家支持
+              <span class="desc">PLAYER</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              IP新游
+              <span class="desc">NEW GAMES</span>
+            </a>
+          </li>
+        </ul>
+        <div class="search">
+          <a href="#"></a>
+        </div>
+      </div>
+      <div class="right-area">
+        <a href="#" class="image">
+          <img src="./img/header_login.png" alt="">
+        </a>
+        <div class="info">
+          <a href="#">欢迎登录</a>
+          <p>登录后查看游戏战绩</p>
+        </div>
+      </div>
+    </div>
+    <div class="dropmenu">
+      <div class="inner">666</div>
+    </div>
+  </div>
+
+</body>
+</html>
