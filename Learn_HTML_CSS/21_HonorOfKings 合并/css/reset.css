@@ -1,0 +1,28 @@
+/* reset.css 样式重置文件 */
+
+/* margin、padding 重置 */
+body, h1, h2, h3, ul, ol, li, dl, dt, dd, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* a 元素样式重置 */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* img 的 vertical-align 重置 */
+img {
+  vertical-align: top;
+}
+
+/* ul、ol、li 重置 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* 斜体样式的元素样式重置 */
+i, em {
+  font-style: normal;
+}

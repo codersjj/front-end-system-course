@@ -1,0 +1,179 @@
+.news-section {
+  display: flex;
+  height: 342px;
+  background: url(../img/news_bg.png) no-repeat;
+}
+
+.news-section .banner {
+  width: 605px;
+  background-color: #222;
+}
+
+.news-section .banner .image-list {
+  display: flex;
+  width: 604px;
+  overflow: hidden;
+}
+
+.news-section .banner .image-list .item {
+  flex-shrink: 0;
+  /* 最好给 item 设置固定宽度，否则在 flex 布局中由于 flex-shrink 的默认值为 1，item 可能会被压缩。
+  这里设置每项都占满父元素的宽度，注意，需要同时设置 flex-shrink 为 0，不让它对 item 进行压缩 */
+  width: 100%;
+}
+
+.news-section .banner .image-list .item a {
+  display: block;
+}
+
+.news-section .banner .image-list .item a img {
+  width: 100%;
+}
+
+.news-section .banner .title-list {
+  display: flex;
+  width: 604px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.news-section .banner .title-list .item {
+  flex: 1;
+  text-align: center;
+}
+
+.news-section .banner .title-list .item a {
+  display: block;
+  font-size: 14px;
+  color: #b1b2be;
+}
+
+.news-section .banner .title-list .item.active a ,
+.news-section .banner .title-list .item a:hover {
+  color: #f3c258;
+  background: rgba(255,255,255,.15);
+}
+
+.news-section .news {
+  flex: 1;
+  padding: 0 17px;
+
+  /* 在设置 flex: 1; 的元素上设置 overflow: hidden; 来解决里面子元素的内容 nowrap 超出时不显示 ... 的问题 */
+  overflow: hidden;
+}
+
+.news-section .news .title-list {
+  display: flex;
+  /* align-items: normal; */
+  height: 48px;
+  border-bottom: 1px solid #000;
+}
+
+.news-section .news .title-list .item {
+  width: 52px;
+}
+
+.news-section .news .title-list .item a {
+  display: block;
+  box-sizing: border-box;
+  height: 48px;
+  line-height: 45px;
+  color: #b8b9c5;
+  text-align: center;
+  transition: border-bottom 150ms ease-in;
+}
+
+.news-section .news .title-list .item.active a,
+.news-section .news .title-list .item:not(.more) a:hover {
+  border-bottom: 3px solid #f3c258;
+  color: #f3c258;
+}
+
+/* .news-section .news .title-list .item.more a:hover {
+  border-bottom-color: transparent;
+  color: #b8b9c5;
+} */
+
+.news-section .news .notice {
+  margin: 18px 0 11px 0;
+  padding: 0 15px;
+  height: 36px;
+  line-height: 36px;
+  background: #414046;
+}
+
+.news-section .news .notice > a {
+  display: block;
+  /* padding-right: 50px; */
+  color: #f3c258;
+  font-size: 18px;
+}
+
+.news-section .news .news-list .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.news-section .news .news-list .item .desc {
+  flex: 1;
+  color: #b8b9c5;
+}
+
+.news-section .news .news-list .item .date {
+  padding-left: 20px;
+  color: #999;
+  font-size: 12px;
+}
+
+.news-section .download {
+  width: 236px;
+  /* background-color: #6f6; */
+}
+
+.news-section .download a {
+  display: block;
+  background: url(../img/main_sprite.png) no-repeat;
+}
+
+.news-section .download a.download-btn {
+  position: relative;
+  height: 128px;
+  background-position: 0 -219px;
+  overflow: hidden;
+}
+
+.news-section .download a.download-btn .download-btn-ani {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 300px;
+  height: 50px;
+  background-color: #ccc;
+  transform: rotate(-45deg);
+  animation: lightmove 1.6s ease-in infinite;
+  filter: blur(32px);
+}
+
+@keyframes lightmove {
+  from {
+    top: -150px;
+    left: -120px;
+  }
+
+  to {
+    top: 150px;
+    left: 120px;
+  }
+}
+
+.news-section .download a.guard-btn {
+  height: 106px;
+  background-position: 0 -350px;
+}
+
+.news-section .download a.experience-btn {
+  height: 108px;
+  background-position: 0 -461px;
+}
