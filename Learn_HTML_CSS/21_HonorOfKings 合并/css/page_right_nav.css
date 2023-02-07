@@ -1,0 +1,103 @@
+.right-nav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 254px;
+  height: 494px;
+  background: url(../img/right_nav_bg.png) no-repeat;
+}
+
+.right-nav .right-dj img {
+  width: 165px;
+  height: 145px;
+}
+
+.right-nav .right-dj .text {
+  position: absolute;
+  top: 33px;
+  left: 15px;
+  font-weight: bold;
+}
+
+.right-nav .right-list .item {
+  position: relative;
+  left: 60px;
+  width: 117px;
+  height: 38px;
+  background: url(../img/right_all.png) no-repeat;
+}
+
+.right-nav .right-list .item.qr-code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 116px;
+  background-position: -243px 0;
+}
+
+.right-nav .right-list .item.qr-code img {
+  width: 107px;
+  height: 107px;
+}
+
+.right-nav .right-list .item.weibo {
+  background-position: -122px -120px;
+}
+
+.right-nav .right-list .item.weibo:hover {
+  background-position: -122px -240px;
+}
+
+.right-nav .right-list .item.weibo a {
+  display: block;
+  height: 100%;
+}
+
+.right-nav .right-list .item.gzh {
+  background-position: -122px -160px;
+}
+
+.right-nav .right-list .item.gzh:hover {
+  background-position: -122px -200px;
+}
+
+.right-nav .right-list .item.sph {
+  background-position: -122px 0;
+}
+
+.right-nav .right-list .item.sph:hover {
+  background-position: -122px -42px;
+}
+
+.right-nav .right-list .item .code {
+  position: absolute;
+  top: -66px;
+  left: -115px;
+  display: none;
+  padding-top: 7px;
+  width: 115px;
+  height: 144px;
+  text-align: center;
+  background: url(../img/right_all.png) no-repeat 0 -416px;
+}
+
+.right-nav .right-list .item:hover .code {
+  display: block;
+  animation: opacityAnim .3s ease;
+}
+
+.right-nav .right-list .item .code img {
+  margin-bottom: 6px;
+  width: 101px;
+  height: 100px;
+}
+
+.right-nav .right-list .item .code p {
+  font-size: 12px;
+  color: #dcdcdc;
+}
+
+.right-nav .right-list .item .code p span {
+  color: #cd974b;
+}

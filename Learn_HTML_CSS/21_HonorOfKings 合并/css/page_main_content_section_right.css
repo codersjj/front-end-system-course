@@ -1,0 +1,133 @@
+.main .hero-skin .new-hero {
+  margin-top: 18px;
+}
+
+.main .hero-skin .new-hero .album {
+  display: block;
+}
+
+.main .hero-skin .new-hero .intro {
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+  padding: 10px 15px;
+  height: 47px;
+}
+
+.main .hero-skin .new-hero .intro .name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main .hero-skin .new-hero .intro .time {
+  font-size: 12px;
+  color: #999;
+}
+
+.main .hero-skin .hero-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.main .hero-skin .hero-list .item a {
+  position: relative;
+  display: block;
+}
+
+.main .hero-skin .hero-list .item a .cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  writing-mode: vertical-lr;
+  font-size: 14px;
+  color: #f3c258;
+  background-color: rgba(0,0,0,.88);
+
+  transition: opacity 300ms ease;
+}
+
+.main .hero-skin .hero-list .item a:hover .cover {
+  opacity: 1;
+}
+
+.main .schedule {
+  margin-top: 30px;
+}
+
+.main .schedule .buy-ticket {
+  box-sizing: border-box;
+  border: 1px solid #f3c258;
+  border-radius: 3px;
+  margin-right: 10px;
+  width: 70px;
+  height: 22px;
+  line-height: 20px;
+  text-align: center;
+  text-indent: 22px;
+  background: url(../img/main_sprite.png) no-repeat -243px -85px;
+}
+
+.main .schedule .schedule-time {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.main .schedule .schedule-time thead {
+  height: 32px;
+  line-height: 32px;
+  color: #999;
+  background-color: #f5f5f5;
+}
+
+.main .schedule .schedule-time tbody {
+  font-size: 12px;
+}
+
+.main .schedule .schedule-time tbody tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.main .schedule .schedule-time tbody td {
+  padding: 10px 0;
+}
+
+.main .schedule .schedule-time td {
+  width: 83px;
+  white-space: nowrap;
+}
+
+.main .schedule .schedule-time td:nth-child(3) {
+  width: 43px;
+  font-size: 14px;
+  color: #f3c258;
+}
+
+.main .schedule .schedule-time td .team-logo {
+  display: block;
+  margin: 0 auto 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.main .schedule .schedule-time td .team-name {
+  display: inline-block;
+  width: 83px;
+}
+
+.main .schedule .match-schedule {
+  display: block;
+  margin-top: 20px;
+}
+
+.main .schedule .match-schedule img {
+  width: 293px;
+  height: 159px;
+}
