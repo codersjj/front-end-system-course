@@ -1,5 +1,6 @@
 .main {
-  background: url(../img/main_bg.png) center top no-repeat;
+  /* 可以通过设置 background-size，让背景图片的大小随着浏览器窗口大小的变化自动变化 */
+  background: url(../img/main_bg.png) center top/100% auto no-repeat;
 }
 
 .main .link {
