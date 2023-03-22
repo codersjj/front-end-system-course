@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 800px;
+    }
+
+    .item {
+      display: inline-block;
+      height: 200px;
+    }
+
+    .item1 {
+      /* width: calc(800px - 300px); */
+      /* width 的百分比相对于包含块（父元素）的宽度 */
+      /* 包含块：通常是父元素，但也有不是父元素的时候，比如在绝对定位时，包含块就变成了最邻近的定位祖先元素 */
+      width: calc(100% - 300px);
+      background-color: #f66;
+    }
+
+    .item2 {
+      width: 300px;
+      background-color: #755;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="item item1"></div><div class="item item2"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      background-color: #f66;
+
+      /* white-space */
+      /* 默认值 */
+      white-space: normal;
+      /* nowrap：不换行，但会合并连续的空白 */
+      white-space: nowrap;
+      /* pre：不换行，不合并 */
+      white-space: pre;
+      /* pre-wrap：换行，不合并 */
+      white-space: pre-wrap;
+      /* pre-line：换行，合并连续的空白，但保留换行符 */
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    我是一个 coder           哈哈哈 zhj_coder_hello
+    哈哈哈哈哈哈      呵呵呵 hello world
+    <!-- 我是一个 coder           哈哈哈 zhj_coder_hello
+    哈哈哈哈哈哈      呵呵呵 hello world
+    我是一个 coder           哈哈哈 zhj_coder_hello
+    哈哈哈哈哈哈      呵呵呵 hello world
+    我是一个 coder           哈哈哈 zhj_coder_hello
+    哈哈哈哈哈哈      呵呵呵 hello world
+    我是一个 coder           哈哈哈 zhj_coder_hello
+    哈哈哈哈哈哈      呵呵呵 hello world -->
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img-filtered {
+      filter: blur(5px);
+    }
+
+    .box {
+      display: inline-block;
+      position: relative;
+      /* filter: blur(5px); */
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /* 因为 backdrop-filter 适用于元素背后的所有元素，为了看到效果，必须使元素或其背景至少部分透明 */
+      background-color: rgba(0,0,0,.5);
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+<body>
+
+  <img class="img-filtered" src="../images/kobe01.jpg" alt="">
+
+  <div class="box">
+    <img src="../images/kobe01.jpg" alt="">
+    <div class="cover"></div>
+  </div>
+
+</body>
+</html>
