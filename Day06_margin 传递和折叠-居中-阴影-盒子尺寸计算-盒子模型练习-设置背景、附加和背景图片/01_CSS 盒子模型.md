@@ -35,6 +35,7 @@
 - 建议：
   - **`margin`** 一般是用来**设置兄弟元素之间**的间距；
   - **`padding`** 一般是用来**设置父子元素之间**的间距；
+- 参考文档：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing#:~:text=No%20content%20separating%20parent%20and%20descendants
 
 ### 上下 `margin` 的折叠
 
