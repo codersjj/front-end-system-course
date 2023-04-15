@@ -1,0 +1,52 @@
+@import "./mixins";
+
+// 1. extend
+// .box_border {
+//   border: 10px solid skyblue;
+// }
+
+// .box {
+//   // 混入
+//   // .box_border();
+//   // 继承
+//   &:extend(.box_border);
+
+//   width: 100px;
+//   background-color: #f66;
+// }
+
+// 2. 内置函数
+// .box {
+//   color: color(skyblue);
+//   width: convert(96px, "in");
+//   font-size: ceil(17.5px);
+// }
+
+// 3. 作用域（一个大括号可以看做是一个作用域，作用域的意思就是在这个范围之内我们定义的变量都是生效的）
+@mainColor: #f00;
+
+.box_mixin {
+  color: orange;
+}
+
+.box {
+  @mainColor: #0f0;
+
+  .item {
+    // 使用导入的 .less 文件中的变量
+    color: @mixinColor;
+    span {
+      // @mainColor: #00f;
+
+      color: @mainColor;
+      // 变量可以在使用的位置后面定义
+      // @mainColor: #00f;
+
+      .box_mixin();
+    }
+  }
+}
+
+// 4. 注释（comment）
+// 单行注释
+/* 多行注释（块注释） */

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      font-size: 15px;
+    }
+
+    .box {
+      /* 如果没有显式设置 font-size，那么会继承父元素的 font-size，因为 font-size 是可继承的 */
+      /* font-size: 20px; */
+      /* 如果 font-size 的单位是 em，可以理解为相对于父元素的 font-size，但是更准确的理解依然是相对于自己的 font-size（先是继承过来 font-size，而后自己再设置就相当于层叠掉了继承过来的值） */
+      font-size: 1em;
+
+      /* width: 100px; */
+      /* 1. em：相对于自己的 font-size */
+      width: 10em;
+      /* height: 100px; */
+      height: 5em;
+      background-color: skyblue;
+    }
+
+    /* 2. rem */
+
+    /* 3. vw */
+  </style>
+</head>
+<body>
+
+  <!-- <div class="box">我是 box</div> -->
+  <div class="container">
+    <div class="box">我是 box</div>
+  </div>
+
+</body>
+</html>

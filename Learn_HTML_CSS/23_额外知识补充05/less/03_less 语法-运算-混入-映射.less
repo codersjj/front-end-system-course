@@ -1,0 +1,80 @@
+// 1. 运算
+// .box {
+//   width: 50px * 2;
+//   // width: 10% + 100px;
+//   // height: 100px;
+//   height: 100px + 10em;
+//   // background-color: skyblue;
+//   background-color: #ff0000 + #00ff00;
+//   font-size: 20px;
+// }
+
+// // 运算的使用场景举例：px to rem
+
+// 2. 混入
+// 2.1 混入的基本使用
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 2.2 混入是可以传递参数（定义变量）的
+.box_border(@borderWidth: 10px, @borderColor: #0f0) {
+  border: @borderWidth solid @borderColor;
+}
+
+// 2.3 混入和映射（Maps）结合使用
+// 作用：弥补 less 中不能自定义函数的缺陷
+.box_size {
+  width: 200px;
+  height: 100px;
+}
+
+.box1 {
+  // width: 200px;
+  // 2.3 混入和映射（map）结合使用
+  width: .box_size()[width];
+
+  background-color: #f66;
+
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+
+  // 2.1 混入的基本使用
+  // 注：可以省略圆括号，但不建议，官方文档有提到：https://lesscss.org/features/#mixins-feature:~:text=Historically%2C%20the%20parentheses%20in%20a%20mixin%20call%20are%20optional%2C%20but%20optional%20parentheses%20are%20deprecated%20and%20will%20be%20required%20in%20a%20future%20release.
+  .nowrap_ellipsis();
+
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 2;
+  // overflow: hidden;
+
+  .box_border()
+}
+
+.box2 {
+  width: 300px;
+  background-color: skyblue;
+
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+
+  .nowrap_ellipsis();
+  // 2.2 混入是可以传递参数（定义变量）的
+  .box_border(20px, rebeccapurple)
+}
+
+// 运算+混入+映射 使用场景举例：px to rem
+.pxToRem(@px, @htmlFontSize: 20) {
+  result: (@px / @htmlFontSize) * 1rem
+}
+
+.box2 {
+  width: .pxToRem(350)[result];
+  font-size: .pxToRem(36, 18)[result];
+}
+
+// 参考文档：https://lesscss.org/features/#mixins-feature-mixins-as-functions-feature
