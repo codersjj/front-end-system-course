@@ -1,0 +1,19 @@
+.pxToRem(@px) {
+  // 注：37.5 不是一定的，而是取决于设计稿（设计稿为 375px 时，<html> 的 font-size 通常设置为 37.5px；设计稿为 750px 时，<html> 的 font-size 通常设置为 75px）
+  // width: 1rem * (@px / 37.5);
+  // height: (@px / 37.5) * 1rem;
+
+  result: 1rem * (@px / 37.5);
+}
+
+.box {
+  // .pxToRem(100);
+
+  width: .pxToRem(100)[result];
+  height: .pxToRem(100)[result];
+  background-color: orange;
+}
+
+p {
+  font-size: .pxToRem(14)[result];
+}

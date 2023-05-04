@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /*
+      rem 方案：
+        1. 动态地设置 <html> 的 font-size
+          font-size：视口的宽度 / 10
+        2. 原先的尺寸换算成 rem 单位
+    */
+
+    /*
+      font-size：视口的宽度 / 100 -> 1vw
+    */
+
+    html {
+      /* font-size: 37.5px; */
+      /* 1vw => 3.75px */
+      /* font-size: 10vw; */
+    }
+
+    .box {
+      /* width: 2.6667rem;
+      height: 2.6667rem; */
+      /* 2.6667 * 10vw */
+      width: 26.667vw;
+      height: 26.667vw;
+      background-color: #f66;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+</body>
+</html>
