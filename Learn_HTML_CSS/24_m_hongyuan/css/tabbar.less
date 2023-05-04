@@ -1,0 +1,19 @@
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  border-top: 1px solid #ddd;
+  height: calc(env(safe-area-inset-bottom) + 50px);
+  background: #fff;
+
+  .item {
+    flex: 1;
+    text-align: center;
+
+    img {
+      width: 48px;
+    }
+  }
+}
