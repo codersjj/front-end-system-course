@@ -1,14 +1,57 @@
+@import url(./variables.less);
+@import url(./mixins.less);
+
 .download {
   display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
   height: 16vw;
 
   .left {
     flex: 1;
-    background-color: #f66;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3.2vw;
+
+    .logo {
+      width: 10.6667vw;
+      border-radius: 2.13333vw;
+      box-shadow: 0 0 0.93333vw 0 rgba(0,0,0,.15);
+    }
+
+    .info {
+      flex: 1;
+      overflow: hidden;
+
+      margin-left: 2.1333vw;
+
+      .title {
+        font-size: @normalFontSize;
+        color: #333;
+
+        .nowrap();
+      }
+
+      .desc {
+        margin-top: .5333vw;
+        font-size: @smallFontSize;
+        color: #999;
+
+        .nowrap();
+      }
+    }
   }
 
   .right {
     width: 25.2vw;
-    background-color: #6f6;
+    height: 16vw;
+    text-align: center;
+    line-height: 16vw;
+    font-size: @bigFontSize;
+    color: #fff;
+    background-image: linear-gradient(to right, #ff0409,#ff3162);
   }
 }
