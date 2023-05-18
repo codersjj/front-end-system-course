@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 定义一个变量
+    // 第一步：变量的声明（告诉 js 引擎接下来我要定义一个变量）
+    // var 关键字
+    // 第二步：变量的赋值
+    // var currentTime = '16:00'
+
+    // 其它的写法一：声明和赋值分开写
+    var currentTime;
+    currentTime = '16:00';
+    currentTime = '17:00';
+
+    // 其它的写法二：同时声明多个变量（不推荐，阅读性较差）
+    // var name, age, height
+    // name = 'wy'
+    // age = 18
+    // height = 1.88
+    var name = 'wy', age = 18, height = 1.88;
+
+    // 补充
+    // 1. 当我们打印变量时，打印的是变量中保存的值
+    // 2. console.log(参数1, 参数2, 参数3, ...)
+    // 另外，在某些 VS Code 的某些主题下，某些变量名如果在全局对象 window 对象上存在，它的颜色可能会和其它变量名不太一样，比如这里的 name
+    console.log(name, age, height);
+
+  </script>
+
+</body>
+</html>

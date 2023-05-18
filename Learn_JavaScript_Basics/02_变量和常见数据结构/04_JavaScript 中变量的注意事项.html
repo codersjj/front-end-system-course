@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 注意事项一：如果一个变量未声明就直接使用，那么会直接报错
+    // var currentAge = age
+    // console.log(name)
+    // console.log(window)
+
+    // 注意事项二：如果一个变量声明了但没有赋值，则它的值默认为 undefined
+    // var info
+    // console.log(info)
+
+    // 注意事项三：在 JavaScript 中也可以省略 var 在全局声明一个变量（不推荐）
+    // 如果不使用 var 来声明一个变量，也是可以声明成功的，并且这个变量会被加入到 window 对象上
+    address = '上海市'
+    console.log(address)
+    console.log(window)
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 练习一：定义变量保存个人信息
+    var name = 'wh'
+    var age = 18
+    var height = 1.88
+    var weight = 160
+    var address = '北京市'
+
+    // 修改变量的值
+    age = 19
+    height = 1.90
+    weight = 165
+    address = '上海市'
+
+    // 练习二：将一个变量的值，赋值给另外一个变量
+    var nickname = 'coderzhj'
+    var admin = nickname
+    console.log(nickname, admin) // coderzhj coderzhj
+
+    // 练习三：定义两个变量保存两个数字，对两个变量中的数字进行交换
+    var num1 = 10
+    var num2 = 20
+
+    // // 方法一：借助第三个变量
+    // console.log('交换前，num1，num2：', num1, num2)
+    // var temp = num1
+    // num1 = num2
+    // num2 = temp
+    // console.log('交换后，num1，num2：', num1, num2)
+
+    // // 方法二：不借助临时变量（第三个变量）完成交换（了解，笔试面试题）
+    // console.log('交换前，num1，num2：', num1, num2)
+    // num1 = num1 + num2 // num1: 10 + 20 = 30, num2: 20
+    // num2 = num1 - num2 // num1: 10 + 20 = 30, num2: 10 + 20 - 20 = 10
+    // num1 = num1 - num2 // num1: 30 - 10 = 20, num2: 10
+    // console.log('交换后，num1，num2：', num1, num2)
+
+    // 方法三：不借助第三个变量完成交换，位运算
+    // 异或运算：两个数的异或运算是指将两个数的二进制表示按位进行异或操作。异或的规则是：相同位上的数字相同则结果为 0，不同则结果为 1。
+    // 异或运算有一个特性：当对同一个数进行两次异或运算时，结果会恢复为原来的数。
+    // 虽然异或运算（XOR）可用来交换变量，但比起使用额外变量来交换变量的做法相比，性能反而比较差（使用额外变量交换变量的方法只需要进行三次赋值操作，不涉及其他复杂的计算）。
+    console.log('交换前，num1，num2：', num1, num2)
+    num1 = num1 ^ num2
+    num2 = num1 ^ num2 // num1: num1 ^ num2, num2: num1 ^ num2 ^ num2 = num1 = 10
+    num1 = num1 ^ num2 // num1: num1 ^ 最初的 num2 ^ num1 = 最初的 num2 = 20, num2: 10
+    console.log('交换后，num1，num2：', num1, num2)
+
+    // 练习四：接受用户输入一个值，并使用一个变量来保存
+    var inputInfo = prompt('请输入内容：')
+    console.log(inputInfo)
+
+  </script>
+</body>
+</html>
