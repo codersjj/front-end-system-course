@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 1. 单行注释
+
+    /*
+      2. 多行注释
+      我是一行注释
+      我是另一行注释
+    */
+
+    // 3. 文档注释（在 VS Code 中，HTML 文档中编写 js 的文档注释效果不好，建议在 js 文件中编写）
+    /**
+     * 和某人打招呼的函数
+     * @param {string} name 姓名
+     * @param {number} age 年龄
+     */
+    function sayHello(name, age) {
+
+    }
+
+    sayHello('wh', 18)
+
+    // 补充：VS Code 中 js 代码设置区域的方式（详见：https://code.visualstudio.com/docs/editor/codebasics#_folding:~:text=TypeScript/JavaScript,//%23endregion）
+    //#region 区域注释
+
+    console.log(1)
+    console.log(2)
+    console.log(3)
+
+    //#endregion
+
+  </script>
+</body>
+</html>

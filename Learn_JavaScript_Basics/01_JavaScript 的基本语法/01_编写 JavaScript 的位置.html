@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 1. 编写位置一：编写在 HTML 内部（了解） -->
+  <a href="#" onclick="alert('百度一下')">百度一下</a>
+  <a href="javascript: alert('百度一下');">百度一下</a>
+
+  <!-- 2. 编写位置二：编写在 script 元素中 -->
+  <a class="google" href="#">谷歌一下</a>
+  <script>
+    // alert('Hello World')
+    var googleAEl = document.querySelector('.google')
+    googleAEl.onclick = function() {
+      alert('Hello World')
+    }
+  </script>
+
+  <!-- 3. 编写位置三：独立的 js 文件 -->
+  <a class="bing" href="#">bing一下</a>
+  <script src="./js/bing.js"></script>
+
+</body>
+</html>

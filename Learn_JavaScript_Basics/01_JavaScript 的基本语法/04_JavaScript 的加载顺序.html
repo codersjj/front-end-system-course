@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- <script>
+    // .title 元素在下面才有，所以这里获取不到
+    var titleEl = document.querySelector('.title')
+    alert('h1.title 元素加载前 ' + titleEl)
+
+    // 当然，如果是使用等到页面加载完后的回调函数，是可以拿到的，但这是和 window 的回调有关系的
+    window.onload = function() {
+      var titleEl = document.querySelector('.title')
+      alert('window.onload ' + titleEl)
+    }
+  </script> -->
+
+  <h1 class="title">我是标题</h1>
+  <p>我是段落</p>
+
+  <!-- script 也是普通的 HTML 元素 -->
+  <script>
+    // .title 元素在前面已经有了，所以这里可以获取到
+    var titleEl = document.querySelector('.title')
+    alert('h1.title 元素加载后 ' + titleEl)
+  </script>
+</body>
+<!-- 放在 <body> 的后面虽然可以，但不推荐，因为 script 元素应该是属于页面的一部分的，所以最好放在 body 里面 -->
+<!-- <script>
+  var titleEl = document.querySelector('.title')
+  alert('h1.title 元素加载后 ' + titleEl)
+</script> -->
+</html>
+<!-- 放在 <html> 的后面虽然浏览器也会帮你执行，但不符合标准，并且 script 元素是作为 HTML 文档的一部分的 -->
+<!-- <script>
+  var titleEl = document.querySelector('.title')
+  alert('h1.title 元素加载后 ' + titleEl)
+</script> -->
