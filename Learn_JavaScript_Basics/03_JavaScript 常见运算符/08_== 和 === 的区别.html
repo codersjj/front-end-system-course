@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    var foo1 = 0
+    var foo2 = ''
+    // var foo2 = null
+
+    // == 运算符在类型不相同的情况下，（多数情况下）会将运算元先转成 Number 类型的值（隐式转换），再进行比较
+    // 详细的比较过程可以参考官方文档：https://262.ecma-international.org/13.0/#sec-islooselyequal
+    console.log(Number(foo1)) // 0
+    console.log(Number(foo2)) // 0
+    console.log(foo1 == foo2) // true
+
+    // === 运算符，在运算元类型不同时，直接返回 false
+    console.log(foo1 === foo2) // false
+
+  </script>
+
+</body>
+</html>

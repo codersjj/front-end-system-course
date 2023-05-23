@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    var currentIndex = 5
+    // 只是自己自增或自减，++/-- 的位置是前置还是后置是没有区别的
+    // ++currentIndex
+    // console.log(currentIndex)
+    // --currentIndex
+    // console.log(currentIndex)
+
+    // 自增和自减表达式本身又在其它表达式或语句中时，++/-- 的位置是前置还是后置是有区别的
+    // var result1 = 100 + currentIndex++
+    // console.log(currentIndex) // 6
+    // console.log('result1:', result1) // 105
+    var result2 = 100 + ++currentIndex
+    console.log(currentIndex) // 6
+    console.log('result2:', result2) // 106
+
+    // 实际开发中，建议将自增/自减写成单独的语句，以提高阅读性
+    currentIndex++
+    var res = 100 + currentIndex
+    // currentIndex++
+  </script>
+
+</body>
+</html>
