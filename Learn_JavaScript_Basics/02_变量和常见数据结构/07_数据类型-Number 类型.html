@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. Number 类型的基本使用
+    var age = 18
+    var height = 1.88
+
+    // 2. 特殊的数值
+    // Infinity
+    var num1 = Infinity
+    var num2 = 1 / 0
+    console.log(num1, num2)
+
+    // NaN: Not a Number(不是一个数字)
+    var result = 3 * 'abc'
+    console.log(result)
+    console.log(isNaN(result)) // true
+    console.log(Number.isNaN(result)) // true
+    console.log(isNaN('aaa')) // true
+    console.log(Number.isNaN('aaa')) // false
+    // Number.isNaN() 和全局函数 isNaN() 的区别请参考 MDN 文档：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN#difference_between_number.isnan_and_global_isnan
+
+    // 3. 进制表示
+    var num3 = 100 // 十进制
+    // 了解
+    var num4 = 0x100 // 十六进制
+    var num5 = 0o100 // 八进制
+    var num6 = 0b100 // 二进制
+    console.log(num3, num4, num5, num6)
+
+    // 4. 数值可以表示的范围
+    var min = Number.MIN_VALUE
+    var max = Number.MAX_VALUE
+    console.log(min, max)
+
+    console.log(NaN == NaN) // false
+  </script>
+
+</body>
+</html>

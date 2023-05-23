@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 信息存在多个变量中
+    // var name = 'wy'
+    // var age = 18
+    // var height = 1.88
+
+    // 1. Object 类型的基本使用
+    var person = {
+      name: 'wy',
+      age: 18,
+      height: 1.88
+    }
+    console.log(person)
+
+    // 2. 获取对象类型中的某一个属性
+    console.log(person.name)
+    // var message = 'Hello World'
+    // console.log(message.length) // message 会被包装成一个 String（原始类型的包装类） 类型的对象，后续会讲解
+
+    // 3. Null 类型
+    // 3.1. 其它类型的初始化
+    var age = 0
+    var num = 0
+    var message = '' // 空字符串
+    var isAdmin = false
+
+    // age/num/message/isAdmin -> false
+    // if (age) {
+    //   console.log('分支语句不会执行')
+    // }
+
+    // 当对一个对象类型进行初始化时，不建议初始化为 {}，建议初始化为 null
+    // 3.2. 初始化为 {}，转成 Boolean 类型，是为 true
+    // var book = {} // true
+    // if (book) {
+    //   console.log('book 的逻辑代码执行')
+    // }
+
+    // null 存在的意义就是对对象进行初始化的，并且在转成 Boolean 类型时，会转成 false
+    var book = null
+    console.log(typeof null) // "object"
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 方式一：隐式转换（用得很少）
+    var num1 = '8'
+    var num2 = '2'
+    var result1 = num1 + num2
+    console.log(result1, typeof result1) // 84 string
+    var result2 = num1 * num2
+    console.log(result2, typeof result2) // 16 'number'
+
+    // 方式二：显式转换（Number()）
+    var result3 = Number(num1)
+    console.log(result3, typeof result3)
+
+    // 其它类型转成数值类型的规则
+    console.log(Number(undefined)) // NaN
+    console.log(Number(true)) // 1
+    console.log(Number(false)) // 0
+    console.log(Number(null)) // 0
+    // 转换字符串时，“按原样读取”字符串，两端的空白字符（空格、换行符 \n、制表符 \t 等）会被忽略。空字符串变成 0。转换出错则输出 NaN。
+    console.log(Number('')) // 0
+    console.log(Number('abc123')) // NaN
+    console.log(Number('123abc')) // NaN
+    console.log(Number('123')) // 123
+    console.log(Number('   123   ')) // 123
+    console.log(Number('\t123\n')) // 123
+    console.log(Number('   12 3   ')) // NaN
+  </script>
+
+</body>
+</html>

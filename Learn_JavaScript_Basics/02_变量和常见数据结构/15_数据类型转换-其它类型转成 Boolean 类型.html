@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 方式一：隐式转换（常见于分支语句中）
+    var isAdmin = true
+    var num = 123 // true
+    if (num) {
+
+    }
+    // 隐式转换有如下规则：
+    // 直观上为空的值（0、""、undefined、null、NaN），转成 Boolean 类型都是 false
+
+    // 方式二：显式转换
+    console.log(Boolean(num), Boolean(undefined))
+
+    // 注意事项
+    console.log(Boolean("")) // false
+    console.log(Boolean("0")) // true
+  </script>
+
+</body>
+</html>

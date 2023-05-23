@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 1. String 类型的基本使用
+    var name = "zhj"
+    var address = "北京市"
+    var info = "认真是一种可怕的力量！"
+
+    // 2. 别的引号的使用
+    // 单引号
+    var message1 = 'Hello World'
+    // 双引号
+    var message2 = "Hello World"
+    // 反引号（ES6 新增语法）
+    // ${变量/表达式}
+    var message3 = `Hello World, ${name}, ${2 + 3}`
+
+    // 3. 转义字符：字符串中本身包含引号
+    var message4 = 'my name is "wy"'
+    console.log(message4)
+    var message5 = "my name is \"wy\""
+    console.log(message5)
+    var message6 = 'my name \'\' \\ is "wy"'
+    console.log(message6)
+
+    // 4. 字符串本身有的属性和方法
+    var message7 = 'Hello World'
+    console.log(message7.length)
+    // 字符串操作
+    var nickname = 'xiaoming'
+    var infoStr1 = 'my name is '
+    var infoStr2 = `my name is ${nickname}` // 推荐（后续我们可以用 babel 自动将 ES6 的代码转成 ES5 的代码）
+    var infoStr3 = infoStr1 + nickname
+    console.log(infoStr2, infoStr3)
+  </script>
+
+</body>
+</html>

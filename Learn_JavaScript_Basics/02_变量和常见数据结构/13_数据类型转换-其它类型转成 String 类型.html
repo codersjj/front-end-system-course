@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    var num = 123
+    var isAdmin = true
+
+    // 1. 转换方式一：隐式转换（常用）
+    var numStr = num + ''
+    var isAdminStr = isAdmin + ''
+    console.log(numStr, isAdminStr)
+    console.log(typeof numStr, typeof isAdminStr)
+
+    // 2. 转换方式二：显式转换
+    var numStr2 = String(num)
+    console.log(numStr2, typeof numStr2)
+  </script>
+
+</body>
+</html>
