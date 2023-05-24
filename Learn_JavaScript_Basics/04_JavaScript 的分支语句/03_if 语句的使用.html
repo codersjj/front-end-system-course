@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 案例一：如果小明考试超过 90 分，就可以去游乐场玩
+    // 1. 定义一个变量来保存小明的分数
+    var score = 99
+
+    // 2. 如果分数超过 90 分，去游乐场
+    if (score > 90) {
+      console.log('去游乐场玩~')
+    }
+
+    // 案例二：5 元/斤的苹果，如果购买超过 5 斤，那么立减 8 元
+    // 1. 定义一些变量保存数据
+    var price = 5
+    var weight = 6
+    var totalPrice = price * weight
+    // 2. 根据购买的重量，决定是否 -8
+    if (weight > 5) {
+      totalPrice -= 8
+    }
+    console.log('总价格：', totalPrice)
+
+    // 案例三：播放列表中的 currentIndex
+    // ["鼓楼", "理想", "阿刁"]
+    var currentIndex = 1
+    currentIndex++
+    // 对 currentIndex++ 操作完之后，判断下标是否变成最大值
+    if (currentIndex === 3) {
+      currentIndex = 0
+    }
+
+  </script>
+
+</body>
+</html>
