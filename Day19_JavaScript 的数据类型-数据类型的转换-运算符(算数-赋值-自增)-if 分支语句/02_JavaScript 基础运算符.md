@@ -204,8 +204,8 @@
   6. 再看是否其中有一个是 Boolean 类型，如果是，将该运算元转换成 Number 类型的值，再回到第 1 步；
   7. 再看是否一个是 Object 类型，一个是 String/Number/BigInt/Symbol 类型，如果是，将 Object 类型的那个运算元转换成原始类型的值，再回到第 1 步；
   8. 再看是否一个是 BigInt 类型，一个是 Number 类型，如果是：
-    1. 先看两者中是否存在 `NaN`/`Infinity`/`-Infinity`，如果是，直接返回 `false`；
-    2. 再看两者的数值（the mathematical value）是否相等，若是，直接返回 `true`，否则，返回 `false`；
+     1. 先看两者中是否存在 `NaN`/`Infinity`/`-Infinity`，如果是，直接返回 `false`；
+     2. 再看两者的数值（the mathematical value）是否相等，若是，直接返回 `true`，否则，返回 `false`；
   9. 返回 `false`；
 
 - 如果你觉得记忆步骤太麻烦的话，我还画了流程图：
