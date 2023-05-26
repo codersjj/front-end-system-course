@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 脱离分支语句，单独使用逻辑或
+    // 条件1 || 条件2 || 条件3
+    /*
+      1. 先将运算元转成 Boolean 类型
+      2. 对转成的 Boolean 类型进行判断
+        * 如果为 true，直接将该运算元的计算结果返回；
+        * 如果为 false，继续判断下一个运算元；
+        * 以此类推
+      3. 如果找到最后也没有找到转换结果为 true 的运算元，那么返回最后一个运算元的计算结果；
+    */
+    // 运算元1 || 运算元2 || 运算元3
+    // var name = 'wy'
+    // name || 运算元2 || 运算元3 // 最终会返回 name 的值，即 'wy'
+
+    // 本质推导一：之前的多条件是如何进行判断的
+    var chineseScore = 98
+    var mathScore = 92
+    // chineseScore > 90 为 true，那么后续的条件都不会进行判断
+    if (chineseScore > 90 || mathScore > 90) {
+      console.log('打 1 小时游戏')
+    }
+
+    // 本质推导二：获取第一个有值的结果
+    // var info = undefined
+    var info = 'abc'
+    var obj = { name: 'zhj' }
+    var message = info || obj || '我是默认值'
+    console.log(message.length)
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 运算元1 && 运算元2 && 运算元3
+    /*
+      也可以脱离条件判断来使用
+      逻辑与的本质：
+      1. 拿到第一个运算元，将其转成 Boolean 类型
+      2. 对转成的 Boolean 类型进行判断
+        * 如果为 false，直接将该运算元的计算结果返回；
+        * 如果为 true，继续判断下一个运算元；
+        * 以此类推
+      3. 如果所有运算元的转换结果都为 true，那么返回最后一个运算元的计算结果；
+    */
+
+    // 本质推导一：逻辑与，也称为短路与
+    var chineseScore = 80
+    var mathScore = 92
+    // chineseScore > 90 为 false，那么后续的条件都不会进行判断
+    if (chineseScore > 90 && mathScore > 90) {
+      console.log('去游乐场玩')
+    }
+
+    // 本质推导二：对一些对象中的方法进行有值判断
+    var obj = {
+      name: 'zhj',
+      friend: {
+        name: 'wy',
+        eating: function() {
+          console.log('eat something')
+        }
+      }
+    }
+    // var obj = undefined
+
+    // 调用 eating() 函数
+    // obj.friend.eating()
+    // obj && obj.friend && obj.friend.eating()
+    obj && obj.friend && obj.friend.eating && obj.friend.eating()
+
+  </script>
+
+</body>
+</html>

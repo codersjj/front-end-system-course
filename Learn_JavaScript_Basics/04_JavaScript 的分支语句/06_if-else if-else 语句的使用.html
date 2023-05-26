@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 案例：分数评级
+    // 1. 获取用户输入的分数
+    var score = prompt('请输入您的分数：')
+    // var score = Number(prompt('请输入您的分数：'))
+    console.log(score, typeof score) // 'string'/'object'(null)
+    score = Number(score)
+
+    // 2. 判断等级
+    // 使用 if...else 的方式来实现（不推荐）
+    // if (score > 90) {
+    //   alert('优秀')
+    // } else {
+    //   if (score > 80) {
+    //     alert('良好')
+    //   } else {
+
+    //   }
+    // }
+
+    // edge case（边界情况）
+    if (score > 100 || score < 0) {
+      alert('您输入的分数超出了正常范围')
+    } else if (score > 90) {
+      alert('优秀')
+    } else if (score > 80) {
+      alert('良好')
+    } else if (score >= 60) {
+      alert('及格')
+    } else {
+      alert('不及格')
+    }
+
+  </script>
+
+</body>
+</html>
