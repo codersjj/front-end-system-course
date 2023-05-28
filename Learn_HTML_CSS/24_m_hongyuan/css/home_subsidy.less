@@ -68,4 +68,46 @@
       }
     }
   }
+
+  .list {
+    display: flex;
+
+    .item {
+      flex: 1;
+      margin: 0 .8vw;
+      text-align: center;
+
+      img {
+        width: 20.9333vw;
+      }
+
+      .info {
+        font-size: @smallFontSize;
+
+        .new {
+          display: flex;
+          align-items: center;
+          color: @mainColor;
+
+          .currency {
+            margin: 0 .5333vw;
+            font-weight: 700;
+          }
+
+          .price {
+            font-size: 4vw;
+            font-weight: 700;
+          }
+        }
+
+        .old {
+          display: flex;
+          justify-content: center;
+          gap: .8vw;
+          color: #777;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
 }
