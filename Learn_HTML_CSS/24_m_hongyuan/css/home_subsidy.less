@@ -1,0 +1,71 @@
+@import url(./variables.less);
+
+.subsidy {
+  margin: 3.2vw auto 0;
+  box-sizing: border-box;
+  border-radius: 3.2vw;
+  padding: 0 2.6667vw;
+  width: 93.6vw;
+  height: 44vw;
+  background-color: #fff;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10.6667vw;
+
+    .left {
+      display: flex;
+      align-items: flex-end;
+
+      img {
+        width: 16.8vw;
+      }
+
+      .countdown {
+        display: flex;
+        align-items: center;
+        margin-left: 1.3333vw;
+        font-size: @smallFontSize;
+
+        .item {
+          border-radius: .8vw;
+          // padding: 0 .8vw;
+          width: 5.3333vw;
+          height: 4.2667vw;
+          text-align: center;
+          line-height: 4.2667vw;
+          color: #fff;
+          background-color: @mainColor;
+        }
+
+        .delimiter {
+          margin: 0 .8vw;
+          color: @mainColor;
+        }
+      }
+    }
+
+    .right {
+      position: relative;
+      padding-right: 2.6667vw;
+      color: @mainColor;
+      font-size: @smallFontSize;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        content: "";
+        border: .2667vw solid @mainColor;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        width: 1.2vw;
+        height: 1.2vw;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
