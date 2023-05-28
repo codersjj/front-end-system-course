@@ -1,0 +1,39 @@
+@import url(./variables.less);
+
+.category {
+  display: flex;
+  margin-top: 3.2vw;
+  padding: 0 2.6667vw;
+
+  .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-size: @bigFontSize;
+      color: #666;
+    }
+
+    .subtitle {
+      border-radius: 2.6667vw;
+      padding: 0 2.6667vw;
+      height: 4.2667vw;
+      line-height: 4.2667vw;
+      font-size: @smallFontSize;
+      color: #999;
+    }
+
+    &.active {
+      .title {
+        color: @mainColor;
+      }
+
+      .subtitle {
+        color: #fff;
+        background-image: linear-gradient(to right, #f00, #ff3164);
+      }
+    }
+  }
+}
