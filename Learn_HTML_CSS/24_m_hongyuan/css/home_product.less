@@ -1,3 +1,6 @@
+@import url(./variables.less);
+@import url(./mixins.less);
+
 .product-list {
   display: flex;
   flex-wrap: wrap;
@@ -6,19 +9,64 @@
   margin-top: 3.2vw;
 
   .product {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     margin-top: 1.6vw;
     border-radius: 1.0667vw;
     overflow: hidden;
     width: 46.6667vw;
-    height: 76vw;
-    background-color: skyblue;
+    background-color: #fff;
 
     &:nth-child(2n) {
       margin-left: 1.6vw;
+    }
+
+    .album {
+      img {
+        margin-bottom: 1.6vw;
+        width: 100%;
+      }
+    }
+
+    .info {
+      padding: 0 2.4vw 1.6vw;
+
+      .brand {
+        margin-bottom: 1.0667vw;
+        // padding-left: 5.3333vw;
+        text-indent: 5.3333vw;
+        font-size: @smallFontSize;
+        color: #666;
+        background: url(../img/country_01.png) no-repeat left center/4vw 4vw;
+      }
+
+      .title {
+        margin-bottom: 1.6vw;
+        font-size: 3.4667vw;
+        color: #333;
+
+        img {
+          position: relative;
+          top: .5333vw;
+          width: 6.9333vw;
+          height: 3.4667vw;
+        }
+
+        .line_clamp_2_ellipsis();
+      }
+
+      .price-info {
+        display: flex;
+        align-items: baseline;
+        font-size: @smallFontSize;
+        color: #f00;
+
+        .coin {
+          margin-left: .2667vw;
+        }
+
+        .price {
+          font-size: 4.8vw;
+        }
+      }
     }
   }
 }
