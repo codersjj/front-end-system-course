@@ -1,0 +1,24 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // gap: 1.6vw;
+  margin-top: 3.2vw;
+
+  .product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1.6vw;
+    border-radius: 1.0667vw;
+    overflow: hidden;
+    width: 46.6667vw;
+    height: 76vw;
+    background-color: skyblue;
+
+    &:nth-child(2n) {
+      margin-left: 1.6vw;
+    }
+  }
+}
