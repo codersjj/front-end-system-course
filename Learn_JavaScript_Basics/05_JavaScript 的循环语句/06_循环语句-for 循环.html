@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 打印 10 次 Hello World
+    // 0 1 2 3 4 5 6 7 8 9
+    // for (var i = 0; i < 10; i++) {
+    //   console.log('Hello World')
+    // }
+
+    // var names = ['abc', 'cba', 'nba', 'mba']
+    // for (var i = 0; i < names.length; i++) {
+    //   console.log(names[i])
+    // }
+
+    // 2. 打印 0~99 的数字
+    // for (var i = 0; i < 100; i++) {
+    //   console.log(i)
+    // }
+
+    // 3. 0~99 的数字和
+    // var sum = 0
+    // for (var num = 0; num < 100; num++) {
+    //   sum += num
+    // }
+    // console.log('sum:', sum)
+
+    // 4. 0~99 的奇数和
+    // var sum = 0
+    // for (var num = 0; num < 100; num++) {
+    //   if (num % 2 !== 0) { // 奇数
+    //     sum += num
+    //   }
+    // }
+    // console.log('sum:', sum)
+
+    // 算法优化
+    var sum = 0
+    for (var num = 1; num < 100; num += 2) {
+      sum += num
+    }
+    console.log('sum:', sum)
+
+  </script>
+
+</body>
+</html>

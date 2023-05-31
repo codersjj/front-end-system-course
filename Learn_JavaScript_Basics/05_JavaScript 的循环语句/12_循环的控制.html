@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    var names = ['xm', 'wy', 'alex', 'jack', 'abc', 'cba', 'nba']
+
+    // 循环遍历数组
+    // break 关键字的使用
+    // 需求：遇到 'wy' 时，不再执行后续的迭代
+    // for (var i = 0; i < 4; i++) {
+    //   console.log(names[i])
+    //   if (names[i] === 'wy') {
+    //     break
+    //   }
+    // }
+
+    // continue 关键字的使用：立刻结束本次循环，（afterthought 后判断 condition）执行下一次循环
+    // 需求：不打印 'alex'
+    for (var i = 0; i < 7; i++) {
+      // if (names[i] !== 'alex') {
+      //   console.log(names[i])
+      // }
+      // if (names[i] === 'alex') {
+      //   continue
+      // }
+      if (names[i] === 'alex' || names[i] === 'abc') {
+        continue
+      }
+      console.log(names[i])
+    }
+
+  </script>
+
+</body>
+</html>
