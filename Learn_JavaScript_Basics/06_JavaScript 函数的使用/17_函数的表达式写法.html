@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    console.log(foo)
+    foo()
+
+    // 函数的声明（声明语句）
+    function foo() {
+      console.log('foo 函数被执行了~')
+    }
+
+    // foo()
+
+    console.log(message) // undefined
+    var message = 'Alan'
+
+    console.log(bar) // undefined
+    // bar() // Uncaught TypeError: bar is not a function
+
+    // 函数的表达式（函数名可以省略）
+    var bar = function() {
+      console.log('bar 函数被执行了~')
+    }
+    // var bar = function abc() {
+    //   console.log('bar 函数被执行了~')
+    // }
+
+    bar()
+    // console.log('%O', bar)
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    function bar() {
+
+    }
+
+    // 递归调用
+    // 默认情况下会产生无限调用的情况（Uncaught RangeError: Maximum call stack size exceeded）
+    function foo() {
+      console.log('foo 函数被执行了')
+      // 函数中又调用了自己
+      foo()
+    }
+
+    foo()
+
+  </script>
+
+</body>
+</html>

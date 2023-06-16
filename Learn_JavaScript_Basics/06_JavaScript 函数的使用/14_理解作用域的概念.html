@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 作用域的理解：message 在哪一个范围内可以被使用，称之为 message 的作用域（scope）
+    // 全局变量（直接定义在 script 中的变量），拥有全局作用域
+    var message = 'Hello World'
+
+    if (true) {
+      console.log(message)
+    }
+
+    function foo() {
+      console.log('在 foo 中访问', message)
+    }
+    foo()
+
+    // 2. ES5 及 ES5 之前是没有块级作用域的（var 声明的变量是没有块级作用域的）
+    {
+      var count = 100
+      console.log('在代码块中访问 count:', count)
+    }
+    console.log('在代码块外面访问 count:', count)
+    // for 循环的代码块也是没有自己的作用域的
+    for (var i = 0; i < 3; i++) {
+      var bar = 'bar'
+    }
+    console.log('for 循环外面访问 bar:', bar)
+    console.log('for 循环外面访问 i:', i)
+
+    // 3. 函数代码块是会形成自己的作用域的
+    // 意味着在函数内部定义的变量外面是访问不到的
+    function test() {
+      var info = 'info'
+    }
+    test()
+    // console.log('test 函数外面访问 info:', info) // Uncaught ReferenceError: info is not defined
+
+    // 函数有自己的作用域：函数内部定义的变量只有函数内部能访问到
+    function sayHello() {
+      var nickname = 'Jack'
+      console.log('sayHello 函数的内部:', nickname)
+
+      function hi() {
+        console.log('hi function~')
+        console.log('在 hi 函数中访问 nickname:', nickname)
+      }
+      hi()
+    }
+    sayHello()
+
+  </script>
+
+</body>
+</html>

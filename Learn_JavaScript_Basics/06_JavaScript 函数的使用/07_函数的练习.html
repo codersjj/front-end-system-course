@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 练习二：定义一个函数，传入宽高，计算矩形区域的面积
+    function getRectangleArea(width, height) {
+      // var area = width * height
+      // return area
+      return width * height
+    }
+
+    var area1 = getRectangleArea(20, 10)
+    var area2 = getRectangleArea(20, 30)
+    console.log('area1:', area1)
+    console.log('area2:', area2)
+
+    // 练习三：定义一个函数，传入半径，计算圆形的面积
+    function getCircleArea(radius) {
+      return Math.PI * radius * radius
+      // return (Math.PI * radius * radius).toFixed(2)
+    }
+
+    var area3 = getCircleArea(10)
+    var area4 = getCircleArea(25)
+    console.log('area3:', area3)
+    console.log('area4:', area4)
+
+    // 练习四：定义一个函数，传入n（n为正整数），计算1~n数字的和
+    function sumN(n) {
+      // 1. 加上对 n 的判断
+      if (n <= 0) {
+        console.log(`您传入的 ${n} 是有问题的`)
+        return
+      }
+
+      // 2. 真正的对 1~n 的求和计算
+      // 1~n 的数字和
+      var sum = 0
+      for (var i = 1; i <= n; i++) {
+        sum += i
+      }
+      return sum
+    }
+
+    var result1 = sumN(5)
+    var result2 = sumN(10)
+    console.log(`result1: ${result1}, result2: ${result2}`)
+
+    var result3 = sumN(-10)
+    console.log('result3:', result3)
+
+  </script>
+
+</body>
+</html>

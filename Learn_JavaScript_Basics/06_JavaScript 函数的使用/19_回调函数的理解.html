@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 函数回调的概念理解
+    // function foo(fn) {
+    //   // 通过 fn 去调用 bar 函数的过程，称之为函数的回调（或者说回调函数）
+    //   fn()
+    // }
+
+    // function bar() {
+    //   console.log('bar 函数被执行了~')
+    // }
+
+    // foo(bar)
+
+    // 2. 函数回调的案例
+    // function request(url, callback) {
+    //   console.log('根据 URL 向服务器发送网络请求')
+    //   console.log('需要花费比较长的时间拿到对应的结果')
+    //   var list = ['JavaScript', 'JavaScript 学习', 'JavaScript 高级编程']
+    //   callback(list)
+    // }
+
+    // function handleResult(res) {
+    //   console.log('在 handleResult 中拿到结果:', res)
+    // }
+
+    // request('url', handleResult)
+
+    // 3. 函数回调的案例重构
+    function request(url, callback) {
+      console.log('根据 URL 向服务器发送网络请求')
+      console.log('需要花费比较长的时间拿到对应的结果')
+      var list = ['JavaScript', 'JavaScript 学习', 'JavaScript 高级编程']
+      callback(list)
+    }
+    // 传入的函数没有名字，是匿名函数
+    request('url', function(res) {
+      console.log('在回调函数中拿到结果:', res)
+    })
+
+  </script>
+
+</body>
+</html>

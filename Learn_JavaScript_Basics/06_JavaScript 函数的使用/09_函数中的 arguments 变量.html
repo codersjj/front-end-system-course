@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 1. arguments 的认识
+    function foo(name, age) {
+      console.log('传入的 name:', name, age)
+
+      // 在函数中都存在一个变量，叫做 arguments
+      console.log(arguments)
+      // arguments 是一个对象，而不是数组
+      console.log(typeof arguments) // object
+      // 对象内部包含了所有传入的参数
+      console.log(arguments[0], arguments[1], arguments[2], arguments[3])
+
+      // 可以对 arguments 进行遍历
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i])
+      }
+    }
+
+    foo('zhj', 20, 1.78, '广州')
+
+    // console.log(arguments) // 函数外不存在 arguments
+
+    // 2. arguments 的案例
+    function sum() {
+      var total = 0
+      for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i]
+      }
+      return total
+    }
+
+    console.log(sum(10, 20))
+    console.log(sum(10, 20, 30))
+    console.log(sum(10, 20, 30, 40))
+
+  </script>
+
+</body>
+</html>

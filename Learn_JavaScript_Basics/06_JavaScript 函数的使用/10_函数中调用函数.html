@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    function bar() {
+      console.log('bar 函数被执行了~')
+      console.log('----------')
+    }
+
+    function foo() {
+      // 函数中调用浏览器默认提供给我们的其它函数
+      console.log('foo 函数执行')
+      console.log('Hello World')
+      // alert('你好哇')
+
+      // 函数中调用自己定义的函数
+      bar()
+
+      // 其它代码
+      console.log('other code')
+    }
+
+    foo()
+
+  </script>
+
+</body>
+</html>
