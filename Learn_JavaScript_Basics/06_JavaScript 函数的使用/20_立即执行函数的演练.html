@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 普通函数的使用过程
+    function foo() {
+      console.log('foo 函数被执行~')
+    }
+
+    foo()
+    foo(); // 后面的行首字符是 [(+-/ 五个符号之一时，可能会报错，需要加上分号
+
+    // 2. 定义函数，定义完这个函数之后，会要求这个函数立即被执行
+    // {}：代码块/对象字面量
+    // []：定义数组/从数组或对象中取值/对象的计算属性
+    // ()：函数声明的部分/函数的调用/分组(控制优先级)
+    // 立即执行函数（通常在定义完后就立即执行了，所以一般不需要写函数名）
+    // (function bar() {
+    //   console.log('bar 函数立刻被执行~')
+    // })()
+    // 常用的写法
+    // (function() {
+    //   console.log('函数立刻被执行~')
+    // })()
+
+    // 3. 立即执行函数的参数和返回值
+    // 和普通的函数一样，可以传参数
+    (function(name) {
+      console.log('函数立刻被执行~', name)
+    })('zhj')
+    // 可以返回值
+    var result = (function(name) {
+      console.log('函数立刻被执行~', name)
+      return 'Hello World'
+    })('zhj')
+    console.log(result)
+
+  </script>
+
+</body>
+</html>

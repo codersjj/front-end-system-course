@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 终极技巧：debug
+    // 代码出问题的时候，产生 bug，debug 找出 bug
+
+    // chrome 中调试技巧 debug
+    function foo(name) {
+      console.log('foo 函数执行:', name)
+    }
+
+    function bar() {
+      console.log('bar 函数执行~')
+      var name = 'alan'
+
+      function hi() {
+        console.log('hi', name)
+      }
+
+      foo()
+
+      return hi
+    }
+
+    // debugger 关键字就是在代码中打断点的方式
+    debugger
+    var fn = bar()
+    fn()
+
+    // setTimeout(fn, delay)
+    // fn 可以是一个匿名函数
+    // setTimeout 也是一个高阶函数
+    // 浏览器会在 delay 时间之后，主动地调用传入的 fn，即回调 fn
+    setTimeout(function() {
+      console.log('匿名函数 2 秒后执行~')
+    }, 2000)
+
+    for (var i = 0; i < 10; i++) {
+      console.log(i)
+    }
+
+  </script>
+
+</body>
+</html>

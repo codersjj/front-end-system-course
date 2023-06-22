@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 函数名和后面的圆括号之间不需要加空格
+    // 2. 函数声明中的参数（形参，parameters）之间，逗号后加一个空格
+    // 3. 函数声明中的圆括号 ) 和花括号 { 之间加一个空格，花括号 { 不进行换行
+    function foo(m, n) {
+      // 4. 使用 2 个空格缩进
+      console.log('foo 函数被调用了')
+
+      // 5. for/if/while 后面加一个空格
+      // 6. 操作符两边各加一个空格
+      for (var i = 0; i < 3; i++) {
+
+      }
+    }
+
+    // 7. 函数调用传参数（实参，arguments）时，参数之间，逗号后加一个空格
+    foo(10, 20)
+
+    // 8. 不同的逻辑代码块之间加一行空行
+    if (true) {
+      // 9. 一行代码不要太长，太长时建议换行
+      var message = `
+        哈哈哈${100}哈哈哈${100}哈哈哈${100}哈哈哈${100}哈哈哈${100}
+        哈哈哈${100}哈哈哈${100}哈哈哈${100}
+      `
+    } else { // 10. else 不用换行
+
+    }
+
+    // 11. 嵌套调用，两边可以各加一个空格
+    console.log( foo(20, 30) )
+
+  </script>
+
+</body>
+</html>

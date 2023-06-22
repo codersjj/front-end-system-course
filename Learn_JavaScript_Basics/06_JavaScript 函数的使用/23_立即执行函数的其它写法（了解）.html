@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 常见的写法
+    // (function() {
+    //   console.log('立即执行函数被调用~')
+    // })()
+
+    // 2. 错误的写法
+    // () -> 分组，里面需要写表达式
+    // function foo() {
+    // }()
+
+    // 3. 其它写法
+    // 匿名函数
+    (function() {
+      console.log('立即执行函数被调用了')
+    }())
+
+    // +(正号)、-(负号)、!(取反)（了解）
+    +function() {
+      console.log('立即执行函数被调用')
+    }()
+
+  </script>
+
+</body>
+</html>
