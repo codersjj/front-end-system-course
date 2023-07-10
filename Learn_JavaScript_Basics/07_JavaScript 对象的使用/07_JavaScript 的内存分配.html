@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      font-size: 15px;
+      --lighting-size: 100px;
+      --lighting-color: #9333ea;
+      --lighting-highlight-color: #d8b4fe;
+    }
+
+    body {
+      --clientX: 0px;
+      --clientY: 0px;
+
+      font-size: 1.5rem;
+      font-family: Helvetica;
+      background-color: #020617;
+      color: #94a3b8;
+    }
+
+    div {
+      padding: 40px;
+    }
+
+    a {
+      /* --offsetX: -9999px; */
+
+      /* fix behavior of MouseEvent.offsetX/Y with inline elements */
+      display: inline-block;
+
+      text-decoration: none;
+      color: #9333ea;
+
+      /* background-image: radial-gradient(yellow, blue, blue); */
+      background-image: radial-gradient(var(--lighting-highlight-color), var(--lighting-color), var(--lighting-color));
+      /* background-size: 100px 100px; */
+      background-size: var(--lighting-size) var(--lighting-size);
+
+      /* background-position: 0 50%; */
+      /* background-position: 50px 50%;
+      background-position: -50px 50%; */
+      /* background-position-x: calc(var(--offsetX) - var(--lighting-size) / 2);
+      background-position-y: calc(var(--offsetY) - var(--lighting-size) / 2); */
+      background-position-x: calc(var(--clientX) - var(--positionX) - var(--lighting-size) / 2);
+      background-position-y: calc(var(--clientY) - var(--positionY) - var(--lighting-size) / 2);
+
+      background-repeat: no-repeat;
+      background-color: var(--lighting-color);
+
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+
+    h1 {
+      text-align: center;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .img-box img {
+      width: 49%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <a href="https://www.turing.com/kb/handling-memory-management-in-javascript" target="_blank">
+      How to Handle Memory Management in JavaScript
+    </a>
+  </h1>
+  <div class="img-box">
+    <img src="https://d2mk45aasx86xg.cloudfront.net/javascript_memory_management_85c00b32a6.webp" alt="javascript memory management.webp">
+    <img src="https://d2mk45aasx86xg.cloudfront.net/javascript_memory_leaks_c12abd3522.webp" alt="javascript memory leaks.webp">
+  </div>
+  <div class="img-box">
+    <img src="./img/JavaScript 的内存分配.png" alt="">
+  </div>
+
+  <!-- <div class="lorem">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non enim magnam tempora. Minus beatae necessitatibus inventore eligendi <a href="#">tenetur quisquam accusantium</a> nulla odit fugiat <a href="#">consectetur</a> harum, animi unde tempore autem reiciendis veritatis cum accusamus cupiditate aspernatur, numquam veniam quia ipsam! Harum nam commodi nostrum, vitae autem ipsam veritatis maiores facere, iusto in, consequuntur quis unde cupiditate aspernatur? <a href="#">Voluptas magnam magni aliquam debitis?</a> Aliquid vel ex atque voluptate ipsum ipsam iste. a, in a architecto aspernatur illo, ab <a href="#">quos</a> quisquam atque quibusdam tempore harum magnam est quidem nulla provident vitae totam alias nobis cupiditate sed reiciendis, recusandae expedita. Esse quis ullam odio.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut tempora officiis aliquam! Quod animi expedita nihil distinctio inventore ut, quaerat accusantium nobis sint excepturi, amet aut itaque. Dolor natus aperiam unde incidunt, minus reiciendis consequuntur eius excepturi rerum rem porro aspernatur voluptas nihil blanditiis ea cum molestias veniam eos ullam magnam fuga error officia commodi ex! Adipisci quasi cupiditate explicabo eaque! Mollitia pariatur nam provident iusto ullam aliquam tenetur ratione repellat, in minima eligendi voluptatum autem dolores quas minus eaque harum velit nemo inventore et! Molestias, perspiciatis expedita cupiditate minus culpa nostrum commodi, dolore, unde porro quos voluptates voluptatum non?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut tempora officiis aliquam! Quod animi expedita nihil distinctio inventore ut, quaerat accusantium nobis sint excepturi, amet aut itaque. Dolor natus aperiam unde incidunt, minus reiciendis consequuntur eius excepturi rerum rem porro aspernatur voluptas nihil blanditiis ea cum molestias veniam eos ullam magnam fuga error officia commodi ex! Adipisci quasi cupiditate explicabo eaque! Mollitia pariatur nam provident iusto ullam aliquam tenetur ratione repellat, in minima eligendi voluptatum autem dolores quas minus eaque harum velit nemo inventore et! Molestias, perspiciatis expedita cupiditate minus culpa nostrum commodi, dolore, unde porro quos voluptates voluptatum non?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate consequatur vero id fugit facere beatae tempora qui cumque unde eius in optio, debitis praesentium at laboriosam blanditiis molestiae minus reprehenderit <a href="#">earum natus</a> architecto quo, provident tenetur! Repudiandae libero doloremque cupiditate, nihil perspiciatis aliquid molestias, aperiam beatae eligendi quasi accusamus. Modi!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet qui corporis fugiat molestiae a possimus! Eius, magnam, fuga ex quaerat praesentium iure possimus minima facere consectetur repellendus asperiores autem est minus. Magni fuga in officia, praesentium, vitae repudiandae odit architecto, accusamus dolore quod voluptates nisi eum quaerat dolorem consequatur quos quidem? Sapiente perferendis soluta eos, est vero quae pariatur, consectetur nemo eius velit cum saepe officia ipsa numquam provident necessitatibus unde repellat sunt! Totam nisi quae, rem mollitia quod pariatur?
+  </div> -->
+
+  <script src="./spotlight-effect-on-links.js"></script>
+  <script>
+
+    var name = 'zhj'
+    var age = 20
+    var obj = {
+      foo: 'foo',
+      bar: 123
+    }
+
+    var message = 'Hello ' + name
+    var info = obj
+    info.foo = '哈哈哈'
+    console.log(obj.foo) // 哈哈哈
+
+  </script>
+
+</body>
+</html>

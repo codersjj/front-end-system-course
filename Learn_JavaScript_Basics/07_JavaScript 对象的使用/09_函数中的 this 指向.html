@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 函数中有一个 this 变量，this 变量在大多数情况下会指向一个对象
+    // arguments 保存的是传入的所有参数
+
+    // 情况一：如果普通的函数被默认调用，那么 this 指向的是 window
+    function foo(name, age) {
+      console.log(arguments)
+      console.log(this)
+    }
+    foo('jack', 20)
+
+    function sayHello() {
+      console.log(this)
+    }
+    sayHello()
+
+    // 情况二：如果函数是被某一个对象来引用并且调用，那么 this 会指向这个对象
+    var obj = {
+      name: 'alan',
+      running: function() {
+        console.log(this)
+        // console.log(obj)
+        console.log(this === obj)
+      }
+    }
+    obj.running()
+
+    // 更多情况后续分解~
+
+    // 考验题目
+    // 1. 题目一：
+    var running = obj.running
+    // 也许你会觉得函数 running 是属于 obj 的，进而认为 running 中的 this 指向 obj。这样理解是错误的，这里没有谁属于谁，也就是说不能根据函数的定义方式来决定函数中的 this，正确的判断是根据函数的调用方式来确定 this 的值。普通的函数被默认调用，那么 this 指向的是 window。
+    running() // window
+
+    // 2. 题目二：
+    function studying() {
+      console.log(this)
+    }
+    var info = {
+      name: 'zhj',
+      studying: studying
+    }
+    // 在大多数情况下，this 的值是由函数的调用方式确定的（动态绑定），而不是函数的定义方式。
+    info.studying()
+
+  </script>
+
+</body>
+</html>

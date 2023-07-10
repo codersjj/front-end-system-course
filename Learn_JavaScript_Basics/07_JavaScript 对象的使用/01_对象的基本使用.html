@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    /*
+      两个术语：函数、方法
+        函数（function）：通过 function 定义的一个结构；
+        方法（method）：是对象中定义的函数，即如果将一个函数放到对象中，作为对象的一个属性，那么将这个函数叫做方法
+    */
+    function foo() {
+
+    }
+
+    // 对象中的 key：字符串类型，但是大部分情况下是可以省略引号的
+    var person = {
+      // key: value
+      name: 'sjj',
+      age: 20,
+      height: 1.78,
+      // （了解）字符串中间存在空格时，需要加引号
+      'my friend': {
+        name: 'Alan',
+        age: 28
+      },
+      run: function() {
+        console.log('running')
+      },
+      eat: function() {
+        console.log('eat foods')
+      },
+      study: function() {
+        console.log('studying')
+      }
+    }
+
+  </script>
+
+</body>
+</html>

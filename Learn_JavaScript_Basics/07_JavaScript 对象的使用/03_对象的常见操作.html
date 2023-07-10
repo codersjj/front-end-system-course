@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 1. 定义了一个对象
+    var info = {
+      name: 'sjj',
+      age: 20,
+      friend: {
+        name: 'Alan',
+        age: 28
+      },
+      running: function() {
+        console.log('running~')
+      }
+    }
+
+    // 2. 访问对象中的属性
+    // console.log(info.name)
+    // console.log(info.friend.name)
+    // info.running()
+
+    // 3. 修改对象中的属性
+    // info.age = 21
+    // info.running = function() {
+    //   alert('running~')
+    // }
+    // console.log(info.age)
+    // info.running()
+
+    // 4. 给对象添加属性
+    // info.height = 1.78
+    // info.studying = function() {
+    //   console.log('I am studying~')
+    // }
+    // console.log(info.height)
+    // info.studying()
+
+    // 5. 删除对象中的属性
+    // delete operator（delete 操作符，delete 也是一个关键字）
+    delete info.age
+    delete info.height
+    console.log(info)
+
+  </script>
+
+</body>
+</html>

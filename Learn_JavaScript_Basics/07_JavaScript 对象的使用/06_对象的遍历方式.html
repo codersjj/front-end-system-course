@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    var info = {
+      name: 'zhj',
+      age: 20,
+      height: 1.78
+    }
+
+    // 对对象进行遍历
+    // 1. 普通 for 循环
+    // var infoKeys = Object.keys(info)
+    // for (var i = 0; i < infoKeys.length; i++) {
+    //   var key = infoKeys[i]
+    //   var value = info[key]
+    //   console.log(`key: ${key}, value: ${value}`)
+    // }
+
+    // 2. for...in 遍历对象
+    for (var key in info) {
+      // if (!info.hasOwnProperty(key)) continue
+      var value = info[key]
+      console.log(`key: ${key}, value: ${value}`)
+    }
+
+    // 普通对象不支持 for...of 遍历
+    // for (var foo of info) {
+    // }
+  </script>
+
+</body>
+</html>
