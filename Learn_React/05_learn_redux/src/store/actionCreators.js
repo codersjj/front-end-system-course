@@ -1,8 +1,10 @@
 // actionCreators：帮助我们创建 action
 
-const changeNameAction = name => ({ type: 'change_name', name })
+const { CHANGE_NAME, ADD_NUMBER } = require('./constants')
 
-const addNumberAction = num => ({ type: 'add_number', num })
+const changeNameAction = name => ({ type: CHANGE_NAME, name })
+
+const addNumberAction = num => ({ type: ADD_NUMBER, num })
 
 module.exports = {
   changeNameAction,
