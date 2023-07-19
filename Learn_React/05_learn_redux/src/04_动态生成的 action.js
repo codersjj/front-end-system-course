@@ -1,3 +1,11 @@
+/*
+  redux 代码优化：
+    1. 编写函数，动态生成想要派发的 action；
+    2. 将定义的所有用来生成 action 的函数抽取到独立的 createActions.js 文件中，以便共享；
+    3. 创建 action 的函数中和 reducer 函数中使用的字符串常量是一致的，所以将常量抽取到一个独立的 constants.js 文件中；
+    4. 将 index.js 中的 initialState 和 reducer 抽取到 reducer.js 文件中，再进行引入，精简 index.js 文件；
+*/
+
 const store = require('./store')
 const { changeNameAction, addNumberAction } = require('./store/actionCreators')
 
