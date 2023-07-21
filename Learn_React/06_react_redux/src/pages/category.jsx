@@ -1,19 +1,12 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { changeBannersAction, changeRecommendsAction } from '../store'
+import { fetchHomeMultidataAction } from '../store'
 
 export class Category extends PureComponent {
-  // 在 Category 组件中发送网络请求，获取数据并存储到 store 中，之后在 About 组件中使用该数据做页面展示
+  // 在 Category 组件的 componentDidMount 生命周期函数中直接调用映射的方法，而异步网络请求代码则放到 store 中去做
   componentDidMount() {
-    axios.get('http://123.207.32.32:8000/home/multidata').then(res => {
-      const banners = res.data.data.banner.list
-      const recommends = res.data.data.recommend.list
-      console.log(banners, recommends)
-
-      this.props.changeBanners(banners)
-      this.props.changeRecommends(recommends)
-    })
+    this.props.fetchHomeMultidata()
   }
 
   render() {
@@ -26,8 +19,7 @@ export class Category extends PureComponent {
 }
 
 const mapDispatchToProps = dispatch => ({
-  changeBanners: banners => dispatch(changeBannersAction(banners)),
-  changeRecommends: recommends => dispatch(changeRecommendsAction(recommends))
+  fetchHomeMultidata: () => dispatch(fetchHomeMultidataAction())
 })
 
 export default connect(null, mapDispatchToProps)(Category)
