@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Home from './pages/home'
 import Profile from './pages/profile'
 import About from './pages/about'
+import Category from './pages/category'
 import './style.css'
 import store from './store'
 
@@ -40,6 +41,7 @@ export class App extends PureComponent {
           <Home />
           <Profile />
           <About />
+          <Category />
         </div>
       </div>
     )

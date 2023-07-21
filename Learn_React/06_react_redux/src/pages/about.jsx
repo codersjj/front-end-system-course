@@ -20,13 +20,39 @@ export class About extends PureComponent {
   }
 
   render() {
-    const { counter } = this.props
+    // step 2: 在 render() 函数中从 props 中获取相应的数据
+    const {
+      counter,
+      banners,
+      recommends
+    } = this.props
 
     return (
       <div>
         <h2>About Page counter: {counter}</h2>
         <button onClick={e => this.calcNumber(1, true)}>+1</button>
         <button onClick={e => this.calcNumber(1, false)}>-1</button>
+        {/* step 3: 拿到数据后在页面中进行展示 */}
+        <div className='banner'>
+          <h2>轮播图数据：</h2>
+          <ul>
+            {
+              banners.map((item, index) => {
+                return <li key={index}>{item.title}</li>
+              })
+            }
+          </ul>
+        </div>
+        <div className='recommend'>
+          <h2>推荐数据：</h2>
+          <ul>
+            {
+              recommends.map((item, index) => {
+                return <li key={index}>{item.title}</li>
+              })
+            }
+          </ul>
+        </div>
       </div>
     )
   }
@@ -40,7 +66,12 @@ export class About extends PureComponent {
 //   }
 // }
 
-const mapStateToProps = state => ({ counter: state.counter })
+// step 1: 从 store 的 state 中映射出需要的数据
+const mapStateToProps = state => ({
+  counter: state.counter,
+  banners: state.banners,
+  recommends: state.recommends
+})
 
 // 对 dispatch 操作进行映射（返回的对象中的函数会映射到 props 中）
 // function mapDispatchToProps(dispatch) {
