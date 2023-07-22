@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
 import { fetchHomeMultidataAction } from '../store'
 
