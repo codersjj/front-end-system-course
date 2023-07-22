@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 // import store from '../store'
-import { addNumberAction, subNumberAction } from '../store/actionCreators'
+import { addNumberAction, subNumberAction } from '../store/counter'
 
 export class About extends PureComponent {
   calcNumber(num, isAdd) {
@@ -24,12 +24,16 @@ export class About extends PureComponent {
     const {
       counter,
       banners,
-      recommends
+      recommends,
+      userInfo
     } = this.props
 
     return (
       <div>
         <h2>About Page counter: {counter}</h2>
+        <div className='user'>
+          <h3>nickname: {userInfo.nickname}</h3>
+        </div>
         <button onClick={e => this.calcNumber(1, true)}>+1</button>
         <button onClick={e => this.calcNumber(1, false)}>-1</button>
         {/* step 3: 拿到数据后在页面中进行展示 */}
@@ -68,9 +72,10 @@ export class About extends PureComponent {
 
 // step 1: 从 store 的 state 中映射出需要的数据
 const mapStateToProps = state => ({
-  counter: state.counter,
-  banners: state.banners,
-  recommends: state.recommends
+  counter: state.counter.counter,
+  banners: state.home.banners,
+  recommends: state.home.recommends,
+  userInfo: state.user.userInfo
 })
 
 // 对 dispatch 操作进行映射（返回的对象中的函数会映射到 props 中）

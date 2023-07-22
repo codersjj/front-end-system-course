@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { fetchHomeMultidataAction } from '../store'
+import { fetchHomeMultidataAction } from '../store/home'
 
 export class Category extends PureComponent {
   // 在 Category 组件的 componentDidMount 生命周期函数中直接调用映射的方法，而异步网络请求代码则放到 store 中去做

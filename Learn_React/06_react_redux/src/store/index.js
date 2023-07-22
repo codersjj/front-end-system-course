@@ -1,6 +1,16 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import reducer from "./reducer";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+
+import counterReducer from './counter'
+import homeReducer from './home'
+import userReducer from './user'
+
 import thunk from "redux-thunk";
+
+const reducer = combineReducers({
+  counter: counterReducer,
+  home: homeReducer,
+  user: userReducer
+})
 
 // redux devtools 开启配置
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -11,5 +21,4 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: tr
 // 要想派发函数：store.dispatch(function)，需要在 createStore 时进行增强
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 
-export * from './actionCreators'
 export default store

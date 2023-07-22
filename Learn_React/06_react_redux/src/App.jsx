@@ -15,7 +15,7 @@ export class App extends PureComponent {
       // 第一，这只会在初始化的时候依赖；
       // 第二，后续会对此代码做优化；
       // 第三，后面我们不会这么写，但是底层在帮我们做这种事情；
-      counter: store.getState().counter
+      counter: store.getState().counter.counter
     }
   }
 
@@ -24,7 +24,7 @@ export class App extends PureComponent {
     store.subscribe(() => {
       console.log('store subscribe callback~')
       // 获取 store 中最新的 state
-      const state = store.getState()
+      const state = store.getState().counter
       // 更新当前组件中的 state，之后会重新执行 render() 函数
       this.setState({ counter: state.counter })
     })
