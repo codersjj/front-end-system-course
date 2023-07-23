@@ -21,18 +21,29 @@ const homeSlice = createSlice({
       state.recommends = payload
     }
   },
-  extraReducers: {
-    [fetchHomeMultidataAction.pending](state, action) {
-      console.log('fetchHomeMultidataAction pending~')
-    },
-    [fetchHomeMultidataAction.fulfilled](state, action) {
-      console.log('fetchHomeMultidataAction fulfilled~', state, action)
-      state.banners = action.payload.data.banner.list
-      state.recommends = action.payload.data.recommend.list
-    },
-    [fetchHomeMultidataAction.rejected](state, action) {
-      console.log('fetchHomeMultidataAction rejected~')
-    }
+  // extraReducers: {
+  //   [fetchHomeMultidataAction.pending](state, action) {
+  //     console.log('fetchHomeMultidataAction pending~')
+  //   },
+  //   [fetchHomeMultidataAction.fulfilled](state, action) {
+  //     console.log('fetchHomeMultidataAction fulfilled~', state, action)
+  //     state.banners = action.payload.data.banner.list
+  //     state.recommends = action.payload.data.recommend.list
+  //   },
+  //   [fetchHomeMultidataAction.rejected](state, action) {
+  //     console.log('fetchHomeMultidataAction rejected~')
+  //   }
+  // }
+  extraReducers: builder => {
+    builder
+      .addCase(fetchHomeMultidataAction.pending, (state, action) => {
+        console.log('fetchHomeMultidataAction pending~')
+      })
+      .addCase(fetchHomeMultidataAction.fulfilled, (state, { payload }) => {
+        console.log('fetchHomeMultidataAction fulfilled~')
+        state.banners = payload.data.banner.list
+        state.recommends = payload.data.recommend.list
+      })
   }
 })
 
