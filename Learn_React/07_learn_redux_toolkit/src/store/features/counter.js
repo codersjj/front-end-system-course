@@ -18,6 +18,13 @@ const counterSlice = createSlice({
   }
 })
 
+// 先解构再导出
 export const { addNumber, subNumber } = counterSlice.actions
+// 等价于
+// const { addNumber, subNumber } = counterSlice.actions
+// export {
+//   addNumber,
+//   subNumber
+// }
 
 export default counterSlice.reducer
