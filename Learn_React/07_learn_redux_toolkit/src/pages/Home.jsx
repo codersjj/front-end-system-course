@@ -47,7 +47,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addNumber(num))
   },
   fetchHomeMultidata() {
-    dispatch(fetchHomeMultidataAction())
+    dispatch(fetchHomeMultidataAction({ name: 'jack', age: 20 }))
   }
 })
 // const mapDispatchToProps = {
