@@ -4,6 +4,7 @@ import {
   // compose,
   combineReducers
 } from "redux";
+import { applyMiddleware, log, thunk } from './middleware'
 
 import counterReducer from './counter'
 import homeReducer from './home'
@@ -27,19 +28,6 @@ function reducer(state = {}, action) {
     counter: counterReducer(state.counter, action),
     home: homeReducer(state.home, action),
     user: userReducer(state.user, action)
-
-    // 第一次执行，其实就拿到了各个模块中的初始状态，即：
-    // counter: {
-    //   counter: 100
-    // },
-    // home: {
-    //   banners: [],
-    //   recommends: []
-    // },
-    // user: {
-    //   nickname: '光战士',
-    //   level: 100
-    // }
   }
 }
 */
@@ -53,38 +41,8 @@ function reducer(state = {}, action) {
 // 要想派发函数：store.dispatch(function)，需要在 createStore 时进行增强
 const store = createStore(reducer)
 
-// 对每次派发的 action 进行拦截，做日志打印
-function log(store) {
-  const next = store.dispatch
-
-  function logAndDispatch(action) {
-    console.log('当前派发的 action：', action)
-    // 真正派发的代码，使用之前的 dispatch 进行派发
-    next(action)
-    console.log('派发之后的 state：', store.getState())
-  }
-
-  // monkey patch：猴补丁，是一种在不改变原始源代码的情况下扩展或修改动态语言(如Smalltalk、JavaScript、Objective-C、Ruby、Perl、Python、Groovy等)运行时代码的方式。
-  store.dispatch = logAndDispatch
-}
-log(store)
-
-// store.dispatch({ type: 'add_number', num: 100 })
-
-function thunk(store) {
-  const next = store.dispatch
-
-  function dispatchThunk(action) {
-    if (typeof action === 'function') {
-      // 函数中可能会继续出现 dispatch(function) 的情况，所以这里传给 action 的第一个参数是 store.dispatch，而不是 next
-      action(store.dispatch, store.getState)
-    } else {
-      next(action)
-    }
-  }
-
-  store.dispatch = dispatchThunk
-}
-thunk(store)
+// log(store)
+// thunk(store)
+applyMiddleware(store, log, thunk)
 
 export default store
