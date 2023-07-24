@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
+import './style.css'
 
 export class App extends PureComponent {
   render() {
@@ -12,6 +13,16 @@ export class App extends PureComponent {
           <div className="nav">
             <Link to='/home'>首页</Link>
             <Link to='/about'>关于</Link>
+
+            {/* <NavLink> 默认会在 active 时添加 class="active"，所以我们可以给这个 active 类添加样式 */}
+            {/* <NavLink to="/home">首页</NavLink>
+            <NavLink to="/about">关于</NavLink> */}
+
+            {/* <NavLink to="/home" style={({ isActive }) => ({ color: isActive ? 'red' : '' })}>首页</NavLink>
+            <NavLink to="/about" style={({ isActive }) => ({ color: isActive ? 'red' : '' })}>关于</NavLink> */}
+
+            {/* <NavLink to='home' className={({ isActive }) => isActive ? 'link-active' : ''}>首页</NavLink>
+            <NavLink to='about' className={({ isActive }) => isActive ? 'link-active' : ''}>关于</NavLink> */}
           </div>
           <hr />
         </header>
