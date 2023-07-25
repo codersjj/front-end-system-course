@@ -1,61 +1,67 @@
-import React, { PureComponent } from 'react'
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import React from 'react'
+import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom'
 import Home from './pages/Home'
-import About from './pages/About'
-import Login from './pages/Login'
-import NotFound from './pages/NotFound'
 import HomeRecommend from './pages/HomeRecommend'
 import HomeRanking from './pages/HomeRanking'
+import About from './pages/About'
+import Login from './pages/Login'
+import Category from './pages/Category'
+import Order from './pages/Order'
+import NotFound from './pages/NotFound'
 import './style.css'
 
-export class App extends PureComponent {
-  render() {
-    return (
-      <div className='app'>
-        <header className='header'>
-          <span>header</span>
-          <div className="nav">
-            <Link to='/home'>首页</Link>
-            <Link to='/about'>关于</Link>
-            <Link to='/login'>登录</Link>
+export function App(props) {
+  // hook 只能放到函数组件的顶层，不能在嵌套函数中
+  const navigate = useNavigate()
 
-            {/* <NavLink> 默认会在 active 时添加 class="active"，所以我们可以给这个 active 类添加样式 */}
-            {/* <NavLink to="/home">首页</NavLink>
-            <NavLink to="/about">关于</NavLink> */}
+  // navigateTo(path) {
+  //   // React Hook "useNavigate" cannot be called in a class component. React Hooks must be called in a React function component or a custom React Hook function
+  //   const navigate = useNavigate()
+  //   navigate(path)
+  // }
 
-            {/* <NavLink to="/home" style={({ isActive }) => ({ color: isActive ? 'red' : '' })}>首页</NavLink>
-            <NavLink to="/about" style={({ isActive }) => ({ color: isActive ? 'red' : '' })}>关于</NavLink> */}
-
-            {/* <NavLink to='home' className={({ isActive }) => isActive ? 'link-active' : ''}>首页</NavLink>
-            <NavLink to='about' className={({ isActive }) => isActive ? 'link-active' : ''}>关于</NavLink> */}
-          </div>
-          <hr />
-        </header>
-        <main className='content'>
-          {/* 映射关系：path => Component */}
-          <Routes>
-            {/* 不推荐，因为每次使用 <Home /> 都会创建一个新的组件实例 */}
-            {/* <Route path='/' element={<Home />} /> */}
-            {/* <Navigate /> 使用场景二： */}
-            <Route path='/' element={<Navigate to='/home' />} />
-            {/* 注意传入的是组件实例，所以是 <Home />，而不是类（Home） */}
-            <Route path='/home' element={<Home />}>
-              <Route path='/home' element={<Navigate to='/home/recommend' />} />
-              <Route path='/home/recommend' element={<HomeRecommend />} />
-              <Route path='ranking' element={<HomeRanking />} />
-            </Route>
-            <Route path='/about' element={<About />} />
-            <Route path='/login' element={<Login />} />
-            {/* 其它路径都匹配不到时，会匹配到这里，path="*" 意味着匹配任意路径 */}
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </main>
-        <footer className='footer'>
-          <hr />
-        </footer>
-      </div>
-    )
+  function navigateTo(path) {
+    // const navigate = useNavigate()
+    navigate(path)
   }
+
+  return (
+    <div className='app'>
+      <header className='header'>
+        <span>header</span>
+        <div className="nav">
+          <Link to='/home'>首页</Link>
+          <Link to='/about'>关于</Link>
+          <Link to='/login'>登录</Link>
+          {/* <button onClick={e => this.navigateTo('/category')}>分类</button>
+          <span onClick={e => this.navigateTo('/order')}>订单</span> */}
+          <button onClick={e => navigateTo('/category')}>分类</button>
+          <span onClick={e => navigateTo('/order')}>订单</span>
+        </div>
+        <hr />
+      </header>
+      <main className='content'>
+        {/* 映射关系：path => Component */}
+        <Routes>
+          {/* <Navigate /> 使用场景二： */}
+          <Route path='/' element={<Navigate to='/home' />} />
+          <Route path='/home' element={<Home />}>
+            <Route path='/home' element={<Navigate to='/home/recommend' />} />
+            <Route path='/home/recommend' element={<HomeRecommend />} />
+            <Route path='ranking' element={<HomeRanking />} />
+          </Route>
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/category' element={<Category />} />
+          <Route path='/order' element={<Order />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </main>
+      <footer className='footer'>
+        <hr />
+      </footer>
+    </div>
+  )
 }
 
 export default App
