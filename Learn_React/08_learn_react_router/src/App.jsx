@@ -1,16 +1,6 @@
 import React from 'react'
-import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom'
-import Home from './pages/Home'
-import HomeRecommend from './pages/HomeRecommend'
-import HomeRanking from './pages/HomeRanking'
-import HomeSonglist from './pages/HomeSonglist'
-import About from './pages/About'
-import Login from './pages/Login'
-import Category from './pages/Category'
-import Order from './pages/Order'
-import User from './pages/User'
-import Detail from './pages/Detail'
-import NotFound from './pages/NotFound'
+import { Link, useNavigate, useRoutes } from 'react-router-dom'
+import routes from './router'
 import './style.css'
 
 export function App(props) {
@@ -46,8 +36,7 @@ export function App(props) {
       </header>
       <main className='content'>
         {/* 映射关系：path => Component */}
-        <Routes>
-          {/* <Navigate /> 使用场景二： */}
+        {/* <Routes>
           <Route path='/' element={<Navigate to='/home' />} />
           <Route path='/home' element={<Home />}>
             <Route path='/home' element={<Navigate to='/home/recommend' />} />
@@ -62,7 +51,8 @@ export function App(props) {
           <Route path='/user' element={<User />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='*' element={<NotFound />} />
-        </Routes>
+        </Routes> */}
+        {useRoutes(routes)}
       </main>
       <footer className='footer'>
         <hr />
