@@ -3,6 +3,7 @@ import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom'
 import Home from './pages/Home'
 import HomeRecommend from './pages/HomeRecommend'
 import HomeRanking from './pages/HomeRanking'
+import HomeSonglist from './pages/HomeSonglist'
 import About from './pages/About'
 import Login from './pages/Login'
 import Category from './pages/Category'
@@ -49,6 +50,7 @@ export function App(props) {
             <Route path='/home' element={<Navigate to='/home/recommend' />} />
             <Route path='/home/recommend' element={<HomeRecommend />} />
             <Route path='ranking' element={<HomeRanking />} />
+            <Route path='/home/songlist' element={<HomeSonglist />} />
           </Route>
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
