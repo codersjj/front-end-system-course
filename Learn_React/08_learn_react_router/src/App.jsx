@@ -8,6 +8,7 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Category from './pages/Category'
 import Order from './pages/Order'
+import User from './pages/User'
 import Detail from './pages/Detail'
 import NotFound from './pages/NotFound'
 import './style.css'
@@ -39,6 +40,7 @@ export function App(props) {
           <span onClick={e => this.navigateTo('/order')}>订单</span> */}
           <button onClick={e => navigateTo('/category')}>分类</button>
           <span onClick={e => navigateTo('/order')}>订单</span>
+          <Link to='/user?name=jack&age=20'>用户</Link>
         </div>
         <hr />
       </header>
@@ -57,6 +59,7 @@ export function App(props) {
           <Route path='/login' element={<Login />} />
           <Route path='/category' element={<Category />} />
           <Route path='/order' element={<Order />} />
+          <Route path='/user' element={<User />} />
           <Route path='/detail/:id' element={<Detail />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
