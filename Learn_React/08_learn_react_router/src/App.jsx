@@ -3,8 +3,10 @@ import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/Login'
-import './style.css'
 import NotFound from './pages/NotFound'
+import HomeRecommend from './pages/HomeRecommend'
+import HomeRanking from './pages/HomeRanking'
+import './style.css'
 
 export class App extends PureComponent {
   render() {
@@ -37,7 +39,11 @@ export class App extends PureComponent {
             {/* <Navigate /> 使用场景二： */}
             <Route path='/' element={<Navigate to='/home' />} />
             {/* 注意传入的是组件实例，所以是 <Home />，而不是类（Home） */}
-            <Route path='/home' element={<Home />} />
+            <Route path='/home' element={<Home />}>
+              <Route path='/home' element={<Navigate to='/home/recommend' />} />
+              <Route path='/home/recommend' element={<HomeRecommend />} />
+              <Route path='ranking' element={<HomeRanking />} />
+            </Route>
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login />} />
             {/* 其它路径都匹配不到时，会匹配到这里，path="*" 意味着匹配任意路径 */}
