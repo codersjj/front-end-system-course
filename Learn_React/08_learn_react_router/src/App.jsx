@@ -8,6 +8,7 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Category from './pages/Category'
 import Order from './pages/Order'
+import Detail from './pages/Detail'
 import NotFound from './pages/NotFound'
 import './style.css'
 
@@ -56,6 +57,7 @@ export function App(props) {
           <Route path='/login' element={<Login />} />
           <Route path='/category' element={<Category />} />
           <Route path='/order' element={<Order />} />
+          <Route path='/detail/:id' element={<Detail />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
