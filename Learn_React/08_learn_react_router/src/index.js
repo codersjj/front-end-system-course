@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 // import { StrictMode } from 'react'
 import ReactDom from 'react-dom/client'
 import App from './App'
@@ -7,7 +8,9 @@ const root = ReactDom.createRoot(document.querySelector('#root'))
 root.render(
   // <StrictMode>
     <HashRouter>
-      <App />
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <App />
+      </Suspense>
     </HashRouter>
   // </StrictMode>
 )
