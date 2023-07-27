@@ -38,10 +38,27 @@ const App = memo(function() {
 
   // useCallback 第一个参数是一个函数，每次组件重新渲染，它都会被重新创建，useCallback 只是多做了一件事，就是将这个函数的引用赋值给另一个变量（https://stackoverflow.com/a/62304519/22291824）
   // useCallback 第二个参数中的依赖的值没有改变时，返回的是上次渲染缓存的函数（即还是之前那个函数），否则返回第一个参数传入的新的函数
+  // const increment = useCallback(function() {
+  //   console.log('increment~', count)
+  //   setCount(count + 1)
+  // }, [count])
+
+  // 进一步优化：当 count 发生改变时，也使用同一个函数（了解）
+  // 实现即使 count 变了，子组件也不重新渲染
+  // 做法一：第二个参数传入一个空数组，不指定依赖项，缺点：回调陷阱
+  // const increment = useCallback(function() {
+  //   console.log('increment~', count)
+  //   setCount(count + 1)
+  // }, [])
+  // 做法二：使用 useRef 解决方式一中的回调陷阱
+  // useRef 在组件多次渲染时，返回的是同一个值
+  const countRef = useRef()
+  countRef.current = count
   const increment = useCallback(function() {
     console.log('increment~', count)
-    setCount(count + 1)
-  }, [count])
+    setCount(countRef.current + 1)
+  }, [])
+
   // const increment = useCallback(function() {
   //   console.log('increment~', count, message)
   //   setCount(count + 1)
