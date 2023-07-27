@@ -15,6 +15,8 @@ function reducer(state, action) {
   }
 }
 
+// useReducer + Context => redux
+
 const App = memo(() => {
   // const [count, setCount] = useState(0)
 
