@@ -3,6 +3,9 @@ import React, { memo, useCallback, useRef, useState } from 'react'
 // useCallback 做性能优化的场景：
 // 场景一：当需要把一个函数传给子组件时，先用 useCallback 对其进行包裹并指定好相关的依赖，之后给子组件传入 useCallback 返回的函数，让子组件在某些情况下不用重新渲染。
 
+// useCallback 定义函数的时候不会带来性能优化，当它把返回的函数传递给子组件的时候才可能带来性能优化。
+// 通常使用 useCallback 的目的是不希望子组件进行多次渲染，并不是为了函数进行缓存。
+
 // props 中的属性发生改变时，组件本身就会被重新渲染
 const IncrementCpn = memo((props) => {
   console.log('IncrementCpn 被渲染了~ 用大大的组件渲染大大的页面~')
