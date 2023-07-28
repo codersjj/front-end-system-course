@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 
 const HelloWorld = memo(function(props) {
   console.log('子组件 HelloWorld 被渲染了')
@@ -50,7 +50,7 @@ const App = memo(() => {
 
   /* 案例二：对子组件传递相同内容的对象（不是对象的值则用不用 useMemo 都一样）时，使用 useMemo 进行性能优化（取消不必要的子组件渲染） */
   // 当前组件每次被渲染时，info 对象都会被重新创建为新的对象，每次都是新的对象传入子组件，意味着子组件也会重新渲染
-  const info = { name: 'jack', age: 20 }
+  // const info = { name: 'jack', age: 20 }
   const cachedInfo = useMemo(() => ({ name: 'jack', age: 20 }), [])
   // const cachedInfo = useMemo(() => info, [])
 
