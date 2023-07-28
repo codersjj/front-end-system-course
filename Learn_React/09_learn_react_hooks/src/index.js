@@ -9,7 +9,7 @@ import { UserContext, ThemeContext } from './05_useContext 的使用/context';
 // import App from './06_useReducer 的使用（了解）/App'
 // import App from './07_useCallback 的使用/App.jsx'
 // import App from './08_useMemo 的使用/App'
-import App from './09_useRef 的使用/01_useRef 绑定 DOM'
+import App from './09_useRef 的使用/02_useRef 绑定值-解决闭包陷阱'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
