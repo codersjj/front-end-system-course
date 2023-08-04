@@ -11,7 +11,7 @@ import { UserContext, ThemeContext } from './05_useContext 的使用/context';
 // import App from './08_useMemo 的使用/App'
 // import App from './09_useRef 的使用/02_useRef 绑定值-解决闭包陷阱'
 // import App from './10_useImperativeHandle 的使用/App';
-import App from './11_useLayoutEffect 的使用/01_useEffect 和 useLayoutEffect 的执行时机';
+import App from './11_useLayoutEffect 的使用/02_修改数字-useEffect 和 useLayoutEffect 的实现对比';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
