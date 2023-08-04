@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { UserContext, ThemeContext } from './05_useContext 的使用/context';
+// import { UserContext, ThemeContext } from './05_useContext 的使用/context';
+import { UserContext, TokenContext } from './12_自定义 Hooks/context';
 // import App from './01_不使用 Hook/App';
 // import App from './02_计数器实现对比/App';
 // import App from './03_useState 的使用/App'
@@ -12,13 +13,20 @@ import { UserContext, ThemeContext } from './05_useContext 的使用/context';
 // import App from './09_useRef 的使用/02_useRef 绑定值-解决闭包陷阱'
 // import App from './10_useImperativeHandle 的使用/App';
 // import App from './11_useLayoutEffect 的使用/02_修改数字-useEffect 和 useLayoutEffect 的实现对比';
-import App from './12_自定义 Hooks/01_打印生命周期'
+import App from './12_自定义 Hooks/02_Context 获取数据'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <UserContext.Provider value={{ name: 'jack', age: 20 }}>
+//     <ThemeContext.Provider value={{ color: 'red', fontSize: '3em' }}>
+//       <App />
+//     </ThemeContext.Provider>
+//   </UserContext.Provider>
+// )
 root.render(
   <UserContext.Provider value={{ name: 'jack', age: 20 }}>
-    <ThemeContext.Provider value={{ color: 'red', fontSize: '3em' }}>
+    <TokenContext.Provider value={'eyJhbGci'}>
       <App />
-    </ThemeContext.Provider>
+    </TokenContext.Provider>
   </UserContext.Provider>
 )

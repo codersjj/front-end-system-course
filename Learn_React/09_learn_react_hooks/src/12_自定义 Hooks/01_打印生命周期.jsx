@@ -7,7 +7,7 @@ function useLogLife(cName) {
     return () => {
       console.log(cName + '组件被销毁了~')
     }
-  }, [])
+  }, [cName])
 }
 
 const Home = memo(() => {
