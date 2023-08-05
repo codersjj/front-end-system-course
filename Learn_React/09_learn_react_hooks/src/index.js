@@ -13,7 +13,7 @@ import { UserContext, TokenContext } from './12_自定义 Hooks/context';
 // import App from './09_useRef 的使用/02_useRef 绑定值-解决闭包陷阱'
 // import App from './10_useImperativeHandle 的使用/App';
 // import App from './11_useLayoutEffect 的使用/02_修改数字-useEffect 和 useLayoutEffect 的实现对比';
-import App from './12_自定义 Hooks/02_Context 获取数据'
+import App from './12_自定义 Hooks/03_获取窗口滚动位置'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
