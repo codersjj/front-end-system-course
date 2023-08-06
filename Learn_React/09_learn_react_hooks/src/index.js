@@ -18,7 +18,8 @@ import { UserContext, TokenContext } from './12_自定义 Hooks/context';
 // import App from './12_自定义 Hooks/04_localStorage 和 state 结合使用'
 // import App from './13_react-redux 中的 hooks/App'
 // import App from './14_useId 的使用/App'
-import App from './15_useTransition 的使用/App'
+// import App from './15_useTransition 的使用/App'
+import App from './16_useDeferredValue 的使用/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
