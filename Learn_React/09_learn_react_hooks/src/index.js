@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux'
+import store from './13_react-redux 中的 hooks/store'
 // import { UserContext, ThemeContext } from './05_useContext 的使用/context';
 import { UserContext, TokenContext } from './12_自定义 Hooks/context';
 // import App from './01_不使用 Hook/App';
@@ -13,7 +15,8 @@ import { UserContext, TokenContext } from './12_自定义 Hooks/context';
 // import App from './09_useRef 的使用/02_useRef 绑定值-解决闭包陷阱'
 // import App from './10_useImperativeHandle 的使用/App';
 // import App from './11_useLayoutEffect 的使用/02_修改数字-useEffect 和 useLayoutEffect 的实现对比';
-import App from './12_自定义 Hooks/04_localStorage 和 state 结合使用'
+// import App from './12_自定义 Hooks/04_localStorage 和 state 结合使用'
+import App from './13_react-redux 中的 hooks/App_hooks'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -26,7 +29,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <UserContext.Provider value={{ name: 'jack', age: 20 }}>
     <TokenContext.Provider value={'eyJhbGci'}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </TokenContext.Provider>
   </UserContext.Provider>
 )
