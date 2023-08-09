@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/9518956/javascript-convert-css-style-string-into-js-object
+
 function styleStrToObject(styleStr) {
   const obj = {}
   const s = styleStr.toLowerCase().replace(/-(.)/g, function (m, g) {
