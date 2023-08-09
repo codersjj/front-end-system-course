@@ -1,9 +1,28 @@
 import React, { memo } from 'react'
 import { RightWrapper } from './style'
+import IconGlobal from '@/assets/svg/icon_global'
+import IconMenu from '@/assets/svg/icon_menu'
+import IconAvatar from '@/assets/svg/icon_avatar'
 
 const HeaderRight = memo(() => {
   return (
-    <RightWrapper>HeaderRight</RightWrapper>
+    <RightWrapper>
+      <div className="btns">
+        <span className="btn">登录</span>
+        <span className="btn">注册</span>
+        <span className="btn">
+          <IconGlobal />
+        </span>
+      </div>
+      <div className="profile">
+        <div className="menu">
+          <IconMenu />
+        </div>
+        <div className="avatar">
+          <IconAvatar />
+        </div>
+      </div>
+    </RightWrapper>
   )
 })
 
