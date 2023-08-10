@@ -1,18 +1,10 @@
 import { styled } from "styled-components";
 
-const boxShadowTransition = `
-  transition: box-shadow 200ms ease;
-  &:hover {
-    box-shadow: 0 2px 4px rgba(0,0,0,.18);
-  }
-`
-
 export const RightWrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 14px;
   font-weight: bold;
   color: ${props => props.theme.text.primaryColor};
 
@@ -42,7 +34,6 @@ export const RightWrapper = styled.div`
     color: ${props => props.theme.text.primaryColor};
     cursor: pointer;
 
-    /* ${boxShadowTransition} */
     ${props => props.theme.mixin.boxShadowTransition}
 
     .avatar {

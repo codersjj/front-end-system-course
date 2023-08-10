@@ -1,9 +1,17 @@
 import React, { memo } from 'react'
 import { CenterWrapper } from './style'
+import IconSearch from '@/assets/svg/icon_search'
 
 const HeaderCenter = memo(() => {
   return (
-    <CenterWrapper>HeaderCenter</CenterWrapper>
+    <CenterWrapper>
+      <div className="search-bar">
+        <div className="label">搜索房源和体验</div>
+        <div className="icon">
+          <IconSearch />
+        </div>
+      </div>
+    </CenterWrapper>
   )
 })
 
