@@ -1,17 +1,33 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { fetchHomeDataAction } from '@/store/modules/home'
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
 
 const Home = memo(() => {
+  // 从 redux 中获取数据
+  const goodPriceInfo = useSelector(state => state.home.goodPriceInfo)
+
+  const dispatch = useDispatch()
+
+  // 在 useEffect 中派发异步的事件，发起网络请求（在组件这里只是发起，具体的网络请求逻辑放到 redux 中完成 -> store 中使用 rtk 的 createAsyncThunk 发起异步请求 -> 调用 services 中封装的请求方法）
+  useEffect(() => {
+    dispatch(fetchHomeDataAction())
+  }, [dispatch])
+
   return (
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        哈哈哈
-        {/* <div className="section">
-          <div className="title"></div>
-          <div className="content"></div>
-        </div> */}
+        <h2>{goodPriceInfo.title}</h2>
+        <ul>
+          {
+            goodPriceInfo.list?.map(item => {
+              return <li key={item.id}>{item.name}</li>
+            })
+          }
+        </ul>
       </div>
     </HomeWrapper>
   )
