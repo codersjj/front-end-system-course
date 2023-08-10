@@ -10,7 +10,7 @@ const HeaderRight = memo(() => {
 
   // 事件处理函数
   function handleProfileClick(e) {
-    console.log('click')
+    // console.log('click')
     setIsShowPanel(!isShowPanel)
     e.stopPropagation()
   }
@@ -22,11 +22,11 @@ const HeaderRight = memo(() => {
     }
 
     function clickListener() {
-      console.log('window clickListener')
+      // console.log('window clickListener')
       hidePanel()
     }
     function blurListener() {
-      console.log('window blurListener')
+      // console.log('window blurListener')
       hidePanel()
     }
 
