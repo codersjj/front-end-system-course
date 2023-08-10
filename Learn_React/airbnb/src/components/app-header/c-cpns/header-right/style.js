@@ -25,6 +25,7 @@ export const RightWrapper = styled.div`
   }
 
   .profile {
+    position: relative;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -40,6 +41,45 @@ export const RightWrapper = styled.div`
       margin-left: 12px;
       width: 30px;
       height: 30px;
+    }
+
+    .panel {
+      position: absolute;
+      top: 53px;
+      right: 0;
+      box-sizing: border-box;
+      /* border: 1px solid #DDD; */
+      border-radius: 12px;
+      width: 240px;
+      background-color: #fff;
+      box-shadow: 0 1px 15px 5px rgba(0,0,0,.08);
+      overflow: hidden;
+      cursor: auto;
+
+      .top, .bottom {
+        padding: 5px 0;
+
+        .item {
+          padding: 0 15px;
+          height: 45px;
+          line-height: 45px;
+          font-weight: normal;
+          cursor: pointer;
+
+          &.register {
+            font-weight: bold;
+          }
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background-color: #DDD;
+      }
     }
   }
 `
