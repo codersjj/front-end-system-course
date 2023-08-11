@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
+import SectionHeader from '@/components/section-header'
 
 const Home = memo(() => {
   // 从 redux 中获取数据
@@ -20,14 +21,16 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        <h2>{goodPriceInfo.title}</h2>
-        <ul>
-          {
-            goodPriceInfo.list?.map(item => {
-              return <li key={item.id}>{item.name}</li>
-            })
-          }
-        </ul>
+        <div className="good-price">
+          <SectionHeader title={goodPriceInfo.title} />
+          <ul>
+            {
+              goodPriceInfo.list?.map(item => {
+                return <li key={item.id}>{item.name}</li>
+              })
+            }
+          </ul>
+        </div>
       </div>
     </HomeWrapper>
   )
