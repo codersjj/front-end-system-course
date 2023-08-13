@@ -6,6 +6,10 @@ export const ItemWrapper = styled.div`
   width: 25%;
   padding: 0 8px;
 
+  .cover, .desc, .name {
+    cursor: pointer;
+  }
+
   .cover {
     position: relative;
     border-radius: 3px;
@@ -26,7 +30,7 @@ export const ItemWrapper = styled.div`
   }
 
   .desc {
-    margin: 10px 0 5px;
+    padding: 10px 0 5px;
     font-size: 12px;
     font-weight: 700;
     color: ${props => props.$verifyColor};
