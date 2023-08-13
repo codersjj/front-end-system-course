@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { Button, Rating, Typography } from '@mui/material'
+import { Button as AntdButton } from 'antd'
 import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
@@ -20,6 +21,8 @@ const RoomItem = memo((props) => {
 
       <Button variant="contained">Contained</Button>
       <Button variant="outlined">Outlined</Button>
+      <AntdButton type="primary">Primary Button</AntdButton>
+      <AntdButton>Default Button</AntdButton>
       <Typography component="legend">Controlled</Typography>
       <Rating
         name="simple-controlled"
