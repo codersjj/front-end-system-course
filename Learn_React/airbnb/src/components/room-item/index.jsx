@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
-import { Button, Rating, Typography } from '@mui/material'
-import { Button as AntdButton } from 'antd'
+import { Rating } from '@mui/material'
 import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
   const { itemData } = props
-
-  const [value, setValue] = React.useState(2)
 
   return (
     // https://styled-components.com/releases#v5.1.0:~:text=Note%20the%20dollar%20sign%20(%24)%20prefix%20on%20the%20prop%3B%20this%20marks%20it%20as%20transient%20and%20styled%2Dcomponents%20knows%20not%20to%20add%20it%20to%20the%20rendered%20DOM%20element%20or%20pass%20it%20further%20down%20the%20component%20hierarchy.
@@ -19,20 +16,23 @@ const RoomItem = memo((props) => {
       <p className="name">{itemData.name}</p>
       <p className="price">¥{itemData.price}/晚</p>
 
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-      <AntdButton type="primary">Primary Button</AntdButton>
-      <AntdButton>Default Button</AntdButton>
-      <Typography component="legend">Controlled</Typography>
-      <Rating
-        name="simple-controlled"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      />
-      <Typography component="legend">Read only</Typography>
-      <Rating name="read-only" value={3} readOnly />
+      <div className="bottom">
+        <div className="rating">
+          <Rating
+            value={itemData.star_rating ?? 5}
+            precision={0.1}
+            readOnly
+            sx={{
+              color: '#00848A',
+              fontSize: 12
+            }}
+          />
+        </div>
+        <span className="review-count">{itemData.reviews_count}</span>
+        {
+          itemData.bottom_info?.content && <span className="extra">· {itemData.bottom_info.content}</span>
+        }
+      </div>
     </ItemWrapper>
   )
 })

@@ -46,4 +46,25 @@ export const ItemWrapper = styled.div`
     margin-top: 8px;
     font-size: 12px;
   }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: ${props => props.theme.text.primaryColor};
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      .MuiRating-icon {
+        margin-right: -2px;
+      }
+    }
+
+    .review-count {
+      margin: 0 2px 0 4px;
+    }
+  }
 `
