@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as MaterialThemeProvider, THEME_ID, createTheme } from '@mui/material/styles';
 
 import App from './App';
 import 'normalize.css'
@@ -15,6 +16,8 @@ import theme from './assets/theme';
 // 解决方案一：npm run eject
 // （推荐）解决方案二：craco -> create react app configuration override
 
+const materialTheme = createTheme();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
@@ -22,7 +25,9 @@ root.render(
       <HashRouter>
         <Provider store={store}>
           <ThemeProvider theme={theme}>
-            <App />
+            <MaterialThemeProvider theme={{ [THEME_ID]: materialTheme }}>
+              <App />
+            </MaterialThemeProvider>
           </ThemeProvider>
         </Provider>
       </HashRouter>

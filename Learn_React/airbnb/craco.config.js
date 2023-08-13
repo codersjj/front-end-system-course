@@ -14,7 +14,8 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       'components': resolve('src/components'),
-      'utils': resolve('src/utils')
+      'utils': resolve('src/utils'),
+      '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   },
   plugins: [
