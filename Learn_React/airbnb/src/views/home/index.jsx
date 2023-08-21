@@ -6,6 +6,7 @@ import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import SectionHeader from '@/components/section-header'
+import SectionTabs from '@/components/section-tabs'
 import SectionRooms from '@/components/section-rooms'
 
 const Home = memo(() => {
@@ -21,6 +22,9 @@ const Home = memo(() => {
     dispatch(fetchHomeDataAction())
   }, [dispatch])
 
+  // 数据的转换
+  const tabNames = discountInfo.dest_address?.map(item => item.name)
+
   return (
     <HomeWrapper>
       <HomeBanner />
@@ -28,6 +32,7 @@ const Home = memo(() => {
 
         <div className="discount">
           <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle} />
+          <SectionTabs tabNames={tabNames} />
           <SectionRooms roomList={discountInfo.dest_list?.成都} itemWidth="33.33333%" />
         </div>
 
