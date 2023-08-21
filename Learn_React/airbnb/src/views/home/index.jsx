@@ -13,6 +13,7 @@ const Home = memo(() => {
   const goodPriceInfo = useSelector(state => state.home.goodPriceInfo)
   const highScoreInfo = useSelector(state => state.home.highScoreInfo)
   const discountInfo = useSelector(state => state.home.discountInfo)
+  const recommendInfo = useSelector(state => state.home.recommendInfo)
 
   const dispatch = useDispatch()
 
@@ -26,6 +27,7 @@ const Home = memo(() => {
       <HomeBanner />
       <div className="content">
         {!isEmptyObj(discountInfo) && <HomeSectionV2 data={discountInfo} />}
+        {!isEmptyObj(recommendInfo) && <HomeSectionV2 data={recommendInfo} />}
         {/* 拿到数据后再做渲染，不然会渲染两次 */}
         {!isEmptyObj(goodPriceInfo) && <HomeSectionV1 data={goodPriceInfo} />}
         {!isEmptyObj(highScoreInfo) && <HomeSectionV1 data={highScoreInfo} />}

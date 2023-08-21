@@ -11,3 +11,7 @@ export function getHomeHighScoreData() {
 export function getHomeDiscountData() {
   return jjRequest.get('/home/discount')
 }
+
+export function getHomeHotRecommendDestData() {
+  return jjRequest.get('/home/hotrecommenddest')
+}
