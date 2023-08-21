@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { memo, useState, useCallback } from 'react'
 
+import { SectionV2Wrapper } from './style'
 import SectionHeader from '@/components/section-header'
 import SectionTabs from '@/components/section-tabs'
 import SectionRooms from '@/components/section-rooms'
-import { SectionV2Wrapper } from './style'
+import SectionFooter from '@/components/section-footer'
 
 const SectionV2 = memo((props) => {
   const { data } = props
@@ -31,6 +32,7 @@ const SectionV2 = memo((props) => {
       <SectionHeader title={data.title} subtitle={data.subtitle} />
       <SectionTabs tabNames={tabNames} onTabClick={onTabClick} />
       <SectionRooms roomList={data.dest_list?.[address]} itemWidth="33.33333%" />
+      <SectionFooter text={address} />
     </SectionV2Wrapper>
   )
 })
