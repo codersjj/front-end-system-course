@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchHomeDataAction } from '@/store/modules/home'
@@ -10,6 +10,8 @@ import SectionTabs from '@/components/section-tabs'
 import SectionRooms from '@/components/section-rooms'
 
 const Home = memo(() => {
+  const [address, setAddress] = useState('佛山')
+
   // 从 redux 中获取数据
   const goodPriceInfo = useSelector(state => state.home.goodPriceInfo)
   const highScoreInfo = useSelector(state => state.home.highScoreInfo)
@@ -25,6 +27,10 @@ const Home = memo(() => {
   // 数据的转换
   const tabNames = discountInfo.dest_address?.map(item => item.name)
 
+  const onTabClick = useCallback((tabName, index) => {
+    setAddress(tabName)
+  }, [])
+
   return (
     <HomeWrapper>
       <HomeBanner />
@@ -32,8 +38,8 @@ const Home = memo(() => {
 
         <div className="discount">
           <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle} />
-          <SectionTabs tabNames={tabNames} />
-          <SectionRooms roomList={discountInfo.dest_list?.成都} itemWidth="33.33333%" />
+          <SectionTabs tabNames={tabNames} onTabClick={onTabClick} />
+          <SectionRooms roomList={discountInfo.dest_list?.[address]} itemWidth="33.33333%" />
         </div>
 
         <HomeSectionV1 data={goodPriceInfo} />
