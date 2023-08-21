@@ -5,8 +5,4 @@ export const HomeWrapper = styled.div`
     margin: 0 auto;
     width: 1032px;
   }
-
-  .discount {
-    margin-top: 30px;
-  }
 `

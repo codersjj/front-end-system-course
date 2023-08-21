@@ -1,17 +1,14 @@
-import React, { memo, useCallback, useEffect, useState } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchHomeDataAction } from '@/store/modules/home'
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
-import SectionHeader from '@/components/section-header'
-import SectionTabs from '@/components/section-tabs'
-import SectionRooms from '@/components/section-rooms'
+import HomeSectionV2 from './c-cpns/home-section-v2'
+import { isEmptyObj } from '@/utils'
 
 const Home = memo(() => {
-  const [address, setAddress] = useState('佛山')
-
   // 从 redux 中获取数据
   const goodPriceInfo = useSelector(state => state.home.goodPriceInfo)
   const highScoreInfo = useSelector(state => state.home.highScoreInfo)
@@ -24,26 +21,14 @@ const Home = memo(() => {
     dispatch(fetchHomeDataAction())
   }, [dispatch])
 
-  // 数据的转换
-  const tabNames = discountInfo.dest_address?.map(item => item.name)
-
-  const onTabClick = useCallback((tabName, index) => {
-    setAddress(tabName)
-  }, [])
-
   return (
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-
-        <div className="discount">
-          <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle} />
-          <SectionTabs tabNames={tabNames} onTabClick={onTabClick} />
-          <SectionRooms roomList={discountInfo.dest_list?.[address]} itemWidth="33.33333%" />
-        </div>
-
-        <HomeSectionV1 data={goodPriceInfo} />
-        <HomeSectionV1 data={highScoreInfo} />
+        {!isEmptyObj(discountInfo) && <HomeSectionV2 data={discountInfo} />}
+        {/* 拿到数据后再做渲染，不然会渲染两次 */}
+        {!isEmptyObj(goodPriceInfo) && <HomeSectionV1 data={goodPriceInfo} />}
+        {!isEmptyObj(highScoreInfo) && <HomeSectionV1 data={highScoreInfo} />}
       </div>
     </HomeWrapper>
   )
