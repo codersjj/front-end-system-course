@@ -22,6 +22,7 @@ const SectionV2 = memo((props) => {
   // }, [initialAddress])
 
   const tabNames = data.dest_address?.map(item => item.name)
+  tabNames.push('aaa', 'bbbbbb', 'cccccccccccc')
 
   const onTabClick = useCallback((tabName, index) => {
     setAddress(tabName)
