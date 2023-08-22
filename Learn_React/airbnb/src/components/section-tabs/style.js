@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const TabsWrapper = styled.div`
   display: flex;
   margin-bottom: 16px;
+  /* overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  } */
 
   .item {
     flex-shrink: 0;
