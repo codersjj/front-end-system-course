@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { memo, useEffect, useRef, useState } from 'react'
 import { ViewWrapper } from './style'
+import IconArrowLeft from '@/assets/svg/icon-arrow-left'
+import IconArrowRight from '@/assets/svg/icon-arrow-right'
 
 const ScrollView = memo((props) => {
   // 定义内部的状态
@@ -36,7 +38,7 @@ const ScrollView = memo((props) => {
   function handleBtnClick(direction) {
     // 获取预期的 offsetLeft 的方案三：在获取 offsetLeft 之前先设置一下 transform（非 none 值）
     // scrollContentRef.current.style.transform = `translate(0px)`
-    console.log(scrollContentRef.current.children[0].offsetLeft)
+    // console.log(scrollContentRef.current.children[0].offsetLeft)
 
     if (direction === 'left') {
       posIndexRef.current--
@@ -57,10 +59,20 @@ const ScrollView = memo((props) => {
 
   return (
     <ViewWrapper>
-      {showLeftBtn && <button onClick={e => handleBtnClick('left')}>左边按钮</button>}
-      {showRightBtn && <button onClick={e => handleBtnClick('right')}>右边按钮</button>}
-      <div ref={scrollContentRef} className="scroll-content">
-        {props.children}
+      {showLeftBtn && (
+        <div className='control left' onClick={e => handleBtnClick('left')}>
+          <IconArrowLeft />
+        </div>
+      )}
+      {showRightBtn && (
+        <div className='control right' onClick={e => handleBtnClick('right')}>
+          <IconArrowRight />
+        </div>
+      )}
+      <div className="content">
+        <div ref={scrollContentRef} className="scroll-content">
+          {props.children}
+        </div>
       </div>
     </ViewWrapper>
   )
