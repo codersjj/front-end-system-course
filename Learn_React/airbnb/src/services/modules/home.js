@@ -15,3 +15,7 @@ export function getHomeDiscountData() {
 export function getHomeHotRecommendDestData() {
   return jjRequest.get('/home/hotrecommenddest')
 }
+
+export function getHomeLongForData() {
+  return jjRequest.get('/home/longfor')
+}
