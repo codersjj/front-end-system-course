@@ -58,7 +58,7 @@ const ScrollView = memo((props) => {
   }
 
   return (
-    <ViewWrapper>
+    <ViewWrapper showMask={props.showMask}>
       {showLeftBtn && (
         <div className='control left' onClick={e => handleBtnClick('left')}>
           <IconArrowLeft />
@@ -78,6 +78,8 @@ const ScrollView = memo((props) => {
   )
 })
 
-ScrollView.propTypes = {}
+ScrollView.propTypes = {
+  showMask: PropTypes.bool
+}
 
 export default ScrollView

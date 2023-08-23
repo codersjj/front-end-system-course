@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+const mask = `
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+  }
+
+  &:has(.control.left)::before {
+    left: 0;
+    background-image: linear-gradient(90deg, #fff, transparent);
+  }
+
+  &:has(.control.right)::after {
+    right: 0;
+    background-image: linear-gradient(90deg, transparent, #fff);
+  }
+`
+
 export const ViewWrapper = styled.div`
   /* 获取预期的 offsetLeft 的方案一：给相应的祖先元素设置定位（非 none 值） */
   position: relative;
@@ -43,4 +65,5 @@ export const ViewWrapper = styled.div`
     }
   }
 
+  ${props => props.showMask ? mask : ''}
 `

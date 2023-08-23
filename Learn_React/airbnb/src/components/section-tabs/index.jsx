@@ -33,7 +33,7 @@ const SectionTabs = memo((props) => {
 
   return (
     <TabsWrapper>
-      <ScrollView>
+      <ScrollView showMask>
         {
           tabNames.map((tabName, index) => {
             return (
