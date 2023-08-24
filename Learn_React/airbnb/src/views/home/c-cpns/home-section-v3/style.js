@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const LongForWrapper = styled.div`
-  .long-for-list {
-    display: flex;
+export const SectionV3Wrapper = styled.div`
+
+  .room-list {
     margin: 0 -8px;
 
     /* 调整 ScrollView 中的按钮位置 */

@@ -19,3 +19,7 @@ export function getHomeHotRecommendDestData() {
 export function getHomeLongForData() {
   return jjRequest.get('/home/longfor')
 }
+
+export function getHomePlusData() {
+  return jjRequest.get('/home/plus')
+}

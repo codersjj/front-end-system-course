@@ -7,6 +7,7 @@ import HomeBanner from './c-cpns/home-banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import HomeLongFor from './c-cpns/home-long-for'
+import HomeSectionV3 from './c-cpns/home-section-v3'
 import { isEmptyObj } from '@/utils'
 
 const Home = memo(() => {
@@ -16,6 +17,7 @@ const Home = memo(() => {
   const discountInfo = useSelector(state => state.home.discountInfo)
   const recommendInfo = useSelector(state => state.home.recommendInfo)
   const longForInfo = useSelector(state => state.home.longForInfo)
+  const plusInfo = useSelector(state => state.home.plusInfo)
 
   const dispatch = useDispatch()
 
@@ -36,6 +38,8 @@ const Home = memo(() => {
         {/* 拿到数据后再做渲染，不然会渲染两次 */}
         {!isEmptyObj(goodPriceInfo) && <HomeSectionV1 data={goodPriceInfo} />}
         {!isEmptyObj(highScoreInfo) && <HomeSectionV1 data={highScoreInfo} />}
+
+        {!isEmptyObj(plusInfo) && <HomeSectionV3 data={plusInfo} />}
       </div>
     </HomeWrapper>
   )

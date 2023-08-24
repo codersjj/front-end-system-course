@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
+  flex-shrink: 0;
   margin-bottom: 20px;
   box-sizing: border-box;
   width: ${props => props.width || '25%'};
