@@ -9,6 +9,10 @@ import SectionFooter from '@/components/section-footer'
 const HomeSectionV3 = memo(({ data }) => {
   const { title, subtitle, list } = data
 
+  function handleMoreClick() {
+    console.log('click more')
+  }
+
   return (
     <SectionV3Wrapper>
       <SectionHeader title={title} subtitle={subtitle} />
@@ -21,7 +25,7 @@ const HomeSectionV3 = memo(({ data }) => {
           }
         </ScrollView>
       </div>
-      <SectionFooter text="plus" />
+      <SectionFooter text="plus" onMoreClick={handleMoreClick} />
     </SectionV3Wrapper>
   )
 })
