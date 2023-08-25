@@ -16,7 +16,18 @@ import theme from './assets/theme';
 // 解决方案一：npm run eject
 // （推荐）解决方案二：craco -> create react app configuration override
 
-const materialTheme = createTheme();
+// 方案一：自定义 mui 的主题色
+// https://mui.com/material-ui/customization/palette/
+const materialTheme = createTheme({
+  // palette: {
+  //   primary: {
+  //     main: '#ffa726',
+  //     light: '#ffb74d',
+  //     dark: '#f57c00',
+  //     contrastText: '#fff',
+  //   }
+  // }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
