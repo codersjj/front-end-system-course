@@ -23,7 +23,6 @@ export const fetchEntireListAction = () => {
   return async (dispatch, getState) => {
     // 根据页码获取最新的数据
     const currentPage = getState().entire.currentPage
-    console.log("🚀 ~ file: actionCreators.js:23 ~ return ~ currentPage:", currentPage)
     const res = await getEntireList(currentPage * 20)
 
     // 将最新的数据保存到 redux 的 store 中
