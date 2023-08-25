@@ -5,6 +5,7 @@ import IconMoreArrow from '@/assets/svg/icon-more-arrow'
 import { useNavigate } from 'react-router-dom'
 
 const SectionFooter = memo((props) => {
+  // eslint-disable-next-line no-unused-vars
   const { text, onMoreClick } = props
 
   const showText = text ? `显示更多${text}房源` : '显示全部'
