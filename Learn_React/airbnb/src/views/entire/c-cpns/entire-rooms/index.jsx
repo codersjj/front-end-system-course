@@ -14,7 +14,7 @@ const EntireRooms = memo(() => {
       {!!totalCount && <h2 className="title">{totalCount} 多处住所</h2>}
       <div className="room-list">
         {
-          roomList.map(room => <RoomItem key={room.id} itemData={room} />)
+          roomList.map(room => <RoomItem key={room._id} itemData={room} />)
         }
       </div>
     </RoomsWrapper>

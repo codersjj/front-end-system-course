@@ -1,8 +1,9 @@
 import React, { memo } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Pagination } from '@mui/material'
 
 import { PaginationWrapper } from './style'
+import { changeCurrentPageAction, fetchEntireListAction } from '@/store/modules/entire/actionCreators'
 
 const EntirePagination = memo(() => {
   // https://react-redux.js.org/api/hooks#useselector
@@ -18,12 +19,23 @@ const EntirePagination = memo(() => {
   const start = currentPage * 20 + 1
   const end = (currentPage + 1) * 20
 
+  const dispatch = useDispatch()
+  const handleChange = (event, value) => {
+    // 更新最新的页码（redux store 中的 currentPage）
+    dispatch(changeCurrentPageAction(value - 1))
+    dispatch(fetchEntireListAction())
+  }
+
   return (
     <PaginationWrapper>
       {
         !!roomList.length && (
           <>
-            <Pagination count={pageCount} color="primary" />
+            <Pagination
+              count={pageCount}
+              color="primary"
+              onChange={handleChange}
+            />
             <p className="desc">第 {start} - {end} 个房源, 共超过 {totalCount} 个</p>
           </>
         )
