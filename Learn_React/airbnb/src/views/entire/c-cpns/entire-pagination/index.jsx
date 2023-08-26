@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Pagination } from '@mui/material'
 
 import { PaginationWrapper } from './style'
-import { changeCurrentPageAction, fetchEntireListAction } from '@/store/modules/entire/actionCreators'
+import { fetchEntireListAction } from '@/store/modules/entire/actionCreators'
 
 const EntirePagination = memo(() => {
   // https://react-redux.js.org/api/hooks#useselector
@@ -21,9 +21,7 @@ const EntirePagination = memo(() => {
 
   const dispatch = useDispatch()
   const handleChange = (event, value) => {
-    // 更新最新的页码（redux store 中的 currentPage）
-    dispatch(changeCurrentPageAction(value - 1))
-    dispatch(fetchEntireListAction())
+    dispatch(fetchEntireListAction(value - 1))
   }
 
   return (
