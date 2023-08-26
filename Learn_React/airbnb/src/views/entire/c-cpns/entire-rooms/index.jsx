@@ -8,6 +8,7 @@ const EntireRooms = memo(() => {
   // 从 redux 中获取 roomList 数据
   const roomList = useSelector(state => state.entire.roomList)
   const totalCount = useSelector(state => state.entire.totalCount)
+  const isLoading = useSelector(state => state.entire.isLoading)
 
   return (
     <RoomsWrapper>
@@ -17,6 +18,7 @@ const EntireRooms = memo(() => {
           roomList.map(room => <RoomItem key={room._id} itemData={room} />)
         }
       </div>
+      {isLoading && <div className='cover'></div>}
     </RoomsWrapper>
   )
 })

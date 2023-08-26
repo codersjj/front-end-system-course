@@ -27,6 +27,8 @@ export const ItemWrapper = styled.div`
       https://drafts.csswg.org/css-position-3/#def-cb */
       width: 100%;
       height: 100%;
+
+      object-fit: cover;
     }
   }
 

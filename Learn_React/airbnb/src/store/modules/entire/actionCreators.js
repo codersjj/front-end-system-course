@@ -16,6 +16,11 @@ export const changeTotalCountAction = (totalCount) => ({
   totalCount
 })
 
+export const changeIsLoadingAction = (isLoading) => ({
+  type: actionTypes.CHANGE_IS_LOADING,
+  isLoading
+})
+
 // 异步请求
 // https://redux.js.org/tutorials/essentials/part-5-async-logic#thunks-and-async-logic
 export const fetchEntireListAction = (page = 0) => {
@@ -23,8 +28,11 @@ export const fetchEntireListAction = (page = 0) => {
   return async (dispatch) => {
     // 修改 currentPage
     dispatch(changeCurrentPageAction(page))
+
+    dispatch(changeIsLoadingAction(true))
     // 根据页码获取最新的数据
     const res = await getEntireList(page * 20)
+    dispatch(changeIsLoadingAction(false))
 
     // 将最新的数据保存到 redux 的 store 中
     dispatch(changeRoomListAction(res.list))
