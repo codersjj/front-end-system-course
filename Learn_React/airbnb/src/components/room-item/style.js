@@ -23,6 +23,9 @@ export const ItemWrapper = styled.div`
       position: absolute;
       top: 0;
       left: 0;
+      /* 注意：在 img 上使用 right: 0; bottom: 0; 无法实现占满父元素的效果。图片是一个特殊的元素类型，不设置宽高会以内在尺寸计算，其它元素定位后可以拉伸，但图片不行，应改用 width: 100%; height: 100%: */
+      /* right: 0;
+      bottom: 0; */
       /* 绝对定位元素的宽高百分比值相对于其最邻近定位祖先元素（如果不是 inline box）的 padding edge 进行计算 https://drafts.csswg.org/css-sizing/#preferred-size-properties
       https://drafts.csswg.org/css-position-3/#def-cb */
       width: 100%;

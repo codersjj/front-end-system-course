@@ -23,6 +23,8 @@ export const changeIsLoadingAction = (isLoading) => ({
 
 // 异步请求
 // https://redux.js.org/tutorials/essentials/part-5-async-logic#thunks-and-async-logic
+// rtk 中已经默认集成了 redux-thunk，所以我们不需要再进行安装
+// https://redux.js.org/tutorials/essentials/part-5-async-logic#thunks-and-async-logic:~:text=The%20most%20common%20async,logic%20with%20Redux.
 export const fetchEntireListAction = (page = 0) => {
   // 返回新的函数
   return async (dispatch) => {

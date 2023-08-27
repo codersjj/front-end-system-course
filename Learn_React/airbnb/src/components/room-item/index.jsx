@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { Rating } from '@mui/material'
 import { ItemWrapper } from './style'
+import Carousel from './c-cpns/carousel'
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth } = props
@@ -13,9 +14,15 @@ const RoomItem = memo((props) => {
       $verifyColor={itemData.verify_info.text_color || '#39576a'}
       width={itemWidth}
     >
-      <div className="cover">
-        <img src={itemData.picture_url} alt="cover" />
-      </div>
+      {
+        itemData.picture_urls
+          ? <Carousel pictureUrls={itemData.picture_urls} />
+          : (
+            <div className="cover">
+              <img src={itemData.picture_url} alt="cover" />
+            </div>
+          )
+      }
       <p className="desc">{itemData.verify_info.messages.join('·')}</p>
       <p className="name">{itemData.name}</p>
       <p className="price">¥{itemData.price}/晚</p>
