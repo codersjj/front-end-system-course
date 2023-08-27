@@ -9,6 +9,11 @@ export const DemoWrapper = styled.div`
   .indicator-list {
     border: 1px solid #f00;
     padding: 10px;
-    width: 100px;
+    width: 200px;
+
+    button {
+      margin: 12px;
+      border: 10px solid #000;
+    }
   }
 `
