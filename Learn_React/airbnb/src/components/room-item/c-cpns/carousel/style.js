@@ -33,7 +33,7 @@ export const CarouselWrapper = styled.div`
     }
   }
 
-  .indicators {
+  .indicators-box {
     position: absolute;
     z-index: 11;
     bottom: 10px;
@@ -41,6 +41,31 @@ export const CarouselWrapper = styled.div`
     right: 0;
     margin: 0 auto;
     width: 30%;
+
+    .indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 14.2857%;
+      cursor: pointer;
+
+      .dot {
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+
+        &.active {
+          width: 8px;
+          height: 8px;
+        }
+
+        &.smaller {
+          width: 4px;
+          height: 4px;
+        }
+      }
+    }
   }
 
   &:hover {
