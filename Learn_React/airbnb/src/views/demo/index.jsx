@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react'
 import Indicators from '@/base-ui/indicators'
 import { DemoWrapper } from './style'
 
-const indicators = ['xxx', 'bbb', 'ccc', 'dddd', 'eeeeeeeee', 'f', 'ggggggggggggggg', 'hh']
+const indicators = ['xxx', 'bbb', 'ccc', 'ddd']
 
 const Demo = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0)

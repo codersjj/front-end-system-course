@@ -8,9 +8,6 @@ export const IndicatorsWrapper = styled.div`
     position: relative;
     display: flex;
 
-    border: 30px solid #f5f;
-    padding: 11px;
-
     transition: transform 300ms ease;
 
     > * {

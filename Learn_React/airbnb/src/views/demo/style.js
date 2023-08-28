@@ -13,7 +13,13 @@ export const DemoWrapper = styled.div`
 
     button {
       margin: 12px;
+      margin-right: 50px;
       border: 10px solid #000;
+      width: 50px;
+
+      &:last-child {
+        margin-right: 150px;
+      }
     }
   }
 `
