@@ -11,7 +11,7 @@ const Carousel = memo(({ pictureUrls = [] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const carouselRef = useRef()
 
-  const handleControlClick = (type) => {
+  const handleControlClick = (type, event) => {
     let newIndex = 0
     if (type === 'prev') {
       carouselRef.current.prev()
@@ -24,15 +24,18 @@ const Carousel = memo(({ pictureUrls = [] }) => {
     if (newIndex < 0) newIndex = lastIndex
     if (newIndex > lastIndex) newIndex = 0
     setSelectedIndex(newIndex)
+
+    // 阻止事件冒泡
+    event.stopPropagation()
   }
 
   return (
     <CarouselWrapper>
       <div className="controls">
-        <div className="prev" onClick={e => handleControlClick('prev')}>
+        <div className="prev" onClick={e => handleControlClick('prev', e)}>
           <IconArrowLeft width="32" height="32" />
         </div>
-        <div className="next" onClick={e => handleControlClick('next')}>
+        <div className="next" onClick={e => handleControlClick('next', e)}>
           <IconArrowRight width="32" height="32" />
         </div>
       </div>

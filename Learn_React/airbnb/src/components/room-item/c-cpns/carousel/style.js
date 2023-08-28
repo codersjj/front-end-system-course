@@ -47,7 +47,6 @@ export const CarouselWrapper = styled.div`
       justify-content: center;
       align-items: center;
       width: 14.2857%;
-      cursor: pointer;
 
       .dot {
         border-radius: 50%;
