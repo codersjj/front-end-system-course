@@ -1,17 +1,21 @@
 import styled from "styled-components";
 
 export const PicturesWrapper = styled.div`
-  display: flex;
-  height: 600px;
+  position: relative;
 
-  &:hover {
-    .cover {
-      opacity: 1 !important;
-    }
+  .pictures {
+    display: flex;
+    height: 600px;
 
-    .item:hover {
+    &:hover {
       .cover {
-        opacity: 0 !important;
+        opacity: 1 !important;
+      }
+
+      .item:hover {
+        .cover {
+          opacity: 0 !important;
+        }
       }
     }
   }
@@ -60,5 +64,19 @@ export const PicturesWrapper = styled.div`
       width: 50%;
       height: 50%;
     }
+  }
+
+
+  .show-viewer-btn {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 6px 15px;
+    line-height: 22px;
+    font-weight: bold;
+    background: #f5f5f5;
+    cursor: pointer;
   }
 `
