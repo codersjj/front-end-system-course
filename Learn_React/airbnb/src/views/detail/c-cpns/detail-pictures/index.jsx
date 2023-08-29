@@ -31,7 +31,7 @@ const DetailPictures = memo(({ data = {} }) => {
         </div>
       </div>
       <button className='show-viewer-btn' onClick={() => setShow(true)}>查看照片</button>
-      {show && <PictureViewer onClose={() => setShow(false)} />}
+      {show && <PictureViewer pictureUrls={picture_urls} onClose={() => setShow(false)} />}
     </PicturesWrapper>
   )
 })
