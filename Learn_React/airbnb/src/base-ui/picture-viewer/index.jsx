@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { memo, useEffect, useState } from 'react'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { ViewerWrapper } from './style'
 import IconClose from '@/assets/svg/icon-close'
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
@@ -9,6 +10,8 @@ const PictureViewer = memo((props) => {
   const { onClose, pictureUrls = [] } = props
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isValidClick, setIsValidClick] = useState(true)
+  const [isNext, setIsNext] = useState(true)
 
   // 当图片浏览器展示出来时，隐藏滚动条
   useEffect(() => {
@@ -22,6 +25,9 @@ const PictureViewer = memo((props) => {
   }
 
   const handleControlClick = isNext => {
+    if (!isValidClick) return
+
+    setIsNext(isNext)
     let newIndex = isNext ? currentIndex + 1 : currentIndex - 1
     const lastIndex = pictureUrls.length - 1
     if (newIndex < 0) newIndex = lastIndex
@@ -30,7 +36,7 @@ const PictureViewer = memo((props) => {
   }
 
   return (
-    <ViewerWrapper>
+    <ViewerWrapper isNext={isNext}>
       <div className="top">
         <div className="close" onClick={handleClose}>
           <IconClose />
@@ -46,7 +52,23 @@ const PictureViewer = memo((props) => {
           </button>
         </div>
         <div className="picture">
-          <img src={pictureUrls[currentIndex]} alt="房间图片" />
+          <SwitchTransition mode='in-out'>
+            <CSSTransition
+              key={pictureUrls[currentIndex]}
+              classNames="pic"
+              timeout={200}
+              onEnter={() => {
+                console.log('onEnter')
+                setIsValidClick(false)
+              }}
+              onExited={() => {
+                console.log('onExited')
+                setIsValidClick(true)
+              }}
+            >
+              <img src={pictureUrls[currentIndex]} alt="房间图片" />
+            </CSSTransition>
+          </SwitchTransition>
         </div>
       </div>
       <div className="preview"></div>

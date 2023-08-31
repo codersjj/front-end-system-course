@@ -30,6 +30,7 @@ export const ViewerWrapper = styled.div`
 
     .controls {
       position: absolute;
+      z-index: 1;
       inset: 0;
       display: flex;
       justify-content: space-between;
@@ -48,15 +49,44 @@ export const ViewerWrapper = styled.div`
     }
 
     .picture {
+      position: relative;
       max-width: 105vh;
       width: 100%;
       height: 100%;
+      overflow: hidden;
 
       img {
-        width: 100%;
+        /* 设置绝对定位，以避免切换图片的动画出现挤压现象 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        /* 考虑到图片的尺寸可能不同，这里只设置 max-width，不设置 width，让 width 随高度变化，使图片自适应 */
+        max-width: 100%;
         height: 100%;
-        object-fit: cover;
       }
+    }
+
+    .pic-enter {
+      transform: translateX(${props => props.isNext ? '100%' : '-100%'});
+      opacity: 0;
+    }
+
+    .pic-enter-active {
+      transform: translateX(0);
+      opacity: 1;
+      /* transition 加到 *-active 上 https://reactcommunity.org/react-transition-group/css-transition#:~:text=*%2Dactive%20classes%20represent%20which%20styles%20you%20want%20to%20animate%20to%2C%20so%20it%27s%20important%20to%20add%20transition%20declaration%20only%20to%20them%2C%20otherwise%20transitions%20might%20not%20behave%20as%20intended! */
+      transition: all 200ms ease;
+    }
+
+    .pic-exit {
+      opacity: 1;
+    }
+
+    .pic-exit-active {
+      opacity: 0;
+      transition: opacity 200ms ease;
     }
   }
 
