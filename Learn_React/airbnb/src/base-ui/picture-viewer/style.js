@@ -91,7 +91,49 @@ export const ViewerWrapper = styled.div`
   }
 
   .preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
     height: 100px;
-    background: orange;
+
+    .preview-content {
+      position: absolute;
+      /* 这里需要对整体进行 bottom 的定位，这样里面的 .list 的高度动画才会以底部为基础进行伸缩 */
+      bottom: 10px;
+      max-width: 105vh;
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 10px;
+        color: #fff;
+
+        .toggle {
+          cursor: pointer;
+        }
+      }
+
+      .list {
+        height: ${props => props.isShowList ? '67px' : '0'};
+        transition: height 200ms ease;
+        overflow: hidden;
+
+        .item {
+          margin-right: 15px;
+          opacity: 0.5;
+          cursor: pointer;
+
+          &.active {
+            opacity: 1;
+          }
+
+          img {
+            width: 100px;
+            height: 67px;
+          }
+        }
+      }
+    }
   }
 `

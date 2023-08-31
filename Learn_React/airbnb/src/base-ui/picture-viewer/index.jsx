@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types'
 import React, { memo, useEffect, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import classNames from 'classnames'
 import { ViewerWrapper } from './style'
 import IconClose from '@/assets/svg/icon-close'
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
 import IconArrowRight from '@/assets/svg/icon-arrow-right'
+import IconTriangleDownArrow from '@/assets/svg/icon-triangle-down-arrow'
+import IconTriangleUpArrow from '@/assets/svg/icon-triangle-up-arrow'
+import Indicators from '../indicators'
 
 const PictureViewer = memo((props) => {
   const { onClose, pictureUrls = [] } = props
@@ -12,6 +16,8 @@ const PictureViewer = memo((props) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isValidClick, setIsValidClick] = useState(true)
   const [isNext, setIsNext] = useState(true)
+  const [isShowList, setIsShowList] = useState(true)
+  const [isMouseOut, setIsMouseOut] = useState(false)
 
   // 当图片浏览器展示出来时，隐藏滚动条
   useEffect(() => {
@@ -35,8 +41,22 @@ const PictureViewer = memo((props) => {
     setCurrentIndex(newIndex)
   }
 
+  const handleMouseOver = () => {
+    if (isMouseOut) setIsShowList(true)
+    setIsMouseOut(false)
+  }
+
+  const handleToggleList = () => {
+    setIsShowList(!isShowList)
+  }
+
+  const handleItemClick = (index) => {
+    setIsNext(index > currentIndex)
+    setCurrentIndex(index)
+  }
+
   return (
-    <ViewerWrapper isNext={isNext}>
+    <ViewerWrapper isNext={isNext} isShowList={isShowList}>
       <div className="top">
         <div className="close" onClick={handleClose}>
           <IconClose />
@@ -71,7 +91,37 @@ const PictureViewer = memo((props) => {
           </SwitchTransition>
         </div>
       </div>
-      <div className="preview"></div>
+      <div className="preview"
+        onMouseOut={e => setIsMouseOut(true)}
+        onMouseOver={handleMouseOver}
+      >
+        <div className="preview-content">
+          <div className="info">
+            <div className="count">
+              <span>{currentIndex + 1}/{pictureUrls.length}：room apartment图片{currentIndex + 1}</span>
+            </div>
+            <div className="toggle" onClick={handleToggleList}>
+              <span>{isShowList ? '隐藏' : '显示'}照片列表</span>
+              {isShowList ? <IconTriangleDownArrow /> : <IconTriangleUpArrow />}
+            </div>
+          </div>
+          <div className="list">
+            <Indicators selectedIndex={currentIndex}>
+              {pictureUrls.map((url, index) => {
+                return (
+                  <div
+                    key={url}
+                    className={classNames('item', { active: currentIndex === index })}
+                    onClick={e => handleItemClick(index)}
+                  >
+                    <img src={url} alt="房间图片" />
+                  </div>
+                )
+              })}
+            </Indicators>
+          </div>
+        </div>
+      </div>
     </ViewerWrapper>
   )
 })
