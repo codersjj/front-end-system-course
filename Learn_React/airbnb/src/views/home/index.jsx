@@ -1,6 +1,7 @@
 import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { changeHeaderConfigAction } from '@/store/modules/main'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
@@ -23,6 +24,7 @@ const Home = memo(() => {
 
   // 在 useEffect 中派发异步的事件，发起网络请求（在组件这里只是发起，具体的网络请求逻辑放到 redux 中完成 -> store 中使用 rtk 的 createAsyncThunk 发起异步请求 -> 调用 services 中封装的请求方法）
   useEffect(() => {
+    dispatch(changeHeaderConfigAction({ isFixed: true }))
     dispatch(fetchHomeDataAction())
   }, [dispatch])
 
