@@ -4,8 +4,17 @@ import { ConfigProvider } from 'antd';
 import routes from './router'
 import AppHeader from './components/app-header'
 import AppFooter from './components/app-footer'
+import { useScrollToTop } from './hooks';
 
 const App = memo(() => {
+
+  // const location = useLocation()
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [location.pathname])
+
+  useScrollToTop()
+
   return (
     <ConfigProvider theme={{ token: { colorPrimary: '#00b96b' } }}>
       <div className='app'>
