@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -35,13 +35,13 @@ root.render(
     <HashRouter>
       {/* 这里需要改为 Provider 包裹 Suspense，因为如果是 Suspense 包裹 Provider，AppHeader 是不会监听到（store.subscribe）异步加载的页面（我们项目的路由中用了懒加载（import() 函数，webpack 会对其进行单独打包））中发出去的事件的。因为 Suspense 是异步加载的，如果没有被 Provider 包裹就意味着它异步加载完后的东西是不会被 Provider 监听到的  */}
       <Provider store={store}>
-        <Suspense fallback='loading'>
+        {/* <Suspense fallback='loading'> */}
           <ThemeProvider theme={theme}>
             <MaterialThemeProvider theme={{ [THEME_ID]: materialTheme }}>
               <App />
             </MaterialThemeProvider>
           </ThemeProvider>
-        </Suspense>
+        {/* </Suspense> */}
       </Provider>
     </HashRouter>
   // </React.StrictMode>

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { Suspense, memo } from 'react'
 import { useRoutes } from 'react-router-dom'
 import { ConfigProvider } from 'antd';
 import routes from './router'
@@ -13,9 +13,11 @@ const App = memo(() => {
     <ConfigProvider theme={{ token: { colorPrimary: '#00b96b' } }}>
       <div className='app'>
         <AppHeader />
-        <div className="page">
-          {useRoutes(routes)}
-        </div>
+        <Suspense fallback='loading'>
+          <div className="page">
+            {useRoutes(routes)}
+          </div>
+        </Suspense>
         <AppFooter />
       </div>
     </ConfigProvider>
