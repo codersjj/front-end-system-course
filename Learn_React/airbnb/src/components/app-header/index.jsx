@@ -22,8 +22,10 @@ const AppHeader = memo(() => {
   // 记录上一次滚动的位置，与界面刷新无关，没有必要使用 useState，可以直接使用 useRef
   const prevScrollY = useRef(0)
   const distance = Math.abs(scrollY - prevScrollY.current)
-  if (distance > 30) setIsSearch(false)
-  prevScrollY.current = scrollY
+  // 搜索框没有弹出来时，不断记录滚动的位置
+  if (!isSearch) prevScrollY.current = scrollY
+  // 在搜索框弹出的情况下，不记录滚动的位置，直接比较当前滚动的位置与之前记录的位置之间的距离是否大于 30
+  if (isSearch && distance > 30) setIsSearch(false)
 
   return (
     <HeaderWrapper className={classNames({ fixed: isFixed })}>
