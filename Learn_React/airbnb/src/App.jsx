@@ -7,12 +7,6 @@ import AppFooter from './components/app-footer'
 import { useScrollToTop } from './hooks';
 
 const App = memo(() => {
-
-  // const location = useLocation()
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, [location.pathname])
-
   useScrollToTop()
 
   return (
