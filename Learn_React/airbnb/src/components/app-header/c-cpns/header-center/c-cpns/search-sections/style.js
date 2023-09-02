@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 export const SectionsWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
   display: flex;
   margin: 0 auto;
   box-sizing: border-box;
@@ -12,6 +8,7 @@ export const SectionsWrapper = styled.div`
   border-radius: 32px;
   max-width: 850px;
   width: 100%;
+  background-color: #fff;
 
   .section {
     position: relative;

@@ -23,10 +23,6 @@ export const HeaderWrapper = styled.div`
       padding: 0 24px;
       height: 80px;
     }
-
-    .search-area {
-      height: 80px;
-    }
   }
 
   .cover {
@@ -34,4 +30,9 @@ export const HeaderWrapper = styled.div`
     inset: 0;
     background-color: rgba(0,0,0,.3);
   }
+`
+
+export const SearchAreaWrapper = styled.div`
+  height: ${props => props.isSearch ? '80px' : '0'};
+  transition: height 250ms;
 `
