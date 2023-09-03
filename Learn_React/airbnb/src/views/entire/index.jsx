@@ -12,7 +12,7 @@ const Entire = memo(() => {
   // https://react-redux.js.org/api/hooks#usedispatch
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(changeHeaderConfigAction({ isFixed: true }))
+    dispatch(changeHeaderConfigAction({ isFixed: true, topAlpha: false }))
     dispatch(fetchEntireListAction())
   }, [dispatch])
 

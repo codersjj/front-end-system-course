@@ -6,7 +6,7 @@ export const TabsWrapper = styled.ul`
   align-items: center;
 
   font-size: 16px;
-  color: #222;
+  color: ${props => props.theme.isAlpha ? '#fff' : '#222'};
 
   li {
     line-height: 20px;

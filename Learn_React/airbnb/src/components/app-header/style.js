@@ -14,7 +14,8 @@ export const HeaderWrapper = styled.div`
   .content {
     position: relative;
     z-index: 1;
-    background-color: #fff;
+    background-color: ${props => props.theme.isAlpha ? 'transparent' : '#fff'};
+    /* transition: background-color 250ms; */
 
     .top {
       position: relative;
