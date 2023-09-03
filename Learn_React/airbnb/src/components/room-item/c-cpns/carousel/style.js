@@ -10,7 +10,7 @@ export const CarouselWrapper = styled.div`
   }
 
   .controls {
-    z-index: 9;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     color: #fff;

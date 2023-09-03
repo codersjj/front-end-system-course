@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 
   &.fixed {
     position: fixed;
@@ -13,7 +16,8 @@ export const HeaderWrapper = styled.div`
 
   .content {
     position: relative;
-    z-index: 1;
+    z-index: 9;
+    border-bottom: 1px solid ${props => props.theme.isAlpha ? 'rgba(0,0,0,.08)' : '#eee'};
     background-color: ${props => props.theme.isAlpha ? 'transparent' : '#fff'};
     /* transition: background-color 250ms; */
 
@@ -28,6 +32,7 @@ export const HeaderWrapper = styled.div`
 
   .cover {
     position: fixed;
+    z-index: 1;
     inset: 0;
     background-color: rgba(0,0,0,.3);
   }

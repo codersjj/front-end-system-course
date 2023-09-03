@@ -1,12 +1,12 @@
 import React, { memo, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 import classNames from 'classnames'
 import { HeaderWrapper, SearchAreaWrapper } from './style'
 import HeaderLeft from './c-cpns/header-left'
 import HeaderCenter from './c-cpns/header-center'
 import HeaderRight from './c-cpns/header-right'
 import { useScrollPosition } from '@/hooks'
-import { ThemeProvider } from 'styled-components'
 
 const AppHeader = memo(() => {
   /* 定义组件内部的状态 */
